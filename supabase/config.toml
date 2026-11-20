@@ -1,0 +1,11 @@
+project_id = "cpns-journey"
+[api]
+enabled = true
+schemas = ["public"]
+[auth]
+enabled = true
+site_url = "id.cpnsjourney://login-callback"
+additional_redirect_urls = ["id.cpnsjourney://login-callback"]
+[auth.email]
+enable_signup = true
+enable_confirmations = true

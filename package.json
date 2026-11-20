@@ -1,0 +1,11 @@
+{
+  "name": "cpns-journey-verification",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:security": "node supabase/tests/security.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.17"
+  }
+}
