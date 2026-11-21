@@ -31,11 +31,11 @@ Screenshot dirender dari antarmuka Flutter dengan **data uji**, bukan riwayat pe
 
 ## Demo video
 
-[![Tonton demo CPNS Journey: buku pop-up dan simulasi CAT](docs/design/preview/video-demo.jpg)](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/CPNS_JOURNEY_REMOTION_1080p60.mp4)
+[![Preview bergerak CPNS Journey: buku pop-up dan simulasi CAT](docs/design/preview/video-demo.gif)](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/CPNS_JOURNEY_REMOTION_1080p60.mp4)
 
 **[Buka / unduh video 1080p60](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/CPNS_JOURNEY_REMOTION_1080p60.mp4)** · [Subtitle Indonesia](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/CPNS_JOURNEY_REMOTION_ID.srt) · [Source dan panduan render](video-demo/README.md)
 
-Demo Remotion berdurasi sekitar **2 menit**, dengan narasi Indonesia dan animasi buku pop-up. Klik gambar untuk membuka MP4; browser dapat memutar atau mengunduhnya. Video merupakan presentasi fitur. Preview tampilan aplikasi sebenarnya ada pada galeri di atas. Master video sekitar 236 MiB, disimpan sebagai aset Release agar tidak membebani riwayat Git.
+Cuplikan GIF di atas bergerak langsung di README (12 detik, tanpa suara). Video lengkap Remotion berdurasi sekitar **2 menit**, dengan narasi Indonesia dan animasi buku pop-up. Klik preview untuk membuka MP4 dengan suara; browser dapat memutar atau mengunduhnya. Video merupakan presentasi fitur. Preview tampilan aplikasi sebenarnya ada pada galeri di atas. Master video sekitar 236 MiB, disimpan sebagai aset Release agar tidak membebani riwayat Git.
 
 ## Yang bisa kamu lakukan
 
