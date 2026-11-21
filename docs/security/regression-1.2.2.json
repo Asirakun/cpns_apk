@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-21T04:42:40.093Z",
+  "tests": 70,
+  "skipped": 3,
+  "sqlChecks": 33,
+  "apkChecks": 42,
+  "assetChecks": 118,
+  "lintErrors": 0,
+  "lintWarnings": 7,
+  "osvActiveFindings": 0,
+  "source": "cpns-intro supplied by user (spns-intro in request)",
+  "durationMs": 6667,
+  "frames": 200,
+  "sfxMixIdentical": true,
+  "wavPeak": 0.849945068359375,
+  "skipButton": false,
+  "background": "Native app PaperBackdrop, original gradient/rings/glow omitted",
+  "physicalAndroidAudioTest": false,
+  "artifact": {
+    "path": "build/releases/cpns-journey-1.2.2-arm64-v8a.apk",
+    "bytes": 30618150,
+    "sha256": "46cb55ad5e0a9d366a6559398e19276f773d54deaf3cab4ff0c6a87652a7f795",
+    "version": "1.2.2",
+    "versionCode": 2007,
+    "signer": "Same pinned release certificate"
+  }
+}

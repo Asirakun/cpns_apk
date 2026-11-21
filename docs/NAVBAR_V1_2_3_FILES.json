@@ -1,0 +1,249 @@
+{
+  "checkedAt": "2026-11-21T07:44:59.495Z",
+  "baseline": "Delivered 1.2.2 file manifest; user-supplied cpns-intro input excluded",
+  "verification": {
+    "checkedAt": "2026-11-21T07:44:58.637Z",
+    "tests": 70,
+    "skipped": 3,
+    "sqlChecks": 33,
+    "apkChecks": 42,
+    "assetChecks": 118,
+    "lintErrors": 0,
+    "lintWarnings": 7,
+    "osvActiveFindings": 0,
+    "navbar": {
+      "shape": "Floating capsule with selected capsule around icon and label",
+      "existingIcons": [
+        "home",
+        "book",
+        "checklist",
+        "route",
+        "avatar"
+      ],
+      "testedWidths": [
+        360,
+        430
+      ],
+      "textScale": 1.3,
+      "themes": [
+        "dark",
+        "light"
+      ]
+    },
+    "preservedPaths": [
+      "lib/core/controller.dart",
+      "lib/core/local_store_native.dart",
+      "lib/core/state_cipher.dart",
+      "lib/core/analytics.dart",
+      "lib/app/intro.dart",
+      "lib/features/home.dart",
+      "lib/features/tryout.dart",
+      "lib/features/profile.dart",
+      "lib/features/journey.dart",
+      "pubspec.lock",
+      "android/app/src/main/kotlin/id/cpnsjourney/cpns_journey/MainActivity.kt"
+    ],
+    "artworkFilesUnchanged": 48,
+    "physicalAndroidTest": false,
+    "artifact": {
+      "path": "build/releases/cpns-journey-1.2.3-arm64-v8a.apk",
+      "bytes": 30618150,
+      "sha256": "973120969d2e31c436d10397be41539d96b454eae6098d23f8fa30e03724eb1f",
+      "version": "1.2.3",
+      "versionCode": 2008,
+      "signer": "Same pinned release certificate"
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "beforeSha256": "edab74314abf5ebba308eacb8a94e1e751a7fed5e6d859c88b17c87f08dd884d",
+      "afterSha256": "e8a2c997ddc4371b34c2d406c3146175d121f5063528c240b14bec66473db23f",
+      "change": "Nomor versi rilis 1.2.3."
+    },
+    {
+      "path": "docs/KEAMANAN.md",
+      "status": "modified",
+      "beforeSha256": "80eef1dd37bea38ed611e70e87690fe4c20cd106c1daebe28650ff310d6ff568",
+      "afterSha256": "ec459a71b95277c90cbbaadcf94eebc562c685ff4b4ee286b8cecf9ae3be088c",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/LANJUTKAN_DI_CODEX.md",
+      "status": "modified",
+      "beforeSha256": "8f2464b2d77a6ca6f7d690308c6bb7d2cd2b85baba2b5e4c1c353647aef139fa",
+      "afterSha256": "5df235bbbbb36c7bd1be00a33945d62c2bba08858e5d1c9c19142f8ba8fbd579",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/NAVBAR_V1_2_3.md",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "d5ad1dd6893f6a718241f3783c890cdbdd6e6b2fda39a39c146d9f6494936878",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/NAVBAR_V1_2_3_FILES.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": null,
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/VERIFIKASI.md",
+      "status": "modified",
+      "beforeSha256": "36fb78a881ca7725d359002e1e89345ac874c842fca81936627e957e2cf6f176",
+      "afterSha256": "25eba8880b242085b23132d1de2dbf8f624d83a82ac23365299a22e2f63b80a9",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/design/PAPERCUT.md",
+      "status": "modified",
+      "beforeSha256": "f685df54c3a7297ab37d2b85db6ef37f30f487b189b89d44d286a5a9b9417ed9",
+      "afterSha256": "bc4fed96084db2026fb364db6adfb1b94ac2348e89be19df0a845c9fcf3aa432",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.3/home.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "de7270e86419af0822fd3f2c064357e16ae6f1d1dc621561afac5037e99108c8",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.3/profile.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "bf27b22335c73341a677b9681fd5f3acbc76414d38eaad2574f5c0c76952e52d",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.3/tryouts.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "4586ea80b0df4a550eb8e289137f9b5826dc7331ef1a1d74e4ca5f0ba92a6065",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/dependency-audit-1.2.3.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "e64a519e3a82274bf9503cadaff31ec9ac1aa803151bafd883531f6ccaf12d55",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/dependency-audit.json",
+      "status": "modified",
+      "beforeSha256": "4601f9d8951ba3536d78dc2a7de2f10211b751bbdb2b2c2cae6c691943278fd4",
+      "afterSha256": "e64a519e3a82274bf9503cadaff31ec9ac1aa803151bafd883531f6ccaf12d55",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/lint-results-release-1.2.3.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7160c75eac6612b37a0dce1a76cdfd5f17d967da8126a23bea64e51d002b199a",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/regression-1.2.3.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b99a924ec869fd8477e2bc26b1556b590217315c860f02ab9ec2419af3f72bbc",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/release-security-1.2.3.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "5cfb702353584b375914c2712ce3a4e4c96c849fd900fa430c5784f4a5d87777",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/release-security.json",
+      "status": "modified",
+      "beforeSha256": "ad255dee020e099e9196bdc5ad7432907c18f9bc0d58bf8903ac33ccce82f900",
+      "afterSha256": "5cfb702353584b375914c2712ce3a4e4c96c849fd900fa430c5784f4a5d87777",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/source-secrets-1.2.3.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "0d8083f204c5562b3718ff077bc8251a22120131b77b8f5c254c1aa57419abc6",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/source-secrets.json",
+      "status": "modified",
+      "beforeSha256": "7970baccfa21e884c02e24e1f7b5b23b2a43fcf90f41668d2d70a8b8006e525a",
+      "afterSha256": "0d8083f204c5562b3718ff077bc8251a22120131b77b8f5c254c1aa57419abc6",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "docs/security/ui-assets-1.2.3.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "15ec5f79b67e1a0286e9d3e2ebda08a4bd987d22cc4f70746d97dc8f0271e8c8",
+      "change": "Dokumentasi, screenshot atau bukti verifikasi rilis 1.2.3."
+    },
+    {
+      "path": "lib/app/floating_nav.dart",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "f5b0a04e41860a8bde8b58e84b64c402d4bb6092ab7b27fff7a413313eb2851c",
+      "change": "Widget navbar kapsul, SafeArea, tema, selected state, semantics dan ikon existing."
+    },
+    {
+      "path": "lib/core/app_version.dart",
+      "status": "modified",
+      "beforeSha256": "5ae7db690be1a5924125ebc0f8cbbe16d1a8ca02c25113e1331bd8477e197f65",
+      "afterSha256": "48233e57a663c4a51b7e10dc32a44901b077da850abe53ba6286b257a12bab54",
+      "change": "Nomor versi rilis 1.2.3."
+    },
+    {
+      "path": "lib/main.dart",
+      "status": "modified",
+      "beforeSha256": "e23af50416a53c6b2162f2fc90949157b6ab80d838ce49d55883228e8c7af3d6",
+      "afterSha256": "1ceb7de638985ecb3fc795e0b1ec27e27a829cff97290d5183089dc6feed9868",
+      "change": "Shell mobile memakai FloatingPaperNavBar; rute dan rail existing dipertahankan."
+    },
+    {
+      "path": "pubspec.yaml",
+      "status": "modified",
+      "beforeSha256": "f33a1c0fa82eacbc29bb824f59e90107cb2a1869c2e4c8dd908d777cc21932f9",
+      "afterSha256": "c9563e778185d2a4f757f80f9d694a362a331e13e5d31068dc55def6828a6ff3",
+      "change": "Nomor versi rilis 1.2.3."
+    },
+    {
+      "path": "test/security_test.dart",
+      "status": "modified",
+      "beforeSha256": "3e4fcbbf853f4025704210fd7625c64673e417f0400c94951a62cc02e56acd79",
+      "afterSha256": "1590067d6d03b0cfd216b2be41983e830a4639b7c1b7f226233d1baa6243ea4c",
+      "change": "Sesuaikan batas versi konten dengan rilis 1.2.3."
+    },
+    {
+      "path": "test/ui_v12_preview_test.dart",
+      "status": "modified",
+      "beforeSha256": "b02539d0cfc827c371b6f2fca432c2a50e0e2ee943e6c65f78a415ac51e04e09",
+      "afterSha256": "73d41462cbcc4fdca130565c1b5f1045b26a40adcd58c6b92415d46688ff716d",
+      "change": "Capture versi 1.2.3 dengan banner data uji di luar viewport aplikasi."
+    },
+    {
+      "path": "test/widget_test.dart",
+      "status": "modified",
+      "beforeSha256": "c68638a9fcbdd323c43b9f4c9cde345693ea594bee077862b70565cbcc4632bd",
+      "afterSha256": "4e74e85feaa3ac3756a10306f356f581f43076ebab7d42d022db70a1487f51e1",
+      "change": "Regresi bentuk, margin, ikon dan lima tab pada empat kombinasi ukuran/tema."
+    },
+    {
+      "path": "tools/papercut_intro/package.json",
+      "status": "modified",
+      "beforeSha256": "8109837f7441885d0ba2be4392a7375220e61fefcfd075e3a4ed3952cb591484",
+      "afterSha256": "ac8ebbac421afa5e2e49540e67b8c2a181029cced83009c4d4b67d848d818316",
+      "change": "Finalisasi entry studio ke sumber intro dengan SFX."
+    }
+  ],
+  "selfHash": "Manifest intentionally unhashed"
+}

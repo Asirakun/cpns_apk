@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 
 import 'support/memory_store.dart';
+import 'support/test_cipher.dart';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -214,7 +215,7 @@ void main() {
   test('Drift cold reopen preserves answers, deadlines, score and immutable submission', () async {
     final dir = await Directory.systemTemp.createTemp('cpns-recovery-');
     final path = File('${dir.path}/test.sqlite');
-    var store = DriftStore(JourneyDatabase(NativeDatabase(path)));
+    var store = DriftStore(JourneyDatabase(NativeDatabase(path)), testCipher());
     final state = initialData();
     final a = makeAttempt();
     a.answer(
@@ -225,7 +226,7 @@ void main() {
     state['attempts'] = [a.json];
     await store.write('user-A', state, 'operation-1');
     await store.close();
-    store = DriftStore(JourneyDatabase(NativeDatabase(path)));
+    store = DriftStore(JourneyDatabase(NativeDatabase(path)), testCipher());
     final recovered = Attempt(
       (await store.read('user-A'))!['attempts'][0] as Json,
     );
@@ -236,7 +237,7 @@ void main() {
     state['attempts'] = [recovered.json];
     await store.write('user-A', state, 'operation-2');
     await store.close();
-    store = DriftStore(JourneyDatabase(NativeDatabase(path)));
+    store = DriftStore(JourneyDatabase(NativeDatabase(path)), testCipher());
     final result = Attempt(
       (await store.read('user-A'))!['attempts'][0] as Json,
     );
@@ -246,7 +247,10 @@ void main() {
     await dir.delete(recursive: true);
   });
   test('SQLite namespaces and outbox isolate two users; duplicate operation is idempotent', () async {
-    final store = DriftStore(JourneyDatabase(NativeDatabase.memory()));
+    final store = DriftStore(
+      JourneyDatabase(NativeDatabase.memory()),
+      testCipher(),
+    );
     await store.write('A', {'alias': 'A'}, 'op-A');
     await store.write('B', {'alias': 'B'}, 'op-B');
     await store.write('A', {'alias': 'A-new'}, 'op-A');
@@ -261,7 +265,10 @@ void main() {
   test(
     'profile and cycle edits preserve past attempts and prior-cycle documents',
     () async {
-      final store = DriftStore(JourneyDatabase(NativeDatabase.memory()));
+      final store = DriftStore(
+        JourneyDatabase(NativeDatabase.memory()),
+        testCipher(),
+      );
       final repo = ContentRepository()..data = content;
       final app = AppController(store, repo);
       final a = makeAttempt();

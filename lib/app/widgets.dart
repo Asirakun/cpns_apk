@@ -3,6 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'theme.dart';
+import '../core/network_policy.dart';
+import 'paper.dart';
 
 String wibDate(String? iso, {bool time = false}) {
   if (iso == null || iso.isEmpty) return 'Belum dicatat';
@@ -39,7 +41,7 @@ Future<void> guard(BuildContext context, Future<void> Function() fn) async {
 
 Future<void> openOfficial(BuildContext context, String url) async {
   final uri = Uri.tryParse(url);
-  if (uri == null || uri.scheme != 'https') {
+  if (uri == null || !isGovernmentUrl(url)) {
     message(context, 'Gunakan tautan HTTPS resmi yang valid.');
     return;
   }
@@ -172,12 +174,13 @@ class Tag extends StatelessWidget {
         ? Color.lerp(color, Colors.white, .45)!
         : color == amber
         ? const Color(0xFF995000)
-        : color;
+        : HSVColor.fromColor(color).withSaturation(.5).withValue(.47).toColor();
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
         color: color.withValues(alpha: dark ? .18 : .08),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(color: color.withValues(alpha: .25), width: .8),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -227,7 +230,7 @@ class Note extends StatelessWidget {
           icon,
           color: Theme.of(context).brightness == Brightness.dark
               ? Color.lerp(color, Colors.white, .4)
-              : color,
+              : Theme.of(context).colorScheme.primary,
           size: 21,
         ),
         const SizedBox(width: 12),
@@ -258,18 +261,10 @@ class EmptyCard extends StatelessWidget {
       padding: const EdgeInsets.all(25),
       child: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: indigo.withValues(alpha: .08),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              icon,
-              color: Theme.of(context).colorScheme.primary,
-              size: 28,
-            ),
-          ),
+          if (PaperArt.forIcon(icon) case final asset?)
+            PaperArt(asset, size: 66)
+          else
+            Icon(icon, size: 48),
           const SizedBox(height: 15),
           Text(
             title,
@@ -303,30 +298,30 @@ class ActionTile extends StatelessWidget {
     required this.subtitle,
     required this.onTap,
     this.trailing,
+    this.paperAsset,
+    this.leading,
     this.color = indigo,
   });
   final IconData icon;
   final String title, subtitle;
   final VoidCallback onTap;
   final Widget? trailing;
+  final PaperAsset? paperAsset;
+  final Widget? leading;
   final Color color;
   @override
   Widget build(BuildContext context) => Card(
     child: ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      leading: Container(
-        padding: const EdgeInsets.all(11),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: .08),
-          borderRadius: BorderRadius.circular(13),
-        ),
-        child: Icon(
-          icon,
-          color: Theme.of(context).brightness == Brightness.dark
-              ? Color.lerp(color, Colors.white, .35)
-              : color,
-        ),
-      ),
+      leading:
+          leading ??
+          (paperAsset != null || PaperArt.forIcon(icon) != null
+              ? PaperArt(paperAsset ?? PaperArt.forIcon(icon)!, size: 45)
+              : Icon(
+                  icon,
+                  size: 30,
+                  color: Theme.of(context).colorScheme.primary,
+                )),
       title: Text(
         title,
         style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
@@ -342,17 +337,11 @@ class BrandMark extends StatelessWidget {
   const BrandMark({super.key, this.size = 46});
   final double size;
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) => Image.asset(
+    'assets/brand/logo.png',
     width: size,
     height: size,
-    decoration: BoxDecoration(
-      gradient: const LinearGradient(
-        colors: [Color(0xFF6873ED), indigo],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-      ),
-      borderRadius: BorderRadius.circular(size * .3),
-    ),
-    child: Icon(Icons.route_rounded, color: Colors.white, size: size * .59),
+    fit: BoxFit.contain,
+    semanticLabel: 'CPNS Journey',
   );
 }

@@ -1,4 +1,8 @@
 import 'package:material_ui/material_ui.dart';
+
+import '../core/app_version.dart';
+import '../app/paper.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,7 +28,7 @@ class ProfileScreen extends ConsumerWidget {
             padding: const EdgeInsets.all(20),
             child: Row(
               children: [
-                const BrandMark(size: 58),
+                const PaperArt(PaperAsset.avatar, size: 58),
                 const SizedBox(width: 16),
                 Expanded(
                   child: Column(
@@ -61,6 +65,7 @@ class ProfileScreen extends ConsumerWidget {
         const SectionTitle('Belajar sesuai ritmemu'),
         ActionTile(
           icon: Icons.tune_rounded,
+          paperAsset: PaperAsset.plan,
           title: 'Rencana ${app.data['plan_days']} hari',
           subtitle:
               '${app.data['minutes']} menit/hari · perubahan tidak menghapus progres',
@@ -139,6 +144,9 @@ class ProfileScreen extends ConsumerWidget {
         const SectionTitle('Akun & penyimpanan'),
         ActionTile(
           icon: Icons.cloud_sync_outlined,
+          paperAsset: app.namespace == 'guest'
+              ? PaperAsset.device
+              : PaperAsset.cloudSync,
           title: app.syncLabel,
           subtitle: app.namespace == 'guest'
               ? 'Masuk untuk mengaktifkan sinkronisasi Supabase'
@@ -238,6 +246,14 @@ class ProfileScreen extends ConsumerWidget {
         ],
         const SectionTitle('Kepercayaan & privasi'),
         ActionTile(
+          icon: Icons.play_circle_outline_rounded,
+          leading: const BrandMark(size: 45),
+          title: 'Intro CPNS Journey',
+          subtitle: 'Putar ulang pembuka papercut',
+          onTap: () => context.push('/intro'),
+        ),
+        const SizedBox(height: 12),
+        ActionTile(
           icon: Icons.verified_user_outlined,
           title: 'Privasi & batas penggunaan',
           subtitle: 'Tanpa NIK, KK, scan identitas, atau password SSCASN',
@@ -286,7 +302,7 @@ class ProfileScreen extends ConsumerWidget {
         const SizedBox(height: 22),
         const Center(
           child: Text(
-            'CPNS Journey 1.0.0 · Persiapan yang terarah\nIndependen, tanpa afiliasi BKN/Kemenkeu',
+            'CPNS Journey $appVersion · Persiapan yang terarah\nIndependen, tanpa afiliasi BKN/Kemenkeu',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 10, height: 1.8),
           ),
@@ -425,7 +441,7 @@ class ProfileScreen extends ConsumerWidget {
             const SizedBox(height: 18),
             FilledButton(
               onPressed: () => guard(ctx, () async {
-                app.data['minutes'] = minutes.round();
+                await app.setDailyGoal(minutes.round());
                 app.data['plan_days'] = days;
                 await app.save();
                 if (ctx.mounted) Navigator.pop(ctx);

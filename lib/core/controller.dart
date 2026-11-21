@@ -12,6 +12,10 @@ import 'package:uuid/uuid.dart';
 import 'models.dart';
 import 'services.dart';
 import 'local_store.dart';
+import 'network_policy.dart';
+import 'app_version.dart';
+import 'analytics.dart';
+import 'study_clock.dart';
 
 final appProvider = ChangeNotifierProvider<AppController>(
   (ref) => throw UnimplementedError('Override at startup'),
@@ -35,9 +39,93 @@ class AppController extends ChangeNotifier {
   int queued = 0;
   int _failures = 0;
   int _namespaceTicket = 0;
+  int get namespaceGeneration => _namespaceTicket;
+  bool _disposed = false;
+  bool _analyticsCloudReady = false;
   Timer? _retry;
   StreamSubscription<AuthState>? _auth;
   Future<void> _writes = Future.value();
+  final studyFlushers = <VoidCallback>{};
+  LearningAnalytics? _analyticsCache;
+  int? _analyticsMinute;
+  LearningAnalytics get analytics {
+    final now = DateTime.now().toUtc();
+    final minute = now.millisecondsSinceEpoch ~/ 60000;
+    if (_analyticsCache == null || _analyticsMinute != minute) {
+      _analyticsCache = LearningAnalytics(data, now: now);
+      _analyticsMinute = minute;
+    }
+    return _analyticsCache!;
+  }
+
+  void _flushStudy() {
+    for (final flush in studyFlushers.toList()) {
+      flush();
+    }
+  }
+
+  Future<void> recordStudySpan(
+    ActiveSpan span, {
+    required String owner,
+    required String kind,
+    int? generation,
+    String? category,
+    String? topic,
+    String? attemptId,
+  }) async {
+    if (_disposed ||
+        owner != namespace ||
+        switchingAccount ||
+        span.seconds <= 0 ||
+        (generation != null && generation != _namespaceTicket)) {
+      return;
+    }
+    ensureAnalytics(data, span.start, uuid.v4());
+    final sessions = (data['analytics'] as Json)['sessions'] as List;
+    // Split exactly at WIB midnight; category changes create a fresh interval.
+    var cursor = span.start;
+    while (cursor.isBefore(span.end)) {
+      final midnight = dayUtc(wibDay(cursor).add(const Duration(days: 1)));
+      final end = span.end.isBefore(midnight) ? span.end : midnight;
+      final seconds =
+          span.seconds *
+          end.difference(cursor).inMicroseconds /
+          span.end.difference(span.start).inMicroseconds;
+      sessions.add({
+        'id': uuid.v4(),
+        'local_day': calendarKey(wibDay(cursor)),
+        'category': category,
+        'kind': kind,
+        'topic_id': topic,
+        'started_at': cursor.toUtc().toIso8601String(),
+        'ended_at': end.toUtc().toIso8601String(),
+        'active_seconds': seconds,
+        'source_attempt_id': attemptId,
+        'source': 'foreground-v1',
+        'created_at': end.toUtc().toIso8601String(),
+      });
+      cursor = end;
+    }
+    await save();
+  }
+
+  Future<void> setDailyGoal(int minutes) async {
+    if (minutes < 15 || minutes > 180) {
+      throw ArgumentError('Target 15–180 menit.');
+    }
+    final now = DateTime.now().toUtc();
+    ensureAnalytics(data, now, uuid.v4());
+    if (data['minutes'] == minutes) return;
+    ((data['analytics'] as Json)['goals'] as List).add({
+      'id': uuid.v4(),
+      'effective_day': calendarKey(wibDay(now)),
+      'minutes': minutes,
+      'created_at': now.toIso8601String(),
+    });
+    data['minutes'] = minutes;
+    await save();
+  }
+
   String get syncLabel => syncing
       ? 'Menyinkronkan…'
       : conflict
@@ -112,6 +200,8 @@ class AppController extends ChangeNotifier {
   }
 
   Future<void> switchNamespace(String next, {bool pull = false}) async {
+    _flushStudy();
+    _analyticsCloudReady = false;
     final ticket = ++_namespaceTicket;
     switchingAccount = true;
     notifyListeners();
@@ -123,6 +213,7 @@ class AppController extends ChangeNotifier {
       final saved = await store.read(next);
       if (ticket != _namespaceTicket) return;
       data = saved ?? initialData();
+      _analyticsCache = null;
       error = null;
       conflict = false;
       await _restoreContent(generation: ticket);
@@ -148,6 +239,7 @@ class AppController extends ChangeNotifier {
               ...Map<String, dynamic>.from(remote['payload'] as Map),
               'server_version': remote['version'],
             };
+            _analyticsCache = null;
             await _restoreContent(generation: ticket);
             if (ticket != _namespaceTicket) return;
             await _metadata();
@@ -164,6 +256,10 @@ class AppController extends ChangeNotifier {
         notifyListeners();
         if (!conflict) unawaited(sync());
       }
+      if (ticket == _namespaceTicket &&
+          ensureAnalytics(data, DateTime.now().toUtc(), uuid.v4())) {
+        await save();
+      }
     } finally {
       if (ticket == _namespaceTicket) {
         switchingAccount = false;
@@ -173,6 +269,8 @@ class AppController extends ChangeNotifier {
   }
 
   Future<void> save() async {
+    ensureAnalytics(data, DateTime.now().toUtc(), uuid.v4());
+    _analyticsCache = null;
     data['updated_at'] = DateTime.now().toUtc().toIso8601String();
     final target = namespace;
     final snapshot = deepCopy(data);
@@ -181,14 +279,14 @@ class AppController extends ChangeNotifier {
     final job = _writes.then((_) => store.write(target, snapshot, id));
     _writes = job.catchError((Object e) {
       error = 'Penyimpanan perangkat gagal. Kosongkan ruang lalu coba lagi.';
-      notifyListeners();
+      if (!_disposed) notifyListeners();
     });
     await job;
-    if (target == namespace) {
+    if (target == namespace && !_disposed) {
       queued = (await store.pending(target)).length;
       notifyListeners();
     }
-    if (target != 'guest') _scheduleSync();
+    if (target != 'guest' && !_disposed) _scheduleSync();
   }
 
   Future<void> _metadata() async {
@@ -227,6 +325,16 @@ class AppController extends ChangeNotifier {
     error = null;
     notifyListeners();
     try {
+      if (!_analyticsCloudReady) {
+        final capability = await client!
+            .rpc('analytics_capabilities')
+            .setHeader('Authorization', 'Bearer ${session.accessToken}');
+        if (ticket != _namespaceTicket) return;
+        if (capability['version'] != 1) {
+          throw StateError('Versi migrasi analitik cloud belum sesuai.');
+        }
+        _analyticsCloudReady = true;
+      }
       final response = await client!
           .rpc(
             'sync_user_state',
@@ -242,6 +350,21 @@ class AppController extends ChangeNotifier {
         conflict = true;
         error = 'Ada perubahan dari perangkat lain. Pilih data yang akan dipakai di Profil.';
       } else {
+        // The additive server trigger preserves sessions from other devices.
+        // Reconcile only analytics; edits made while sync ran stay in data.
+        final remote = await client!
+            .from('user_snapshots')
+            .select('payload')
+            .eq('user_id', target)
+            .single()
+            .setHeader('Authorization', 'Bearer ${session.accessToken}');
+        if (ticket != _namespaceTicket) return;
+        final merged = mergeAnalytics(
+          analyticsOf(data),
+          analyticsOf(Map<String, dynamic>.from(remote['payload'] as Map)),
+        );
+        if (merged != null) data['analytics'] = merged;
+        _analyticsCache = null;
         data['server_version'] = response['version'];
         data['last_sync'] = DateTime.now().toUtc().toIso8601String();
         await store.acknowledge(target, ids);
@@ -253,11 +376,15 @@ class AppController extends ChangeNotifier {
         conflict = false;
         _failures = 0;
       }
-    } catch (_) {
+    } catch (failure) {
       if (ticket == _namespaceTicket) {
         _failures++;
-        error = 'Belum tersinkron. Jawaban tersimpan di HP; aplikasi akan mencoba lagi.';
-        _scheduleSync();
+        if (failure is PostgrestException && failure.code == 'PGRST202') {
+          error = 'Cloud memerlukan migrasi analitik v2.1 (202611210001). Data tetap tersimpan di HP. Terapkan migrasi lalu coba sinkron lagi.';
+        } else {
+          error = 'Belum tersinkron. Jawaban tersimpan di HP; aplikasi akan mencoba lagi.';
+          _scheduleSync();
+        }
       }
     } finally {
       syncing = false;
@@ -295,20 +422,28 @@ class AppController extends ChangeNotifier {
         'Ada perubahan baru di HP. Periksa kembali pilihan konflik.',
       );
     }
+    final localAnalytics = analyticsOf(data);
     data = {
       ...initialData(),
       ...Map<String, dynamic>.from(remote['payload'] as Map),
       'server_version': remote['version'],
     };
+    final merged = mergeAnalytics(localAnalytics, analyticsOf(data));
+    if (merged != null) data['analytics'] = merged;
+    ensureAnalytics(data, DateTime.now().toUtc(), uuid.v4());
+    _analyticsCache = null;
     conflict = false;
     queued = 0;
     await _restoreContent(generation: ticket);
     if (ticket != _namespaceTicket) return;
     await _metadata();
+    // Retained local intervals must also reach the cloud after choosing cloud.
+    if (localAnalytics != null) await save();
     notifyListeners();
   }
 
   Future<void> logout() async {
+    _flushStudy();
     await _writes;
     final old = namespace;
     await client?.auth.signOut();
@@ -318,6 +453,7 @@ class AppController extends ChangeNotifier {
   }
 
   Future<void> deleteAll() async {
+    _flushStudy();
     final old = namespace, ticket = _namespaceTicket;
     await _writes;
     if (ticket != _namespaceTicket) {
@@ -337,6 +473,7 @@ class AppController extends ChangeNotifier {
       }
       await client!.auth.signOut(scope: SignOutScope.local);
     }
+    _namespaceTicket++;
     await store.remove(old);
     await reminders.disable();
     await switchNamespace('guest');
@@ -468,57 +605,36 @@ class AppController extends ChangeNotifier {
         'Masuk ke akun Supabase untuk memeriksa pembaruan cloud.',
       );
     }
+    final ticket = _namespaceTicket;
+    void checkAccount() {
+      if (ticket != _namespaceTicket) {
+        throw StateError('Akun berubah. Pembaruan paket dibatalkan.');
+      }
+    }
+
     final release = await client!
         .from('content_releases')
         .select()
         .order('published_at', ascending: false)
         .limit(1)
         .maybeSingle();
+    checkAccount();
     if (release == null || release['version'] == content.data['version']) {
       return 'Paket ${content.data['version']} sudah versi terbaru yang tersedia.';
     }
-    final minimum = (release['minimum_app_version'] as String? ?? '1.0.0')
-        .split('.')
-        .map(int.tryParse)
-        .toList();
-    if (minimum.length != 3 ||
-        minimum.any((n) => n == null) ||
-        minimum[0]! > 1 ||
-        (minimum[0] == 1 && (minimum[1]! > 0 || minimum[2]! > 0))) {
+    if (!supportsContentMinimum(release['minimum_app_version'] as String?)) {
       throw StateError(
         'Paket ini membutuhkan versi aplikasi yang lebih baru. Perbarui APK terlebih dahulu.',
       );
     }
-    final uri = Uri.tryParse(release['download_url'] as String? ?? '');
-    if (uri == null ||
-        uri.scheme != 'https' ||
-        !uri.host.endsWith('.supabase.co')) {
-      throw StateError(
-        'Paket baru belum memiliki URL HTTPS Supabase yang valid.',
-      );
-    }
+    final uri = publicContentUri(
+      release['download_url'] as String? ?? '',
+      CloudConfig.projectOrigin!,
+    );
     final connection = http.Client();
     try {
-      final response = await connection
-          .send(http.Request('GET', uri))
-          .timeout(const Duration(seconds: 30));
-      if (response.statusCode != 200) {
-        throw StateError(
-          'Paket belum dapat diunduh. Versi sebelumnya tetap tersedia.',
-        );
-      }
-      if ((response.contentLength ?? 0) > 10 * 1024 * 1024) {
-        throw StateError('Paket melebihi batas 10 MB.');
-      }
-      final bytes = <int>[];
-      await for (final chunk in response.stream.timeout(
-        const Duration(seconds: 30),
-      )) {
-        bytes.addAll(chunk);
-        if (bytes.length > 10 * 1024 * 1024) {
-          throw StateError('Paket melebihi batas 10 MB.');
-        }
-      }
+      final bytes = await downloadPublicContent(connection, uri);
+      checkAccount();
       final candidate = content.validateBytes(
         bytes,
         release['content_hash'] as String,
@@ -534,12 +650,15 @@ class AppController extends ChangeNotifier {
         data['content_package_hash'] = release['content_hash'];
         data['downloaded_version'] = candidate['version'];
         await save();
+        checkAccount();
         content.installBytes(bytes, release['content_hash'] as String);
         notifyListeners();
       } catch (_) {
-        data = previous;
-        content.data = oldContent;
-        content.manifest = oldManifest;
+        if (ticket == _namespaceTicket) {
+          data = previous;
+          content.data = oldContent;
+          content.manifest = oldManifest;
+        }
         rethrow;
       }
       return 'Paket ${candidate['version']} tersimpan. Riwayat attempt tetap memakai versi aslinya.';
@@ -571,6 +690,7 @@ class AppController extends ChangeNotifier {
 
   @override
   void dispose() {
+    _disposed = true;
     _retry?.cancel();
     _auth?.cancel();
     super.dispose();

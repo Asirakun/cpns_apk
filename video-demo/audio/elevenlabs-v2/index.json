@@ -1,0 +1,276 @@
+[
+  {
+    "scene": 0,
+    "fingerprint": "cdda50b5ae01f3cd9d264657c25b8300e4a79fb8bf58bbb6e26dd59edf9b9801",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "JQx7otp6eD12K5s5kDAw",
+    "audio": "audio/elevenlabs-v2/voice-00-cdda50b5ae01.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 2.171,
+        "text": "Mau mulai persiapan CPNS."
+      },
+      {
+        "start": 2.345,
+        "end": 5.805,
+        "text": "Tapi materi, latihan, dan berkas terasa datang bersamaan."
+      },
+      {
+        "start": 5.979,
+        "end": 7.152,
+        "text": "Mulai dari mana?"
+      }
+    ]
+  },
+  {
+    "scene": 1,
+    "fingerprint": "a1b48d932e44f2fc629df57d3d789dff67c7faf753bc3a94beb922ae0b058b36",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "An6KneG5HCfuFWrYhSjg",
+    "audio": "audio/elevenlabs-v2/voice-01-a1b48d932e44.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 2.101,
+        "text": "Kenali CPNS Journey."
+      },
+      {
+        "start": 2.357,
+        "end": 7.523,
+        "text": "Teman untuk menata persiapanmu, dari belajar hari ini sampai mencatat langkah seleksi."
+      }
+    ]
+  },
+  {
+    "scene": 2,
+    "fingerprint": "1ad49e199bbd22a8413ee29a702678e55cbfbfa235c5b2f004b07033c6a5d53b",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "WfjVxztmKhZ23SUp9mKr",
+    "audio": "audio/elevenlabs-v2/voice-02-1ad49e199bbd.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 3.587,
+        "text": "Buka materi TWK, TIU, dan TKP."
+      },
+      {
+        "start": 3.924,
+        "end": 8.313,
+        "text": "Pilih satu topik, lalu simpan bagian yang ingin kamu pelajari lagi."
+      }
+    ]
+  },
+  {
+    "scene": 3,
+    "fingerprint": "a663b333b0d0fb49c19d19988b911e75b119d5335f40a18477a56bb1e6b6c57a",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "bY1bVoLUptWeGhGkYkiy",
+    "audio": "audio/elevenlabs-v2/voice-03-a663b333b0d0.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 4.005,
+        "text": "Dari jawaban yang keliru, kamu bisa melihat topik yang perlu diulang."
+      },
+      {
+        "start": 4.296,
+        "end": 8.127,
+        "text": "Kartu pengulangan membantu menjadwalkan belajar berikutnya."
+      }
+    ]
+  },
+  {
+    "scene": 4,
+    "fingerprint": "d468fa40f9a9c299bcd80e216e333b0ce0fefa4c1a3c1590455d8e4f15715598",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "47IEX5ebdyNRpU9otI3l",
+    "audio": "audio/elevenlabs-v2/voice-04-d468fa40f9a9.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 5.016,
+        "text": "Saatnya mencoba simulasi CAT: seratus sepuluh soal dalam seratus menit."
+      },
+      {
+        "start": 5.271,
+        "end": 9.009,
+        "text": "Latih ketelitian, sekaligus cara membagi waktu."
+      }
+    ]
+  },
+  {
+    "scene": 5,
+    "fingerprint": "2b2bc6edd024ee47e4c959e87bab816c3d4e8cb6f363a8168a97cb1943ba5369",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "PNLhWFGYllX6D0HdnOiC",
+    "audio": "audio/elevenlabs-v2/voice-05-2b2bc6edd024.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 0.871,
+        "text": "Belum yakin?"
+      },
+      {
+        "start": 1.126,
+        "end": 3.622,
+        "text": "Tandai ragu-ragu, lalu lanjutkan."
+      },
+      {
+        "start": 3.959,
+        "end": 9.474,
+        "text": "Jawaban tersimpan di perangkat, sehingga kamu bisa kembali memeriksanya selama waktu tersedia."
+      }
+    ]
+  },
+  {
+    "scene": 6,
+    "fingerprint": "c6c1c0e2f3e2d1d6ac5c1d06f39ff8aa77501f7cffef23934889a75a24ae6e7c",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "WAxwNjze4ojYtYhci1F5",
+    "audio": "audio/elevenlabs-v2/voice-06-c6c1c0e2f3e2.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 2.879,
+        "text": "Setelah latihan, lihat skor dan pembahasan."
+      },
+      {
+        "start": 3.216,
+        "end": 7.802,
+        "text": "Temukan bagian yang sudah kamu pahami, dan bagian yang masih perlu diperkuat."
+      }
+    ]
+  },
+  {
+    "scene": 7,
+    "fingerprint": "6fdc852a169e81bfc0451bce196e63c2013404a020edcfecf0aa41b5d032fbe8",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "hlFcaYQqI3i91IUNK6PJ",
+    "audio": "audio/elevenlabs-v2/voice-07-6fdc852a169e.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 2.136,
+        "text": "Persiapan juga punya banyak tahapan."
+      },
+      {
+        "start": 2.392,
+        "end": 9.427,
+        "text": "Di Journey, catat perjalanan S nol nol sampai S sebelas, beserta status dan catatan pribadimu."
+      }
+    ]
+  },
+  {
+    "scene": 8,
+    "fingerprint": "b0e2220028ad6ead2f293243bc5dfaf9b3a6c3c9aa3d3e374eb6a6ac5508b33a",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "tihE0HPQndKv2d9rXgwG",
+    "audio": "audio/elevenlabs-v2/voice-08-b0e2220028ad.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 3.913,
+        "text": "Rapikan checklist berkas, tambahkan catatan, dan susun agenda."
+      },
+      {
+        "start": 4.249,
+        "end": 9.102,
+        "text": "Jadi, persiapan belajar dan urusan administrasi bisa kamu pantau bersama."
+      }
+    ]
+  },
+  {
+    "scene": 9,
+    "fingerprint": "8a945ce33aab5f79abab1caa991a17c90c9f6635c5e7b093136dff0017181b36",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "rsbXwjlwFGvG0EGpHQ9Z",
+    "audio": "audio/elevenlabs-v2/voice-09-8a945ce33aab.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 5.213,
+        "text": "Materi, latihan, dan checklist bisa digunakan tanpa akun dan tanpa internet."
+      },
+      {
+        "start": 5.666,
+        "end": 8.684,
+        "text": "Mulai dari perangkatmu, sedikit demi sedikit."
+      }
+    ]
+  },
+  {
+    "scene": 10,
+    "fingerprint": "23f71282c2e64d551a8d091a1892c56641bc461aa887a70458cc3aa9d0a05ea5",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "YCSkJXTZTgwAARYngwwD",
+    "audio": "audio/elevenlabs-v2/voice-10-23f71282c2e6.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 2.949,
+        "text": "Kamu tidak harus menyelesaikan semuanya hari ini."
+      },
+      {
+        "start": 3.123,
+        "end": 6.827,
+        "text": "Cukup tahu langkah berikutnya, lalu mulai menjalaninya."
+      }
+    ]
+  },
+  {
+    "scene": 11,
+    "fingerprint": "ba3bc50c52f920e12af5c7b3cefdf9087f951bca619ec0b38e1d45ab57233ae1",
+    "status": "completed",
+    "provider": "ElevenLabs",
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "model": "eleven_multilingual_v2",
+    "request_id": "ApiTulx19H4crceuQSeW",
+    "audio": "audio/elevenlabs-v2/voice-11-ba3bc50c52f9.mp3",
+    "captions": [
+      {
+        "start": 0,
+        "end": 1.73,
+        "text": "CPNS Journey."
+      },
+      {
+        "start": 1.95,
+        "end": 3.529,
+        "text": "Mulai langkahmu hari ini."
+      }
+    ]
+  }
+]

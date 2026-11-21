@@ -1,0 +1,481 @@
+﻿{
+    "checkedAt":  "2026-11-21T07:43:15.6318591Z",
+    "apk":  "D:\\Project_Ai\\cpns\\build\\app\\outputs\\flutter-apk\\app-arm64-v8a-release.apk",
+    "sha256":  "973120969d2e31c436d10397be41539d96b454eae6098d23f8fa30e03724eb1f",
+    "reviewedFlutterAssets":  45,
+    "checks":  [
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/avatar.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/avatar.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/balloon.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/balloon.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/bell.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/bell.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/book.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/book.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/calendar.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/calendar.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/checklist.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/checklist.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/clock.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/clock.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/documents.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/documents.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/flashcards.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/flashcards.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/graduation.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/graduation.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/home.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/home.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/medal.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/medal.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/route.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/route.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/shield.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/shield.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/sprout.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/sprout.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut/target.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut/target.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_home/focus.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_home/focus.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_home/welcome.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_home/welcome.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/analytics.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/analytics.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/announcements.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/announcements.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/backup.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/backup.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/briefcase.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/briefcase.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/cloudSync.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/cloudSync.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/device.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/device.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/download.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/download.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/formation.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/formation.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/help.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/help.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/logout.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/logout.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/moon.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/moon.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/plan.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/plan.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/privacy.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/privacy.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/results.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/results.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/review.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/review.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/search.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/search.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/settings.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/settings.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/sources.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/sources.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/verified.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/verified.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/papercut_functions/wallet.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/papercut_functions/wallet.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/brand/logo.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/brand/logo.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/intro/book-closed.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/intro/book-closed.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/intro/book-open.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/intro/book-open.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/intro/flag.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/intro/flag.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/intro/intro-sfx.wav",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/intro/intro-sfx.wav",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/intro/provided-motion.json",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/intro/provided-motion.json",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset exists: assets/intro/road-rot.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Packaged asset matches reviewed source: assets/intro/road-rot.png",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Five compiled PNG densities for ic_launcher",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher 48px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher mdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher 72px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher hdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher 96px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher xhdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher 144px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher xxhdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher 192px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher xxxhdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Adaptive launcher XML is packaged",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Adaptive launcher references foreground and background resources",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Adaptive launcher includes a themed monochrome layer",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Five compiled PNG densities for ic_launcher_foreground",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher_foreground 108px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher_foreground mdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher_foreground 162px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher_foreground hdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher_foreground 216px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher_foreground xhdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher_foreground 324px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher_foreground xxhdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Expected compiled dimensions ic_launcher_foreground 432px",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Compiled ic_launcher_foreground xxxhdpi visible pixels match generated logo",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "No raw design atlas, preview video or Remotion tooling in APK",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Obsolete compressed intro and optional WebP previews are absent",
+                       "passed":  true
+                   },
+                   {
+                       "check":  "Intro SFX WAV is stored uncompressed for Android asset file descriptor playback",
+                       "passed":  true
+                   }
+               ],
+    "scope":  "Packaged UI source bytes and compiled launcher pixel verification; not a device launcher/playback test."
+}

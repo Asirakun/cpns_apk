@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-21T03:53:44.506Z",
+  "videoResolution": [
+    1440,
+    3200
+  ],
+  "videoFrames": 96,
+  "debugFrames": 96,
+  "transparentMarkFrames": 96,
+  "nativeAssetResolution": [
+    1080,
+    1080
+  ],
+  "nativeAssetExactlyMatchesGpuFrame": true,
+  "debugMasksVerified": true,
+  "issues": [],
+  "pass": true,
+  "method": "All decoded final NVENC video frames + verified debug masks + transparent mark corners + exact PNG/frame pixels",
+  "limitations": "Pixel checks are heuristics; visual contact-sheet/full-size review and Flutter aspect-ratio/background tests are separate. Not a physical Android playback test."
+}

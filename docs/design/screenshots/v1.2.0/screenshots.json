@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-11-21T03:11:03.371Z",
+  "renderer": "Flutter test engine with actual application font/assets, 2x pixel output",
+  "viewport": "390x900 dp; light-large 430x900 dp at 1.3x text",
+  "data": "MemoryStore fixtures only, labelled DATA UJI; no user database opened",
+  "deviceTest": false,
+  "captures": 13,
+  "montage": "overview.png",
+  "screenshots": [
+    {
+      "path": "docs/design/screenshots/v1.2.0/category.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "347192330939940cde17f6c883a71eace3b7d77f7ba2f86fa770a243a4624286"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/daily.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "febe5e002f5b24c05615301e68664e5f64aee7e37736bb54fb732043f8c7a0cb"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/history.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "fa7daf026f73e6999d294b7890f2471ed24efc49bbbfbaccc8744101d777ca7b"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/home.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "2b7965bbe0ffb65c03980561dddfd85dbb5c3946b480718bc207f7d30a2b8443"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/light-large.png",
+      "width": 860,
+      "height": 1800,
+      "sha256": "dc2296d3d1c4ce130cb3eb6437d92953eb6113dfc40399d438a61f74672a576e"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/monthly.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "d352ac86688126ddcc37fdb6bb4ffbf250bceb7d3ced699fef97b0ebd551ec71"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/navigator.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "9e26b9a3637561a9efac649e358c0e7eb5cc5eabd14b970c1b7a8a8fd0434b7b"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/preparation.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "ca1d7a8cd16e098f929e3602ccace37c5259c917b08b772a4d3ed4e7da9170ac"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/priorities.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "fbe7024ab4680ad984cca61cf51bdd2dc3d8feef0dbe5ca691ba0ece89f8823e"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/profile-icons.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "ffb46bf6995eff5f7ac3e453f69bf0d572e654e0b3091f15621ccfb2f63596fa"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/profile.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "66363702bad072203898ddaf67bfb31bdc97d7f720837105da8a03752876d04a"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/tryouts.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "5bd5d0c0ff7c4531eebd19ac0928690bd791e13bf1026142b3cb61d9a636b54f"
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/weekly.png",
+      "width": 780,
+      "height": 1800,
+      "sha256": "fd169e81054d36f87f1c42d64811f5afaa2605300336729b3834843da5880095"
+    }
+  ]
+}

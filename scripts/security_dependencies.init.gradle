@@ -1,0 +1,17 @@
+// Run from android/: gradlew -I ../scripts/security_dependencies.init.gradle :app:securityDependencyInventory
+gradle.projectsEvaluated {
+    def app = rootProject.findProject(':app')
+    if (app == null) return
+    app.tasks.register('securityDependencyInventory') {
+        doLast {
+            def components = app.configurations.getByName('releaseRuntimeClasspath').incoming.resolutionResult.allComponents
+            def inventory = components.collect { it.id }.findAll {
+                it instanceof org.gradle.api.artifacts.component.ModuleComponentIdentifier
+            }.collect { [ecosystem: 'Maven', name: "${it.group}:${it.module}".toString(), version: it.version] }
+            def output = new File(rootProject.projectDir.parentFile, 'work/maven-dependencies.json')
+            output.parentFile.mkdirs()
+            output.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(inventory.sort { it.name }))
+            println "Resolved ${inventory.size()} Maven components for security inventory."
+        }
+    }
+}

@@ -7,179 +7,59 @@ import '../core/controller.dart';
 import '../core/models.dart';
 import '../app/theme.dart';
 import '../app/widgets.dart';
+import '../app/paper.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final app = ref.watch(appProvider);
-    final last = app.results.lastOrNull;
     final completed = (app.data['completed'] as List).length;
-    final date = DateTime.now().toUtc().add(const Duration(hours: 7));
-    final day = (app.data['study_days'] as List).length;
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 1050),
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(22, 16, 22, 32),
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 30),
           children: [
+            _WelcomePaper(app: app),
+            const SizedBox(height: 9),
+            _StudyStats(app: app),
+            const SizedBox(height: 13),
+            _FocusPaper(app: app),
+            const SectionTitle(
+              'Progres Belajar',
+              subtitle: 'Pantau langkah kecilmu di setiap materi.',
+            ),
+            _LearningPapers(app: app),
+            const SizedBox(height: 14),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Selamat datang, ${app.data['alias']}',
-                        style: const TextStyle(fontSize: 13),
-                      ),
-                      const SizedBox(height: 7),
-                      Text(
-                        'Siap melangkah\nlebih dekat?',
-                        style: Theme.of(context).textTheme.headlineLarge,
-                      ),
-                    ],
+                  child: _HomeShortcut(
+                    title: 'Tryout',
+                    subtitle: 'Uji kesiapanmu\ndengan simulasi lengkap',
+                    asset: PaperAsset.target,
+                    onTap: () => context.go('/tryouts'),
                   ),
                 ),
-                CircleAvatar(
-                  radius: 24,
-                  backgroundColor: indigo.withValues(alpha: .1),
-                  child: Text(
-                    (app.data['alias'] as String).isEmpty
-                        ? 'CJ'
-                        : (app.data['alias'] as String)
-                              .substring(0, 1)
-                              .toUpperCase(),
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 18),
-            Row(
-              children: [
-                Icon(
-                  app.namespace == 'guest'
-                      ? Icons.offline_pin_outlined
-                      : Icons.cloud_done_outlined,
-                  size: 14,
-                  color: teal,
-                ),
-                const SizedBox(width: 6),
+                const SizedBox(width: 10),
                 Expanded(
-                  child: Text(
-                    app.syncLabel,
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Theme.of(context).colorScheme.onSurfaceVariant,
-                    ),
+                  child: _HomeShortcut(
+                    title: 'Analisis\nperforma',
+                    subtitle: app.results.isEmpty
+                        ? 'Mulai latihan pertamamu'
+                        : 'Lihat kekuatan belajarmu',
+                    asset: PaperAsset.medal,
+                    onTap: () => context.push('/analytics'),
                   ),
-                ),
-                Text(
-                  '${date.day}/${date.month}/${date.year} · WIB',
-                  style: const TextStyle(fontSize: 10),
                 ),
               ],
             ),
-            const SizedBox(height: 22),
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF4653D9), Color(0xFF4F5DCC)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 6,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: .08),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: const Text(
-                          'FOKUS HARI INI',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(
-                        Icons.auto_awesome_rounded,
-                        color: Color(0xFFD7DBFF),
-                        size: 26,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    '${app.data['minutes']} menit untuk\nmasa depanmu.',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 26,
-                      height: 1.3,
-                      letterSpacing: -.6,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    day == 0
-                        ? 'Mulai ringan. Satu materi, lalu satu latihan.'
-                        : 'Sudah belajar pada $day hari. Lanjutkan sesuai ritmemu.',
-                    style: const TextStyle(
-                      color: Color(0xFFE4E7FF),
-                      fontSize: 12,
-                    ),
-                  ),
-                  const SizedBox(height: 22),
-                  FilledButton.icon(
-                    style: FilledButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: indigo,
-                    ),
-                    onPressed: () async {
-                      try {
-                        final a = await app.startAttempt(quick: true);
-                        if (context.mounted) context.push('/exam/${a.id}');
-                      } catch (e) {
-                        if (context.mounted) {
-                          message(
-                            context,
-                            'Aktifkan paket offline melalui tab Belajar.',
-                          );
-                        }
-                      }
-                    },
-                    icon: const Icon(Icons.play_arrow_rounded),
-                    label: Text(
-                      app.activeAttempt == null
-                          ? 'Mulai latihan'
-                          : 'Lanjutkan latihan',
-                    ),
-                  ),
-                ],
-              ),
+            SectionTitle(
+              'Langkah Kecil Hari Ini',
+              subtitle: '$completed materi selesai · tetap belajar fleksibel',
             ),
-            SectionMetrics(last: last),
-            SectionTitleWithCount(count: completed),
             Card(
               child: Column(
                 children: [
@@ -188,100 +68,136 @@ class HomeScreen extends ConsumerWidget {
                     app,
                     'materi',
                     'Baca satu materi',
-                    'Ringkas, sekitar 10–15 menit',
-                    Icons.menu_book_rounded,
+                    'Sekitar 10–15 menit',
+                    PaperAsset.book,
                     () => context.go('/learn'),
                   ),
+                  const Divider(height: 1, indent: 20, endIndent: 20),
                   _task(
                     context,
                     app,
                     'latihan',
-                    'Selesaikan latihan singkat',
+                    'Latihan singkat',
                     '15 soal untuk mengasah pemahaman',
-                    Icons.edit_note_rounded,
-                    () async {
+                    PaperAsset.target,
+                    () => guard(context, () async {
                       final a = await app.startAttempt(quick: true);
                       if (context.mounted) context.push('/exam/${a.id}');
-                    },
+                    }),
                   ),
+                  const Divider(height: 1, indent: 20, endIndent: 20),
                   _task(
                     context,
                     app,
                     'berkas',
-                    'Cek satu berkas persiapan',
+                    'Cek satu berkas',
                     'Cukup status, tanpa unggah dokumen',
-                    Icons.task_alt_rounded,
+                    PaperAsset.checklist,
                     () => context.push('/journey/documents'),
                   ),
                 ],
               ),
             ),
             if (app.recommendedTopics.isNotEmpty) ...[
-              const SectionTitleWithText(
-                title: 'Prioritas belajarmu',
-                subtitle: 'Berdasarkan jawaban pada latihan yang selesai',
+              const SectionTitle(
+                'Prioritas belajarmu',
+                subtitle: 'Dari jawaban latihan yang selesai',
               ),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: app.recommendedTopics
-                    .map(
-                      (t) => ActionChip(
-                        label: Text('$t · ${app.weaknesses[t]} perlu ditinjau'),
-                        avatar: const Icon(Icons.psychology_outlined, size: 17),
-                        onPressed: () async {
-                          final a = await app.startAttempt(
-                            topic: t,
-                            quick: true,
-                          );
-                          if (context.mounted) context.push('/exam/${a.id}');
-                        },
+              ...app.recommendedTopics.asMap().entries.map((entry) {
+                final topic = entry.value;
+                final question = app.content.questions
+                    .where((q) => q.topic == topic)
+                    .firstOrNull;
+                final category = question?.domain;
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Card(
+                    key: ValueKey('priority-$topic'),
+                    child: ListTile(
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 7,
                       ),
-                    )
-                    .toList(),
-              ),
+                      leading: CircleAvatar(
+                        radius: 19,
+                        backgroundColor: Theme.of(context)
+                            .colorScheme
+                            .primaryContainer,
+                        foregroundColor: Theme.of(context)
+                            .colorScheme
+                            .onPrimaryContainer,
+                        child: Text(
+                          (entry.key + 1).toString().padLeft(2, '0'),
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                      title: Text(
+                        topic,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '${category ?? 'Topik'} · ${app.weaknesses[topic]} soal perlu ditinjau',
+                        style: const TextStyle(fontSize: 12),
+                      ),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => guard(context, () async {
+                        final a = await app.startAttempt(
+                          topic: topic,
+                          quick: true,
+                        );
+                        if (context.mounted) context.push('/exam/${a.id}');
+                      }),
+                    ),
+                  ),
+                );
+              }),
             ],
-            SectionTitleWithAction(onTap: () => context.go('/tryouts')),
+            SectionTitle(
+              'Perkembangan latihan',
+              action: 'Lihat Analisis',
+              onAction: () => context.push('/analytics'),
+            ),
             if (app.results.isEmpty)
               const EmptyCard(
                 icon: Icons.show_chart_rounded,
                 title: 'Setiap progres punya awal',
-                body: 'Tren nilaimu akan muncul setelah menyelesaikan latihan pertama.',
+                body: 'Tren nilaimu muncul setelah latihan pertama selesai.',
               )
             else
               ScoreChart(attempts: app.results),
-            const SectionTitleWithText(
-              title: 'Perjalanan seleksimu',
-              subtitle: 'Kemenkeu · pendidikan melamar SMA',
+            const SectionTitle(
+              'Perjalanan seleksimu',
+              subtitle: 'Status pribadi, berdasarkan sumber resmi',
             ),
             ActionTile(
               icon: Icons.route_rounded,
               title: '${app.stagesDone} dari 12 tahap selesai',
-              subtitle: 'Status dicatat sendiri dari pengumuman resmi',
+              subtitle: 'Buka peta perjalananmu',
               color: teal,
               onTap: () => context.go('/journey'),
-              trailing: SizedBox(
-                width: 42,
-                height: 42,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircularProgressIndicator(
-                      value: app.stagesDone / 12,
-                      strokeWidth: 4,
-                      backgroundColor: teal.withValues(alpha: .1),
-                      color: teal,
-                    ),
-                    Text(
-                      '${(app.stagesDone / 12 * 100).round()}%',
-                      style: const TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                  ],
-                ),
+              trailing: Text(
+                '${(app.stagesDone / 12 * 100).round()}%',
+                style: const TextStyle(fontWeight: FontWeight.w800),
               ),
+            ),
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                const Icon(Icons.offline_pin_outlined, size: 14, color: teal),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    app.syncLabel,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 14),
             const Note(
@@ -295,25 +211,25 @@ class HomeScreen extends ConsumerWidget {
   }
 
   Widget _task(
-    BuildContext c,
+    BuildContext context,
     AppController app,
     String key,
     String title,
     String subtitle,
-    IconData icon,
+    PaperAsset asset,
     VoidCallback action,
   ) {
     final id = '${app.dayKey}:$key';
     final done = (app.data['daily_tasks'] as List).contains(id);
     return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       leading: Checkbox(
         value: done,
-        onChanged: (v) async {
+        onChanged: (v) => guard(context, () async {
           final tasks = app.data['daily_tasks'] as List;
           v == true ? tasks.add(id) : tasks.remove(id);
           await app.save();
-        },
+        }),
       ),
       title: Text(
         title,
@@ -323,47 +239,400 @@ class HomeScreen extends ConsumerWidget {
           decoration: done ? TextDecoration.lineThrough : null,
         ),
       ),
-      subtitle: Text(subtitle, style: const TextStyle(fontSize: 11)),
+      subtitle: Text(subtitle, style: const TextStyle(fontSize: 10)),
       trailing: IconButton(
         tooltip: 'Buka $title',
-        icon: Icon(icon, size: 22, color: Theme.of(c).colorScheme.primary),
         onPressed: action,
+        icon: PaperArt(asset, size: 32),
       ),
     );
   }
 }
 
-class SectionMetrics extends StatelessWidget {
-  const SectionMetrics({super.key, this.last});
-  final Attempt? last;
+class _WelcomePaper extends StatelessWidget {
+  const _WelcomePaper({required this.app});
+  final AppController app;
   @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(top: 18),
+  Widget build(BuildContext context) => Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Expanded(
+        flex: 6,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Selamat datang, ${app.data['alias'] as String}',
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                fontSize: 10,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Siap melangkah\nlebih dekat?',
+              style: Theme.of(context).textTheme.headlineLarge
+                  ?.copyWith(fontSize: 24, height: 1.17),
+            ),
+            const SizedBox(height: 9),
+            CustomPaint(size: const Size(90, 7), painter: _UnderlinePainter()),
+          ],
+        ),
+      ),
+      const Expanded(flex: 5, child: HomeIllustration('welcome', height: 138)),
+    ],
+  );
+}
+
+class _UnderlinePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawPath(
+      Path()
+        ..moveTo(1, 6)
+        ..quadraticBezierTo(42, -2, 88, 5),
+      Paint()
+        ..color = const Color(0xFFFFCC54)
+        ..strokeWidth = 3
+        ..strokeCap = StrokeCap.round
+        ..style = PaintingStyle.stroke,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant _UnderlinePainter oldDelegate) => false;
+}
+
+class _StudyStats extends StatelessWidget {
+  const _StudyStats({required this.app});
+  final AppController app;
+  @override
+  Widget build(BuildContext context) {
+    final days = (app.data['study_days'] as List).cast<String>().toSet();
+    final now = DateTime.parse(app.dayKey);
+    final firstDay = now.subtract(Duration(days: now.weekday - 1));
+    final week = days.where((s) {
+      final day = DateTime.tryParse(s);
+      return day != null && !day.isBefore(firstDay) && !day.isAfter(now);
+    }).length;
+    final all = app.content.lessons.length;
+    final progress = all == 0
+        ? 0
+        : ((app.data['completed'] as List).length / all * 100)
+              .clamp(0, 100)
+              .round();
+    return BluePaperPanel(
+      deep: true,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      child: IntrinsicHeight(
+        child: Row(
+          children: [
+            Expanded(
+              child: _stat(
+                Icons.local_fire_department_rounded,
+                '${days.length} hari',
+                'Hari belajar',
+              ),
+            ),
+            const VerticalDivider(
+              width: 13,
+              thickness: .7,
+              color: Color(0xFF3F6B90),
+            ),
+            Expanded(
+              child: _stat(
+                Icons.my_location_rounded,
+                '$week/7',
+                'Belajar pekan ini',
+              ),
+            ),
+            const VerticalDivider(
+              width: 13,
+              thickness: .7,
+              color: Color(0xFF3F6B90),
+            ),
+            Expanded(
+              child: _stat(
+                Icons.bar_chart_rounded,
+                '$progress%',
+                'Materi selesai',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _stat(IconData icon, String value, String label) => Row(
+    children: [
+      Icon(icon, color: const Color(0xFFFFCF61), size: 22),
+      const SizedBox(width: 6),
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              value,
+              style: const TextStyle(
+                color: paperCream,
+                fontSize: 11,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            Text(
+              label,
+              style: const TextStyle(color: Color(0xFFC2D8E9), fontSize: 7),
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+class _FocusPaper extends StatelessWidget {
+  const _FocusPaper({required this.app});
+  final AppController app;
+  @override
+  Widget build(BuildContext context) => BluePaperPanel(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 6,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFBFE5FF),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.track_changes_rounded,
+                          size: 12,
+                          color: paperInk,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          'Fokus Hari Ini',
+                          style: TextStyle(
+                            color: paperInk,
+                            fontSize: 8,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    '${app.data['minutes']} menit',
+                    style: const TextStyle(
+                      color: paperCream,
+                      fontSize: 26,
+                      fontWeight: FontWeight.w800,
+                      height: 1.1,
+                      letterSpacing: -.8,
+                    ),
+                  ),
+                  const Text(
+                    'untuk masa depanmu.',
+                    style: TextStyle(
+                      color: Color(0xFFB9DFFF),
+                      fontSize: 14,
+                      height: 1.3,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  const SizedBox(height: 7),
+                  const Text(
+                    'Sedikit hari ini.\nLebih siap setiap hari.',
+                    style: TextStyle(
+                      color: Color(0xFFC5DDEF),
+                      fontSize: 9,
+                      height: 1.45,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Expanded(
+              flex: 4,
+              child: HomeIllustration('focus', width: 125, height: 126),
+            ),
+          ],
+        ),
+        const SizedBox(height: 13),
+        Row(
+          children: [
+            Expanded(
+              flex: 6,
+              child: FilledButton.icon(
+                style: FilledButton.styleFrom(
+                  backgroundColor: const Color(0xFFFFCB4F),
+                  foregroundColor: paperInk,
+                  minimumSize: const Size(0, 40),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 10,
+                  ),
+                ),
+                onPressed: () => guard(context, () async {
+                  final a = await app.startAttempt(quick: true);
+                  if (context.mounted) context.push('/exam/${a.id}');
+                }),
+                icon: const Icon(Icons.play_arrow_rounded, size: 16),
+                label: Text(
+                  app.activeAttempt == null
+                      ? 'Mulai latihan'
+                      : 'Lanjutkan latihan',
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: 9),
+            Expanded(
+              flex: 5,
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: paperCream,
+                  side: const BorderSide(color: Color(0xFFA5C8E5)),
+                  minimumSize: const Size(0, 40),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 10,
+                  ),
+                ),
+                onPressed: () => context.go('/profile'),
+                icon: const Icon(Icons.calendar_month_outlined, size: 15),
+                label: const Text(
+                  'Atur target',
+                  style: TextStyle(fontSize: 9, fontFamily: 'PlusJakarta'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+class _LearningPapers extends StatelessWidget {
+  const _LearningPapers({required this.app});
+  final AppController app;
+  double _progress(String domain) {
+    final lessons = app.content.lessons
+        .where((l) => l['domain'] == domain)
+        .toList();
+    if (lessons.isEmpty) return 0;
+    double sum = 0;
+    for (final lesson in lessons) {
+      if ((app.data['completed'] as List).contains(lesson['id'])) {
+        sum += 1;
+        continue;
+      }
+      final length = (lesson['body'] as List).length;
+      final position =
+          (app.data['lesson_positions'] as Json)[lesson['id']] as int? ?? 0;
+      if (length > 0) sum += (position / length).clamp(0, 1);
+    }
+    return sum / lessons.length;
+  }
+
+  @override
+  Widget build(BuildContext context) => IntrinsicHeight(
     child: Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: List.generate(
         3,
         (i) => Expanded(
           child: Padding(
-            padding: EdgeInsets.only(right: i == 2 ? 0 : 10),
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(14),
+            padding: EdgeInsets.only(right: i == 2 ? 0 : 8),
+            child: BluePaperPanel(
+              padding: const EdgeInsets.all(10),
+              child: InkWell(
+                onTap: () => context.go('/learn'),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Tag(domains[i], color: [indigo, teal, amber][i]),
-                    const SizedBox(height: 12),
-                    Text(
-                      last == null ? '—' : '${last!.scores[domains[i]]}',
-                      style: Theme.of(context).textTheme.headlineMedium,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        PaperArt(
+                          [
+                            PaperAsset.book,
+                            PaperAsset.target,
+                            PaperAsset.avatar,
+                          ][i],
+                          size: 26,
+                        ),
+                        const SizedBox(width: 4),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                domains[i],
+                                style: const TextStyle(
+                                  color: paperCream,
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 10,
+                                ),
+                              ),
+                              Text(
+                                [
+                                  'Wawasan\nKebangsaan',
+                                  'Tes Inteligensi\nUmum',
+                                  'Karakteristik\nPribadi',
+                                ][i],
+                                style: const TextStyle(
+                                  color: Color(0xFFC5DEEF),
+                                  fontSize: 6.5,
+                                  height: 1.25,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
+                    const SizedBox(height: 10),
                     Text(
-                      last == null ? 'Belum latihan' : 'Latihan terakhir',
-                      style: TextStyle(
-                        fontSize: 9,
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      '${(_progress(domains[i]) * 100).round()}%',
+                      style: const TextStyle(
+                        color: paperCream,
+                        fontSize: 15,
+                        height: 1.15,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
+                    const SizedBox(height: 5),
+                    LinearProgressIndicator(
+                      value: _progress(domains[i]),
+                      minHeight: 5,
+                      borderRadius: BorderRadius.circular(8),
+                      backgroundColor: const Color(0xFF17456F),
+                      color: i == 2
+                          ? const Color(0xFFFFCD58)
+                          : const Color(0xFFAADEFF),
+                    ),
+                    const SizedBox(height: 5),
                   ],
                 ),
               ),
@@ -375,73 +644,55 @@ class SectionMetrics extends StatelessWidget {
   );
 }
 
-class SectionTitleWithCount extends StatelessWidget {
-  const SectionTitleWithCount({super.key, required this.count});
-  final int count;
-  @override
-  Widget build(BuildContext c) => Section(
-    title: 'Langkah kecil hari ini',
-    subtitle: '$count materi selesai · ritme belajar fleksibel',
-  );
-}
-
-class SectionTitleWithText extends StatelessWidget {
-  const SectionTitleWithText({super.key, required this.title, this.subtitle});
-  final String title;
-  final String? subtitle;
-  @override
-  Widget build(BuildContext c) => Section(title: title, subtitle: subtitle);
-}
-
-class SectionTitleWithAction extends StatelessWidget {
-  const SectionTitleWithAction({super.key, required this.onTap});
+class _HomeShortcut extends StatelessWidget {
+  const _HomeShortcut({
+    required this.title,
+    required this.subtitle,
+    required this.asset,
+    required this.onTap,
+  });
+  final String title, subtitle;
+  final PaperAsset asset;
   final VoidCallback onTap;
   @override
-  Widget build(BuildContext c) => Section(
-    title: 'Perkembangan latihan',
-    action: 'Lihat semua',
-    onAction: onTap,
-  );
-}
-
-// Small wrapper keeps screen sections consistent.
-class Section extends StatelessWidget {
-  const Section({
-    super.key,
-    required this.title,
-    this.subtitle,
-    this.action,
-    this.onAction,
-  });
-  final String title;
-  final String? subtitle, action;
-  final VoidCallback? onAction;
-  @override
-  Widget build(BuildContext c) => SectionHeader(
-    title: title,
-    subtitle: subtitle,
-    action: action,
-    onAction: onAction,
-  );
-}
-
-class SectionHeader extends StatelessWidget {
-  const SectionHeader({
-    super.key,
-    required this.title,
-    this.subtitle,
-    this.action,
-    this.onAction,
-  });
-  final String title;
-  final String? subtitle, action;
-  final VoidCallback? onAction;
-  @override
-  Widget build(BuildContext c) => SectionTitle(
-    title,
-    subtitle: subtitle,
-    action: action,
-    onAction: onAction,
+  Widget build(BuildContext context) => BluePaperPanel(
+    padding: const EdgeInsets.all(12),
+    child: InkWell(
+      onTap: onTap,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          PaperArt(asset, size: 36),
+          const SizedBox(width: 7),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: paperCream,
+                    fontSize: 12,
+                    height: 1.15,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    color: Color(0xFFCAE0F0),
+                    fontSize: 7.5,
+                    height: 1.3,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Icon(Icons.chevron_right_rounded, size: 13, color: paperBlue),
+        ],
+      ),
+    ),
   );
 }
 
@@ -476,7 +727,7 @@ class ScoreChart extends StatelessWidget {
                     horizontalInterval: 25,
                   ),
                   borderData: FlBorderData(show: false),
-                  titlesData: const FlTitlesData(
+                  titlesData: FlTitlesData(
                     topTitles: AxisTitles(
                       sideTitles: SideTitles(showTitles: false),
                     ),
@@ -489,8 +740,13 @@ class ScoreChart extends StatelessWidget {
                     leftTitles: AxisTitles(
                       sideTitles: SideTitles(
                         showTitles: true,
-                        reservedSize: 33,
+                        reservedSize: 46,
                         interval: 50,
+                        getTitlesWidget: (value, _) => Text(
+                          '${value.round()}%',
+                          maxLines: 1,
+                          style: const TextStyle(fontSize: 10),
+                        ),
                       ),
                     ),
                   ),

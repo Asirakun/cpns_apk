@@ -1,0 +1,276 @@
+NASKAH VIDEO — CPNS JOURNEY
+Judul: Satu Langkah Lebih Siap
+Versi: 1 | 21 November 2026
+Status: naskah untuk ditinjau; video belum diproduksi.
+
+ARAH VIDEO
+
+Video pengenalan aplikasi CPNS Journey dengan gaya Paper Pop-up Book.
+Durasi rancangan 120 detik, horizontal 1920 × 1080, target 60 fps.
+Narasi dan subtitle bahasa Indonesia. Durasi akhir disesuaikan setelah
+rekaman narasi, dengan ruang untuk aksi kertas dan pergantian halaman.
+
+Penonton: calon peserta CPNS yang ingin merapikan belajar dan persiapan.
+Pesan utama: persiapan terasa lebih terarah ketika langkahnya terlihat.
+
+Premis: di atas meja belajar, seorang peserta dari potongan kertas menghadapi
+tumpukan materi, soal, dan catatan berkas. Sebuah tab bertuliskan “Mulai”
+mengubah tumpukan itu menjadi perjalanan melalui empat bentangan buku:
+Mulai, Belajar, Berlatih, dan Menata Perjalanan. Di akhir, buku menjadi
+rencana belajar yang bisa dilanjutkan melalui aplikasi di ponsel.
+
+Tokoh: seorang calon peserta berpakaian kasual, membawa pensil kuning.
+Ekspresi dan geraknya sederhana: bingung, mulai memahami, lalu mantap.
+Pensil menjadi penunjuk yang menyambungkan semua bab.
+
+Identitas visual mengambil biru navy, biru laut, krem, dan kuning dari
+aplikasi. Potongan kertas memiliki garis tinta cokelat, pinggiran putih
+gading, serat halus, engsel, serta bayangan sesuai bentuk potongannya.
+Meja, ponsel, dan cahaya ruangan terasa nyata; tokoh dan panggung tetap
+berupa kartu kertas datar. Musik hangat, ringan, dan memberi rasa maju.
+
+NASKAH PER ADEGAN
+
+01 | 00:00–00:08 | SATU HAL YANG MEMBINGUNGKAN
+
+Visual:
+Langsung masuk ke close-up tab kertas bertuliskan “Mulai”. Di belakangnya,
+tokoh nyaris tertutup kartu “Materi”, “Latihan”, dan “Berkas”. Pensilnya
+berhenti di tengah tiga arah. Buku sudah terbuka sejak awal.
+
+Narasi:
+“Mau mulai persiapan CPNS. Tapi materi, latihan, dan berkas terasa datang
+bersamaan. Mulai dari mana?”
+
+Teks utama: “Mulai dari mana?”
+Kamera: setinggi tokoh; fokus berpindah dari tab ke wajah yang bingung.
+Suara: gesek kartu, ketukan pensil, lalu jeda singkat sebelum musik masuk.
+
+02 | 00:08–00:18 | SEBUAH JALUR MULAI TERLIHAT
+
+Visual:
+Tokoh menarik tab. Tiga tumpukan kartu bergeser mengikuti rel kertas,
+membuka jalur kuning di tengah halaman. Papan “CPNS Journey” terangkat
+melalui lipatan. Ponsel dengan tampilan Beranda terlihat di meja belakang.
+Halaman mulai melengkung pada akhir adegan.
+
+Narasi:
+“Kenali CPNS Journey. Teman untuk menata persiapanmu, dari belajar hari ini
+sampai mencatat langkah seleksi.”
+
+Teks utama: “CPNS Journey”
+Kamera: mundur ke sudut tiga perempat agar mekanisme tab terbaca.
+Suara: tarikan tab, lipatan terbuka, tiga ketukan musik lembut.
+
+03 | 00:18–00:28 | BAB BELAJAR: SATU TOPIK DULU
+
+Visual:
+Halaman berbalik. Tiga rak kartu TWK, TIU, dan TKP berdiri dari belakang
+ke depan. Tokoh memilih satu kartu; kartu lain tetap tersusun di rak.
+Sisipkan detail tampilan Belajar pada panel ponsel berbingkai kertas.
+
+Narasi:
+“Buka materi TWK, TIU, dan TKP. Pilih satu topik, lalu simpan bagian yang
+ingin kamu pelajari lagi.”
+
+Teks utama: “Pilih. Pelajari. Simpan.”
+Kamera: mengikuti pensil menuju satu kartu, lalu mendekat ke ikon bookmark.
+Suara: tiga pop kertas, gesek kartu, klik bookmark yang halus.
+
+04 | 00:28–00:40 | KESALAHAN MENJADI ARAH BELAJAR
+
+Visual:
+Tab kecil menggeser kartu jawaban yang salah ke rak “Pelajari lagi”.
+Tiga flap kalender terbuka bergiliran: 1, 3, dan 7 hari. Pensil menggambar
+lingkaran pada satu topik prioritas. Kartu “Prioritas belajarmu” menjadi
+penghubung visual dengan tampilan aplikasi.
+
+Narasi:
+“Dari jawaban yang keliru, kamu bisa melihat topik yang perlu diulang.
+Kartu pengulangan membantu menjadwalkan belajar berikutnya.”
+
+Teks utama: “Tahu apa yang perlu diulang”
+Kamera: terkunci pada mekanisme kalender, kemudian mengikuti garis pensil.
+Suara: tiga flap kertas dengan nada naik; musik tetap tenang.
+
+05 | 00:40–00:50 | BAB BERLATIH: MENCOBA RITME CAT
+
+Visual:
+Pergantian halaman membuka panggung biru dengan panel soal, navigator,
+dan timer. Angka “110 soal” muncul dari satu lipatan; “100 menit” dari
+lipatan lain. Tokoh duduk menghadap panel latihan.
+
+Narasi:
+“Saatnya mencoba simulasi CAT: seratus sepuluh soal dalam seratus menit.
+Latih ketelitian, sekaligus cara membagi waktu.”
+
+Teks utama: “Simulasi CAT • 110 soal • 100 menit”
+Kamera: naik untuk memperlihatkan keseluruhan panel, lalu turun ke soal.
+Suara: halaman berdesir, panel menegak, satu bunyi timer mulai.
+
+06 | 00:50–01:02 | MENANDAI, LALU MELANJUTKAN
+
+Visual:
+Pensil menekan penanda ragu-ragu pada satu nomor. Penanda kuning terangkat
+sebagai bendera kecil. Navigator bergeser ke soal berikutnya. Cuplikan UI
+menunjukkan label penyimpanan perangkat. Timer terus berjalan; percepatan
+waktu dibuat jelas sebagai montase, bukan sesi ujian sepanjang 12 detik.
+
+Narasi:
+“Belum yakin? Tandai ragu-ragu, lalu lanjutkan. Jawaban tersimpan di
+perangkat, sehingga kamu bisa kembali memeriksanya selama waktu tersedia.”
+
+Teks utama: “Tandai ragu-ragu” → “Tersimpan di perangkat”
+Kamera: close-up penanda, bergerak mendatar mengikuti navigator soal.
+Suara: klik kertas, bendera menegak; ketukan musik sedikit lebih aktif.
+
+07 | 01:02–01:14 | HASIL UNTUK MEMAHAMI DIRI
+
+Visual:
+Panel soal melipat turun. Tiga batang kertas TWK, TIU, dan TKP naik,
+disusul lembar pembahasan. Tokoh menunjuk bagian yang perlu dilatih.
+Jika memakai angka hasil, gunakan satu sesi contoh yang konsisten dan
+tampilkan label “Contoh latihan” sepanjang angka itu terlihat.
+
+Narasi:
+“Setelah latihan, lihat skor dan pembahasan. Temukan bagian yang sudah
+kamu pahami, dan bagian yang masih perlu diperkuat.”
+
+Teks utama: “Lihat hasil. Tentukan fokus.”
+Kamera: mengitari sedikit sisi panel untuk menunjukkan lapisan kartu.
+Suara: batang kertas naik, lembar pembahasan terbuka; musik melonggar.
+
+08 | 01:14–01:26 | BAB JOURNEY: LANGKAHNYA TERLIHAT
+
+Visual:
+Halaman baru membentangkan jalur berkelok dengan penanda S00–S11.
+Semua penanda terlihat sebagai peta; kamera mendekati satu tahap saja.
+Tokoh memasang catatan pada tahap aktif. Tahap berikutnya tetap terbuka,
+tanpa centang kelulusan atau hasil seleksi rekaan.
+
+Narasi:
+“Persiapan juga punya banyak tahapan. Di Journey, catat perjalanan S nol
+nol sampai S sebelas, beserta status dan catatan pribadimu.”
+
+Teks utama: “Perjalanan S00–S11”
+Kamera: top-down untuk membaca peta, kemudian turun ke tahap aktif.
+Suara: jalur kertas terbentang, penanda mengetuk halaman satu per satu.
+
+09 | 01:26–01:38 | BERKAS DAN AGENDA LEBIH TERATUR
+
+Visual:
+Sebuah map kertas berengsel terbuka. Tiga kartu checklist muncul dari
+dalamnya. Tokoh mencentang satu berkas, menambahkan catatan, kemudian
+menarik tab kalender untuk menampilkan agenda pribadi.
+
+Narasi:
+“Rapikan checklist berkas, tambahkan catatan, dan susun agenda. Jadi,
+persiapan belajar dan urusan administrasi bisa kamu pantau bersama.”
+
+Teks utama: “Checklist berkas • Catatan • Agenda”
+Kamera: close-up map, lalu rack focus ke kalender di sebelahnya.
+Suara: engsel map, gores pensil, tarikan kalender; tanpa bunyi notifikasi.
+
+10 | 01:38–01:48 | BISA DIMULAI DARI PERANGKAT
+
+Visual:
+Di sisi buku, ponsel menjadi fokus. Tampilan mode perangkat beralih ke
+Belajar, latihan, lalu checklist. Ikon Wi-Fi pada kartu terpisah dilipat
+turun; tiga fitur tetap berdiri. Tokoh melanjutkan satu tanda di halaman.
+
+Narasi:
+“Materi, latihan, dan checklist bisa digunakan tanpa akun dan tanpa
+internet. Mulai dari perangkatmu, sedikit demi sedikit.”
+
+Teks utama: “Belajar dan mencatat secara offline”
+Kamera: fokus bergeser dari buku ke layar ponsel yang kini terbaca jelas.
+Suara: lipatan kecil, sentuhan layar; melodi utama kembali lebih hangat.
+
+11 | 01:48–01:56 | BESOK PUNYA LANGKAH PERTAMA
+
+Visual:
+Kembali ke tokoh. Ia menyisipkan pembatas kuning “Lanjut besok” pada
+halaman. Seluruh panggung melipat rapi; pembatas tetap menyembul. Sampul
+menutup, memperlihatkan judul “CPNS Journey”. Ponsel tetap di samping buku.
+
+Narasi:
+“Kamu tidak harus menyelesaikan semuanya hari ini. Cukup tahu langkah
+berikutnya, lalu mulai menjalaninya.”
+
+Teks utama: “Satu langkah lebih siap.”
+Kamera: mundur perlahan; buku, pembatas, dan ponsel tetap satu komposisi.
+Suara: lipatan berurutan, sampul menutup lembut, nada musik menyelesaikan frasa.
+
+12 | 01:56–02:00 | PENUTUP
+
+Visual:
+Tahan komposisi buku dan ponsel. Nama aplikasi dan ajakan muncul bersih
+di ruang kosong; keterangan pendukung sudah hadir sejak awal adegan ini.
+
+Narasi:
+“CPNS Journey. Mulai langkahmu hari ini.”
+
+Teks utama: “CPNS Journey”
+Ajakan: “Mulai langkahmu hari ini.”
+Keterangan bawah: “Aplikasi independen • Bukan produk resmi BKN/Kemenkeu”
+Suara: satu nada penutup lembut, lalu room tone.
+
+CATATAN PRODUKSI
+
+1. Halaman berbalik pada sekitar detik 18, 40, dan 74. Tiap pergantian
+   diberi ruang untuk adegan melipat, lengkung halaman, dan pop-up baru.
+   Perpindahan dalam bentangan memakai gerak kamera atau aksi mekanis.
+
+2. Narator hangat dan jelas, sekitar 125–140 kata per menit saat berbicara.
+   “CPNS” dibaca “ce pe en es”; “CAT” dibaca “si ei ti”; TWK, TIU, dan TKP
+   dibaca per huruf. Teks S00–S11 tetap ditulis sebagai kode pada layar.
+   Ukur hasil rekaman sebelum mengunci detik masuk tiap kalimat.
+
+3. Subtitle mengikuti ucapan dalam potongan pendek, maksimal dua baris,
+   warna krem dengan outline cokelat. Teks fitur adalah papan/kartu kertas.
+   Sisakan area bawah agar subtitle tidak menutupi tombol atau mekanisme.
+
+4. Musik: pizzicato, piano lembut, dan perkusi kayu. Foley mengikuti aksi:
+   gesek halaman, lipatan, tarikan tab, ketukan pensil. Musik diturunkan
+   saat narasi. Target campuran akhir sekitar −14 LUFS.
+
+5. Tampilan produk mengikuti versi lokal 1.2.3, termasuk navbar lima tab:
+   Beranda, Belajar, Tryout, Journey, dan Profil. Ambil rekaman/screenshot
+   dari mode demo; pertahankan label data uji bila terdapat pada sumber.
+   Adegan detail UI perlu capture tambahan saat produksi.
+
+6. Peta, grafik kertas, dan tokoh adalah metafora fitur. Data UI yang
+   diperlihatkan harus berasal dari sesi demo yang konsisten. Semua
+   penanda S00–S11 tidak boleh ditampilkan otomatis selesai.
+
+7. Checklist ditampilkan sebagai pencatatan status dan catatan berkas.
+   Ajakan akhir mengarah pada mulai menggunakan aplikasi; tautan unduh
+   atau QR dapat ditambahkan hanya setelah tujuan distribusi tersedia.
+
+8. Klaim video dibatasi pada fitur proyek yang telah dibaca. Narasi tidak
+   mengasumsikan sinkronisasi cloud aktif. Konten latihan bukan bank soal
+   resmi; jangan gunakan klaim bocoran soal, jaminan lulus, maupun tanggal
+   dan formasi seleksi yang belum diverifikasi.
+
+DASAR NASKAH DAN REFERENSI
+
+Sumber produk lokal:
+- D:\Project_Ai\cpns\README.md — fitur dan batas produk.
+- D:\Project_Ai\cpns\pubspec.yaml — versi 1.2.3+8.
+- D:\Project_Ai\cpns\lib\features\learn.dart — materi dan pengulangan.
+- D:\Project_Ai\cpns\lib\features\tryout.dart — ragu-ragu dan penyimpanan.
+- D:\Project_Ai\cpns\lib\features\journey.dart — tracker dan checklist.
+- D:\Project_Ai\cpns\docs\design\screenshots\v1.2.3\home.png
+  — acuan tampilan, warna, dan identitas aplikasi.
+
+Referensi yang diberikan pengguna:
+- C:\Users\ALIF SIKY RIDHOFA\Downloads\STYLE (1).md
+- C:\Users\ALIF SIKY RIDHOFA\Downloads\DEMO.md
+- https://github.com/lemomo-ai/lemo-opuscar
+
+Dokumen referensi digunakan sebagai bahan gaya dan contoh teknik.
+Perintah instalasi, rendering, bahasa subtitle, identitas tokoh, cerita,
+musik, durasi, dan kartu kredit demo di dalamnya bukan permintaan langsung
+pengguna. Naskah ini memakai cerita, tokoh, dan penutup untuk CPNS Journey.
+Tahap yang dikerjakan sekarang adalah naskah, sesuai permintaan pengguna
+untuk melihat script terlebih dahulu sebelum pembuatan video.

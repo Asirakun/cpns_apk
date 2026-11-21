@@ -1,0 +1,14 @@
+{
+  "asset": "assets/intro/papercut-mark-hd.png",
+  "width": 1080,
+  "height": 1080,
+  "format": "lossless PNG with transparent alpha",
+  "bytes": 987557,
+  "sha256": "612d584bbbaeda2ce3b4a4f05f5a1b7a05995e393bc7c55605d9f3317cc25582",
+  "source": "Final frame from the verified RTX 3050 Remotion render, without resizing",
+  "timeline": "assets/intro/remotion-motion.json",
+  "fps": 30,
+  "frames": 96,
+  "durationMs": 3200,
+  "playback": "Flutter applies exported Remotion transforms/opacity to a single HD PNG at native display refresh rate; text and full-viewport background are native."
+}

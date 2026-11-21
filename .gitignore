@@ -53,8 +53,19 @@ app.*.map.json
 android/key.properties
 *.jks
 *.keystore
+*.p12
+*.pfx
+*.credentials.json
 .env
 .env.*
 !.env.example
 node_modules/
 work/
+
+# Video render and local tooling
+video-demo/out/
+video-demo/tools/temp/
+video-demo/tools/ffmpeg.exe
+.motioncraft/
+tools/**/node_modules/
+tools/**/out/

@@ -11,27 +11,51 @@ import 'package:timezone/data/latest.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
 import 'models.dart';
+import 'network_policy.dart';
 
 class SecureSessionStorage extends LocalStorage {
-  const SecureSessionStorage();
+  const SecureSessionStorage(this.project);
+  final String project;
   static const storage = FlutterSecureStorage();
+  String get _key => 'supabase-session-${sha256.convert(utf8.encode(project))}';
   @override
-  Future<void> initialize() async {}
+  Future<void> initialize() async {
+    // Older sessions were not bound to a project. Require a fresh login rather
+    // than forwarding an old project's token to a newly configured endpoint.
+    await storage.delete(key: 'supabase-session');
+  }
+
   @override
-  Future<bool> hasAccessToken() async =>
-      await storage.containsKey(key: 'supabase-session');
+  Future<bool> hasAccessToken() async => await storage.containsKey(key: _key);
   @override
-  Future<String?> accessToken() => storage.read(key: 'supabase-session');
+  Future<String?> accessToken() => storage.read(key: _key);
   @override
-  Future<void> removePersistedSession() =>
-      storage.delete(key: 'supabase-session');
+  Future<void> removePersistedSession() => storage.delete(key: _key);
   @override
   Future<void> persistSession(String value) =>
-      storage.write(key: 'supabase-session', value: value);
+      storage.write(key: _key, value: value);
+}
+
+class SecurePkceStorage extends GotrueAsyncStorage {
+  const SecurePkceStorage(this.project);
+  final String project;
+  static const _storage = FlutterSecureStorage();
+  String _key(String key) =>
+      'supabase-pkce-${sha256.convert(utf8.encode(project))}-$key';
+  @override
+  Future<String?> getItem({required String key}) =>
+      _storage.read(key: _key(key));
+  @override
+  Future<void> setItem({required String key, required String value}) =>
+      _storage.write(key: _key(key), value: value);
+  @override
+  Future<void> removeItem({required String key}) =>
+      _storage.delete(key: _key(key));
 }
 
 class CloudConfig {
   static bool ready = false;
+  static Uri? projectOrigin;
   static const buildUrl = String.fromEnvironment('SUPABASE_URL');
   static const buildKey = String.fromEnvironment('SUPABASE_ANON_KEY');
   static Future<void> initialize() async {
@@ -42,48 +66,28 @@ class CloudConfig {
   }
 
   static Future<void> connect(String url, String key) async {
-    final uri = Uri.tryParse(url.trim());
-    if (uri == null ||
-        uri.scheme != 'https' ||
-        !uri.host.endsWith('.supabase.co')) {
-      throw const FormatException(
-        'Gunakan URL HTTPS proyek Supabase: https://nama-proyek.supabase.co',
-      );
+    final origin = supabaseOrigin(url).toString();
+    final publicKey = publicSupabaseKey(key);
+    if (ready) {
+      ready = false;
+      await Supabase.instance.dispose();
     }
-    if (key.startsWith('sb_secret_')) {
-      throw const FormatException(
-        'Gunakan publishable/anon key. Secret key dilarang.',
-      );
-    }
-    if (key.split('.').length == 3) {
-      try {
-        final payload = jsonDecode(
-          utf8.decode(base64Url.decode(base64Url.normalize(key.split('.')[1]))),
-        );
-        if (payload['role'] != 'anon') {
-          throw const FormatException('Hanya anon key yang diizinkan.');
-        }
-      } on FormatException {
-        rethrow;
-      }
-    } else if (!key.startsWith('sb_publishable_')) {
-      throw const FormatException('Publishable/anon key tidak valid.');
-    }
-    if (ready) await Supabase.instance.dispose();
     await Supabase.initialize(
-      url: url.trim(),
-      publishableKey: key.trim(),
+      url: origin,
+      publishableKey: publicKey,
       authOptions: FlutterAuthClientOptions(
         localStorage: kIsWeb
             ? const EmptyLocalStorage()
-            : const SecureSessionStorage(),
+            : SecureSessionStorage(origin),
         authFlowType: AuthFlowType.pkce,
+        pkceAsyncStorage: kIsWeb ? null : SecurePkceStorage(origin),
       ),
     );
     ready = true;
+    projectOrigin = Uri.parse(origin);
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('public-supabase-url', url.trim());
-    await prefs.setString('public-supabase-key', key.trim());
+    await prefs.setString('public-supabase-url', origin);
+    await prefs.setString('public-supabase-key', publicKey);
   }
 }
 
@@ -186,10 +190,8 @@ class ContentRepository {
       final blueprint = blueprintFor(p as Json);
       final distribution = blueprint['distribution'] as Json;
       final expected = distribution.values.cast<int>().fold(0, (a, b) => a + b);
-      final source = Uri.tryParse(blueprint['source_url'] as String? ?? '');
       if (!['historical', 'verified', 'draft'].contains(blueprint['status']) ||
-          source?.scheme != 'https' ||
-          !(source?.host.endsWith('.go.id') ?? false)) {
+          !isGovernmentUrl(blueprint['source_url'] as String? ?? '')) {
         throw const FormatException('Sumber/status blueprint tidak valid.');
       }
       for (final d in domains) {

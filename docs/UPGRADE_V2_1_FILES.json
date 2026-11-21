@@ -1,0 +1,391 @@
+{
+    "checkedAtUtc":  "2026-11-20T19:19:39.1802776Z",
+    "scope":  "Changes since the PRD v2.1 checkpoint only; earlier security/design work is preserved. Latest user screenshot overrides compact redesign: original UI/icons plus charts.",
+    "branch":  "feat/prd-v2.1-analytics",
+    "baselineFiles":  137,
+    "changedFiles":  47,
+    "removedFiles":  [
+
+                     ],
+    "uiRestoration":  {
+                          "sourceFiles":  [
+                                              {
+                                                  "path":  "lib/app/theme.dart",
+                                                  "identicalToBaseline":  true
+                                              },
+                                              {
+                                                  "path":  "lib/app/widgets.dart",
+                                                  "identicalToBaseline":  true
+                                              },
+                                              {
+                                                  "path":  "lib/app/paper.dart",
+                                                  "identicalToBaseline":  true
+                                              },
+                                              {
+                                                  "path":  "lib/features/journey.dart",
+                                                  "identicalToBaseline":  true
+                                              }
+                                          ],
+                          "originalArtAssets":  18,
+                          "changedArtAssets":  0,
+                          "homeScreenshotIdentical":  true
+                      },
+    "verification":  {
+                         "flutterAnalyze":  "No issues",
+                         "flutterTestsPassed":  55,
+                         "optInSkipped":  2,
+                         "additionalAggregationVerification":  17,
+                         "sqlRlsChecks":  33,
+                         "renderedScreenshots":  11,
+                         "androidLintErrors":  0,
+                         "androidLintWarnings":  7,
+                         "osvPackages":  234,
+                         "osvActiveMatches":  0,
+                         "apkChecks":  42,
+                         "deviceRuntime":  "Not tested",
+                         "supabaseHosted":  "Not connected / migration not applied"
+                     },
+    "release":  {
+                    "version":  "1.1.0+4",
+                    "splitVersionCode":  2004,
+                    "applicationId":  "id.cpnsjourney.app",
+                    "abi":  "arm64-v8a",
+                    "minimumSdk":  24,
+                    "targetSdk":  36,
+                    "path":  "build/releases/cpns-journey-1.1.0-arm64-v8a.apk",
+                    "bytes":  27226148,
+                    "sha256":  "4bb65189a54772ef3d60f0f77395aaf7917ebf47508f7694a75478a166adcd26",
+                    "signer":  "Existing pinned release certificate"
+                },
+    "files":  [
+                  {
+                      "path":  "docs/design/PAPERCUT.md",
+                      "change":  "modified",
+                      "beforeSha256":  "d6d62976132d2485f6e01529e89f1ecd0ccf7b697919fb64f2559a74f607b3e4",
+                      "afterSha256":  "b4d9cd573a35f94817ad95b0525ff4be834e85efc57cb38740b2f84edcd460e7",
+                      "description":  "Screenshot desain lama yang dipulihkan, bukti identik, chart dan label fixture."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/category.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "41d129aa053b38b5f2e00c806f73f32dcddd6e028fa914d1dd69d6e25abe51fc",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/daily.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "06c49e3ced11b092dfb35163b216ee607e5c0a52d014db25aa7625d9217a4c8e",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/home-demo.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "3cd8b490a113f769ef84696fd612dc6aab0f62a17fe129e514d9bd1e449c1db5",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/home-empty.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "112d960f963fe3efeadac2ce7a3fe35b7c28bdfaaf7c849537a693c51dfb9f5e",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/journey.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "94a1bc68a5a4349ed814d150703653fe1bd8e90f81be65f4e7da21723c05baee",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/learn.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "ee07700970d176508abefcf3572761992c0ab1ba208ca0e03de06ff2163adfae",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/light-large.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "c391933821060e5451d31df56961c74a1ab20a21d440287cd5a0cdcdd14e923a",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/monthly.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "5b95b35efc80770e9bb7b83c50d54e3fce5d46b8cd214fa8a77030b4e6a8efc9",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/profile.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "03c893a5fa02ef677bab0358c650347388a71a69e4074fb4b243b4b7af8a4bea",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/tryouts.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "b7ba564242ea4ef534c030d05b2ad472db1b6a16acd26edd1d96628bc0643913",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/design/screenshots/v1.1.0/weekly.png",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "e8909030043eeb2c3ab3e547352ac3b3f2728ba3ebb58483fa7a6e015e77746b",
+                      "description":  "Screenshot renderer Flutter asli; DATA UJI untuk fixture, home-empty memakai state awal dan identik baseline."
+                  },
+                  {
+                      "path":  "docs/KEAMANAN.md",
+                      "change":  "modified",
+                      "beforeSha256":  "8b7baece84c7ac65e38857cfc444c99598c2ef3456e582b4965ec506409d25e4",
+                      "afterSha256":  "83f4f56ef673f8e3feaf133f75fdfd25c53de9117e7e1f427aa8cec9fc453cc2",
+                      "description":  "Bukti keamanan terbaru dan dampak additive analytics; signer existing."
+                  },
+                  {
+                      "path":  "docs/LANJUTKAN_DI_CODEX.md",
+                      "change":  "modified",
+                      "beforeSha256":  "33e2b3e60b17839cf3d176e3cfa99d210882a82d50aa9cdaa29c46d8ec96a1dc",
+                      "afterSha256":  "2924cd2e1c62987f5bf2ce10cf00c182fdf0bd51d8179ba68b48f09465521ca4",
+                      "description":  "Handoff menegaskan desain/ikon lama dan chart saja, versi dan migration existing."
+                  },
+                  {
+                      "path":  "docs/security/dependency-audit.json",
+                      "change":  "modified",
+                      "beforeSha256":  "aab0aec289f33f6d73f0ab6ddbd18922d272c775e50838c3c31ab236c7f2d456",
+                      "afterSha256":  "2c6a359fa46a1ae427336236ff042ec95ce9f8f815d821edcaaacc329adb04be",
+                      "description":  "Bukti OSV terbaru: 136 Pub + 97 Maven + 1 npm, tanpa advisori aktif yang cocok."
+                  },
+                  {
+                      "path":  "docs/security/dependency-audit-1.0.2.json",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "aab0aec289f33f6d73f0ab6ddbd18922d272c775e50838c3c31ab236c7f2d456",
+                      "description":  "Arsip bukti release 1.0.2 agar hasil sebelumnya tetap tersimpan."
+                  },
+                  {
+                      "path":  "docs/security/lint-results-release-1.0.2.xml",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "7160c75eac6612b37a0dce1a76cdfd5f17d967da8126a23bea64e51d002b199a",
+                      "description":  "Arsip bukti release 1.0.2 agar hasil sebelumnya tetap tersimpan."
+                  },
+                  {
+                      "path":  "docs/security/release-security.json",
+                      "change":  "modified",
+                      "beforeSha256":  "050c6699fdf8d876eed678a241d3f23f2a8dcac952e0d879a14e8fce630e1fb1",
+                      "afterSha256":  "1dbc5dcb0bafb52a8883838c403296042e0a903b887b185a181ffea6cae6b650",
+                      "description":  "Bukti 42 pemeriksaan statis APK 1.1.0, metadata, SHA-256 dan sertifikat publik."
+                  },
+                  {
+                      "path":  "docs/security/release-security-1.0.2.json",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "050c6699fdf8d876eed678a241d3f23f2a8dcac952e0d879a14e8fce630e1fb1",
+                      "description":  "Arsip bukti release 1.0.2 agar hasil sebelumnya tetap tersimpan."
+                  },
+                  {
+                      "path":  "docs/security/source-secrets.json",
+                      "change":  "modified",
+                      "beforeSha256":  "36c8324d1a46a86038e0ce6148c9a995167a6649cc5f5128355223437620fbc3",
+                      "afterSha256":  "bb17e688b0e0ef913d5ae5943c577dd9ab7419219c8c4e5a429e6e49c1011a9a",
+                      "description":  "Bukti pemindaian pola secret source terkini tanpa temuan."
+                  },
+                  {
+                      "path":  "docs/security/source-secrets-1.0.2.json",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "36c8324d1a46a86038e0ce6148c9a995167a6649cc5f5128355223437620fbc3",
+                      "description":  "Arsip bukti release 1.0.2 agar hasil sebelumnya tetap tersimpan."
+                  },
+                  {
+                      "path":  "docs/UPGRADE_V2_1.md",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "627bc95989a468790b91d4b29d7ab9783270e89db69050a780650b3b2a8e231d",
+                      "description":  "Audit baseline, perubahan scope pengguna, laporan per file, migration, tes, APK dan batas verifikasi."
+                  },
+                  {
+                      "path":  "docs/UPGRADE_V2_1_FILES.json",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  null,
+                      "description":  "Manifest setiap file berubah dan hasil verifikasi; checksum sendiri sengaja tidak diisi."
+                  },
+                  {
+                      "path":  "docs/VERIFIKASI.md",
+                      "change":  "modified",
+                      "beforeSha256":  "3a43a8e110a2ca073cd4c6738a0ee32a87f45a60d61a648359b980baecb6782d",
+                      "afterSha256":  "3a936a5bc4e0590e38b89113eb557249265cdda84f548d04c0ee0262f5e7239e",
+                      "description":  "Hasil QA/build 1.1.0 dengan arsip hasil sebelumnya dan batas uji perangkat/hosted."
+                  },
+                  {
+                      "path":  "lib/app/study_activity.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "41e08cdac97eb77df36631676b464d9adb92414c4e25932c1f75dcb66e4b83fa",
+                      "description":  "Hook pencatatan sesi pada route konten, lifecycle dan generasi akun; tanpa perubahan tampilan."
+                  },
+                  {
+                      "path":  "lib/core/analytics.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "437218161c63244d7671644553a11c8cc1e4e847680e03a6f1636fffd570b3da",
+                      "description":  "Agregator lokal, migrasi field opsional, deduplikasi dan cohort CAT; tanpa mengubah jawaban/skor lama."
+                  },
+                  {
+                      "path":  "lib/core/app_version.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "9914fd432597609eb2045ba7f30d878cdcd1b9d9f9b1b707cdd0ea68cbc782ec",
+                      "afterSha256":  "4187b490caec28ed6b820b9dc4473b1448277abcb16a580dfcc98ac79cf93569",
+                      "description":  "Versi aplikasi menjadi 1.1.0."
+                  },
+                  {
+                      "path":  "lib/core/controller.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "48f00d406e028ab9ca82980ddaaaa161de5d504085a8655870cff9f46ee5b168",
+                      "afterSha256":  "58e162e1e7f7a9596dad940923ad5a1ef3e703aa5338d43f2ba70b01e141f75f",
+                      "description":  "Penyimpanan sesi/target additive, cache agregasi, capability check cloud, reconcile UUID."
+                  },
+                  {
+                      "path":  "lib/core/study_clock.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "cd1edbb20a8b78ae876805a2021a30b1e5e130138350a03f06f0cc58609e7be2",
+                      "description":  "Clock monoton untuk aktivitas foreground dan idle 120 detik."
+                  },
+                  {
+                      "path":  "lib/features/analytics.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "85ff79bfe87bedef24085a19b900e79f7a044a8b2a03b5a716971610cc8c2f59",
+                      "description":  "Halaman chart tambahan dengan filter periode/kategori/mode dan sumber metrik; memakai tema lama."
+                  },
+                  {
+                      "path":  "lib/features/analytics_charts.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "3bbe92704fd69655d9de7a5ad70a54c8ac5f9a9484cc25137a6c3c7f2fb1fbb6",
+                      "description":  "Bar harian, stack mingguan, line bulanan/CAT, tooltip dan tabel alternatif."
+                  },
+                  {
+                      "path":  "lib/features/home.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "c263eba3a2e3ab842907182a28052432a11ba25e6cff4ed8ec9139025727252e",
+                      "afterSha256":  "c7069af946c5ca27f24ba471a75bbaf01897ef68166bb13aa564d507de2e94d7",
+                      "description":  "Pintasan Analisis performa dan tautan Lihat Analisis diarahkan ke chart; layout/ikon lama tetap."
+                  },
+                  {
+                      "path":  "lib/features/learn.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "720a0e7fb5a8cc94054c66def8279b7711fffcd213cee051578f611173457528",
+                      "afterSha256":  "6c4d4a76a9b657c1e8922facd8f41df04f3f86e5af4100fa88bd7e789219c265",
+                      "description":  "Wrapper waktu reader/flashcard, UI existing dipertahankan."
+                  },
+                  {
+                      "path":  "lib/features/profile.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "9b9a3274fd30f708b2423cb8991695e0918233f8959fdb2a4cae2fbf40d79f75",
+                      "afterSha256":  "b9e8993140fd6440f827993a64a0a01494b9e9370dcef0190210c5d930d68d13",
+                      "description":  "Setter target existing mencatat sejarah target efektif tanpa mengganti UI."
+                  },
+                  {
+                      "path":  "lib/features/tryout.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "b6fed93cde79258a5a09b0455f89e1924058fcd6c2500afa8f7c19e3cfd90082",
+                      "afterSha256":  "3121c518573cb2eada0bcecaf61e9db968144303bdd6b4ac36424b46725eca22",
+                      "description":  "Wrapper waktu saat soal tampil, UI/timer/nilai/review existing dipertahankan."
+                  },
+                  {
+                      "path":  "lib/main.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "b9b63e87134de40bb316372ca682e41eccc1d5949e1d7b24d4bdbddfd8e19ea9",
+                      "afterSha256":  "2c8c8c2a7b1ad497ae2c172a0eb8b2f3dd56cc9e0d5d8422a5ef33db8d02eb3c",
+                      "description":  "Route Analisis tambahan dan observer lifecycle route; navigation shell existing tetap."
+                  },
+                  {
+                      "path":  "pubspec.yaml",
+                      "change":  "modified",
+                      "beforeSha256":  "a5610df7b0311a8f6bf9aa8d73563bc1f9b22568c66d1e653f5fcf028e07779f",
+                      "afterSha256":  "36aa44e0302f16ebb8097174b5ca1972b1061526b4e77c7daaa1c3a8ff9c2e1d",
+                      "description":  "Versi 1.1.0+4; paket/asset lama tetap."
+                  },
+                  {
+                      "path":  "README.md",
+                      "change":  "modified",
+                      "beforeSha256":  "0e8627b84ace17cb3d481d6b2c3d9dd8083695d1cc66732fcfda2a55b911d7c8",
+                      "afterSha256":  "5620911bc2ce71cd074e7dd03655683cf0f3f724bf17978145df46105b872463",
+                      "description":  "Status release, tautan chart/screenshot dan instruksi migrasi pada proyek existing."
+                  },
+                  {
+                      "path":  "scripts/capture_design_previews.ps1",
+                      "change":  "modified",
+                      "beforeSha256":  "a99711bc317f2728d384b20b114edc5fff11429f59d950cd6bf3f4720bf1c5a2",
+                      "afterSha256":  "10a4cad91f579161d20b2ef4e05c235335e7b061592161c7b02847eb031b8b41",
+                      "description":  "Reproduksi 11 screenshot UI/chart terisolasi."
+                  },
+                  {
+                      "path":  "supabase/migrations/202611210001_analytics_additive.sql",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "d045f9a1bcdca5e4bd9c7a49dda24a3183002cd963686ef6d835dec7f755f825",
+                      "description":  "Fungsi/trigger additive pada snapshot existing; tanpa database/tabel baru atau rewrite data lama."
+                  },
+                  {
+                      "path":  "supabase/tests/security.mjs",
+                      "change":  "modified",
+                      "beforeSha256":  "27797cbb3f8b65c4d87745df0d08ec39e458a51119e82ed99cac68a565dbf6f4",
+                      "afterSha256":  "ae32d95c9eb863d1af8faba9b1084c9b7fb74c950c8a8765c824038e71220a55",
+                      "description":  "Regresi migrasi snapshot existing, retry/union UUID/immutability/capability; 33 skenario."
+                  },
+                  {
+                      "path":  "test/analytics_aggregation_test.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "6c6655e3df2232f83bcec61a5012d8ef23e4e2cf6a3de7599e47f31c5b3747a5",
+                      "description":  "17 tes agregasi/kompatibilitas/timer/isolasi, termasuk callback generasi akun lama."
+                  },
+                  {
+                      "path":  "test/analytics_preview_test.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "f424d4ee74c1aa9ae1abc0cbfdc20bb373aa904665238d261d01b428a9e5f993",
+                      "description":  "Capture opt-in renderer Flutter; fixture jelas diberi label DATA UJI."
+                  },
+                  {
+                      "path":  "test/analytics_ui_test.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "c488fee136c84bc7c54409e7b8cf4108b331136ea81de83ef4abf2083dd4619f",
+                      "description":  "Kontrol chart 360dp dark/light 1.3x, empty CTA dan pintasan beranda lama."
+                  },
+                  {
+                      "path":  "test/cat_flow_test.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "e5c3906ec20a84d74d481382ca8d95a99a85aa2b9c07e8db96fa1a091567f149",
+                      "description":  "CAT penuh 110 soal melalui widget sampai nilai 550, kemudian chart; attempt tetap utuh."
+                  },
+                  {
+                      "path":  "test/security_test.dart",
+                      "change":  "modified",
+                      "beforeSha256":  "0dc0070ba509a37f49e45060948866df574a26863acb084db7b57f698292734f",
+                      "afterSha256":  "707aa1347bae9f307c29db46ee7d016247d50d241c2aaadf46a7fbccb4f22f63",
+                      "description":  "Ekspektasi minimum versi mengikuti versi aplikasi 1.1.0."
+                  },
+                  {
+                      "path":  "test/support/analytics_fixture.dart",
+                      "change":  "added",
+                      "beforeSha256":  null,
+                      "afterSha256":  "ef75701e21e8af667670a7520035f25b054db56b80ed7a341eebf93759a5ea4a",
+                      "description":  "Fixture terisolasi untuk tes/render, tidak digunakan oleh aplikasi produksi."
+                  }
+              ]
+}

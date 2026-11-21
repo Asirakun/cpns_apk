@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-11-21T04:35:34.183Z",
+  "frames": 200,
+  "master": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1440,
+        "height": 3200,
+        "nb_frames": "200",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "nb_frames": "315"
+      }
+    ],
+    "format": {
+      "duration": "6.677000"
+    }
+  },
+  "wavPeak": 0.849945068359375,
+  "wavRms": 0.10282537746666255,
+  "wavSha256": "bf3a96e74b32e27a42d5f2750bd38e0e0d015a62966af6680f45f3e712355b06",
+  "originalMixIdentical": true,
+  "backgroundCornersMatchApp": true,
+  "skipButtonRemoved": true,
+  "physicalAndroidAudioTest": false,
+  "previewAACDecodedPeak": 0.55987548828125,
+  "previewAACDecodedRms": 0.07229176008411761,
+  "previewAACNonSilent": true
+}

@@ -1,0 +1,243 @@
+[
+  {
+    "time": 8.35175,
+    "type": "paper",
+    "duration": 0.9
+  },
+  {
+    "time": 16.85175,
+    "type": "paper",
+    "duration": 1.3
+  },
+  {
+    "time": 38.851749999999996,
+    "type": "paper",
+    "duration": 1.3
+  },
+  {
+    "time": 73.06110416666667,
+    "type": "paper",
+    "duration": 1.3
+  },
+  {
+    "time": 111.97243750000001,
+    "type": "paper",
+    "duration": 1.3
+  },
+  {
+    "time": 18.85175,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 18.931749999999997,
+    "type": "card-tap"
+  },
+  {
+    "time": 19.071749999999998,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 19.151749999999996,
+    "type": "card-tap"
+  },
+  {
+    "time": 19.29175,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 19.37175,
+    "type": "card-tap"
+  },
+  {
+    "time": 24.85175,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 24.931749999999997,
+    "type": "card-tap"
+  },
+  {
+    "time": 29.35175,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 29.431749999999997,
+    "type": "card-tap"
+  },
+  {
+    "time": 29.731749999999998,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 29.811749999999996,
+    "type": "card-tap"
+  },
+  {
+    "time": 30.11175,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 30.19175,
+    "type": "card-tap"
+  },
+  {
+    "time": 40.862217708333326,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 40.94389254166666,
+    "type": "card-tap"
+  },
+  {
+    "time": 43.41455625,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 43.49623108333333,
+    "type": "card-tap"
+  },
+  {
+    "time": 51.56110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 51.64110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 55.56110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 55.64110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 63.56110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 63.64110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 63.80110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 63.88110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 64.04110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 64.12110416666665,
+    "type": "card-tap"
+  },
+  {
+    "time": 75.36110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 75.44110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 75.76110416666667,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 75.84110416666667,
+    "type": "card-tap"
+  },
+  {
+    "time": 76.16110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 76.24110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 76.56110416666667,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 76.64110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 78.56110416666667,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 78.64110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 86.86110416666666,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 86.94110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 89.56110416666667,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 89.64110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 99.56110416666667,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 99.64110416666666,
+    "type": "card-tap"
+  },
+  {
+    "time": 109.96577083333334,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 110.04603750000001,
+    "type": "card-tap"
+  },
+  {
+    "time": 115.8854375,
+    "type": "paper",
+    "duration": 0.16
+  },
+  {
+    "time": 115.96570416666667,
+    "type": "card-tap"
+  }
+]

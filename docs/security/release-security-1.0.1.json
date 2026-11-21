@@ -1,0 +1,184 @@
+{
+  "checkedAt": "2026-11-20T17:06:49.2819033Z",
+  "apk": "D:\\Project_Ai\\cpns\\build\\app\\outputs\\flutter-apk\\app-arm64-v8a-release.apk",
+  "sizeBytes": 22955910,
+  "sha256": "b9607f0c700e35a8b6dbc1d0558f18aa7b1cf6313cc7b61cd63a9f45e10cd610",
+  "checks": [
+    {
+      "check": "APK cryptographic signature verifies",
+      "passed": true
+    },
+    {
+      "check": "Private release certificate is used",
+      "passed": true
+    },
+    {
+      "check": "Expected public signing certificate fingerprint is available",
+      "passed": true
+    },
+    {
+      "check": "APK signer matches the recorded private release identity",
+      "passed": true
+    },
+    {
+      "check": "Only ARM64 native libraries are packaged",
+      "passed": true
+    },
+    {
+      "check": "Package ID matches CPNS Journey",
+      "passed": true
+    },
+    {
+      "check": "Release version and Android minimum are correct",
+      "passed": true
+    },
+    {
+      "check": "Debugging is disabled",
+      "passed": true
+    },
+    {
+      "check": "Automatic backup is disabled",
+      "passed": true
+    },
+    {
+      "check": "Cleartext traffic is disabled",
+      "passed": true
+    },
+    {
+      "check": "Packaged manifest declares fullBackupContent",
+      "passed": true
+    },
+    {
+      "check": "Packaged manifest declares dataExtractionRules",
+      "passed": true
+    },
+    {
+      "check": "Packaged manifest declares networkSecurityConfig",
+      "passed": true
+    },
+    {
+      "check": "Declared permission allowed: android.permission.INTERNET",
+      "passed": true
+    },
+    {
+      "check": "Declared permission allowed: android.permission.POST_NOTIFICATIONS",
+      "passed": true
+    },
+    {
+      "check": "Declared permission allowed: android.permission.RECEIVE_BOOT_COMPLETED",
+      "passed": true
+    },
+    {
+      "check": "Declared permission allowed: android.permission.VIBRATE",
+      "passed": true
+    },
+    {
+      "check": "Declared permission allowed: id.cpnsjourney.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+      "passed": true
+    },
+    {
+      "check": "Release contains compiled Dart AOT code",
+      "passed": true
+    },
+    {
+      "check": "Debug kernel is absent",
+      "passed": true
+    },
+    {
+      "check": "Signing keys, local credentials and env files are absent",
+      "passed": true
+    },
+    {
+      "check": "AOT library can be inspected",
+      "passed": true
+    },
+    {
+      "check": "Packaged AOT library has no DWARF debug sections",
+      "passed": true
+    },
+    {
+      "check": "Notification icon survives release resource shrinking",
+      "passed": true
+    },
+    {
+      "check": "Compiled resource backup_rules is present in the resource table",
+      "passed": true
+    },
+    {
+      "check": "Manifest binds fullBackupContent to the inspected resource",
+      "passed": true
+    },
+    {
+      "check": "Compiled backup_rules resource can be inspected",
+      "passed": true
+    },
+    {
+      "check": "Compiled resource data_extraction_rules is present in the resource table",
+      "passed": true
+    },
+    {
+      "check": "Manifest binds dataExtractionRules to the inspected resource",
+      "passed": true
+    },
+    {
+      "check": "Compiled data_extraction_rules resource can be inspected",
+      "passed": true
+    },
+    {
+      "check": "Compiled resource network_security_config is present in the resource table",
+      "passed": true
+    },
+    {
+      "check": "Manifest binds networkSecurityConfig to the inspected resource",
+      "passed": true
+    },
+    {
+      "check": "Compiled network_security_config resource can be inspected",
+      "passed": true
+    },
+    {
+      "check": "Network trust uses system CAs and no user CA override",
+      "passed": true
+    },
+    {
+      "check": "Network security config also disables cleartext traffic",
+      "passed": true
+    },
+    {
+      "check": "Legacy backup rules exclude stored app data",
+      "passed": true
+    },
+    {
+      "check": "Cloud backup and device transfer both have exclusions",
+      "passed": true
+    },
+    {
+      "check": "Backup extraction excludes root in both transfer modes",
+      "passed": true
+    },
+    {
+      "check": "Backup extraction excludes file in both transfer modes",
+      "passed": true
+    },
+    {
+      "check": "Backup extraction excludes database in both transfer modes",
+      "passed": true
+    },
+    {
+      "check": "Backup extraction excludes sharedpref in both transfer modes",
+      "passed": true
+    },
+    {
+      "check": "Backup extraction excludes external in both transfer modes",
+      "passed": true
+    }
+  ],
+  "metadata": [
+    "package: name='id.cpnsjourney.app' versionCode='2002' versionName='1.0.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+    "sdkVersion:'24'",
+    "targetSdkVersion:'36'",
+    "native-code: 'arm64-v8a'"
+  ],
+  "signature": "Verifies\nVerified using v1 scheme (JAR signing): false\nVerified using v2 scheme (APK Signature Scheme v2): true\nVerified using v3 scheme (APK Signature Scheme v3): false\nVerified using v3.1 scheme (APK Signature Scheme v3.1): false\nVerified using v4 scheme (APK Signature Scheme v4): false\nVerified for SourceStamp: false\nNumber of signers: 1\nSigner #1 certificate DN: CN=CPNS Journey\nSigner #1 certificate SHA-256 digest: e98009b44e37caae46158282036489c8332747495b1da8a6ff13164e54a6cdff\nSigner #1 certificate SHA-1 digest: 8ef9b48c03f0a9bfeb30c8464d78245cf21ef871\nSigner #1 certificate MD5 digest: e7aa1f50718787ff1720c591897519c7\nSigner #1 key algorithm: RSA\nSigner #1 key size (bits): 3072\nSigner #1 public key SHA-256 digest: b6b23c1f0a1518a3ae51bd1c2703b34b973bd42a24a4855f561909e7eb553ab4\nSigner #1 public key SHA-1 digest: ce8642ab44a7a2f5babf397a837299c06f9f2a83\nSigner #1 public key MD5 digest: 16f5d6a8370d18d5104da28b856f4412",
+  "scope": "Static verification of this APK. Does not certify runtime behavior, a hosted backend, or absence of malware."
+}

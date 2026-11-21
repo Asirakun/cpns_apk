@@ -24,7 +24,7 @@ android {
         applicationId = "id.cpnsjourney.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         // Uses the version code from pubspec.yaml. When using split APKs, 1000 * ABI_VERSION
         // is added automatically by Flutter. (https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)
@@ -41,11 +41,16 @@ android {
                 keyPassword = signingProperties["keyPassword"] as String
                 storeFile = file(signingProperties["storeFile"] as String)
                 storePassword = signingProperties["storePassword"] as String
+                storeType = signingProperties.getProperty("storeType", "JKS")
             }
         }
     }
     buildTypes {
         release {
+            isDebuggable = false
+            isJniDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             // Configure a private key through android/key.properties before release.
             signingConfig = signingConfigs.getByName("personalRelease")
         }

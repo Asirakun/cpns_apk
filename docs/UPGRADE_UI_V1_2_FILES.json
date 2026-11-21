@@ -1,0 +1,1602 @@
+{
+  "checkedAt": "2026-11-21T03:22:15.582Z",
+  "release": "1.2.0+5",
+  "scope": "Changes since the 166-file pre-request v1.1.0 checkpoint, including pre-existing uncommitted source; no commits/pushes.",
+  "baselineFiles": 166,
+  "changedFiles": 127,
+  "integrity": {
+    "originalArtFiles": 18,
+    "originalArtChanged": [],
+    "flutterLockUnchanged": true,
+    "contentUnchanged": true,
+    "controllerUnchanged": true,
+    "localStorageUnchanged": true,
+    "cipherUnchanged": true,
+    "analyticsReadModelUnchanged": true,
+    "hostedDatabaseTouched": false,
+    "newMigration": false,
+    "removedFiles": []
+  },
+  "verification": {
+    "checkedAt": "2026-11-21T03:22:14.270Z",
+    "flutterAnalyze": "No issues",
+    "flutterTestsPassed": 67,
+    "optInSkipped": 3,
+    "sqlRlsChecks": 33,
+    "renderedScreenshots": 13,
+    "androidLintErrors": 0,
+    "androidLintWarnings": 7,
+    "osvCounts": {
+      "Pub": 136,
+      "npm": 1,
+      "Maven": 97
+    },
+    "osvActiveMatches": 0,
+    "introToolingTypeScript": "No errors",
+    "introToolingNpmAdvisories": 0,
+    "introFinalVideoFrames": 96,
+    "introDebugFrames": 96,
+    "introQaIssues": 0,
+    "apkChecks": 42,
+    "uiAssetChecks": 106,
+    "packagedArtAssets": 40,
+    "deviceRuntime": "Not tested",
+    "hostedSupabase": "Not tested",
+    "artifact": {
+      "path": "build/releases/cpns-journey-1.2.0-arm64-v8a.apk",
+      "sizeBytes": 29781539,
+      "sha256": "c299bd1b26877daadae3ce1280b1e89a9059d6dfd34ae6a1cf601a0e422227ad",
+      "version": "1.2.0",
+      "versionCode": 2005,
+      "minSdk": 24,
+      "targetSdk": 36,
+      "abi": "arm64-v8a",
+      "signer": "Existing pinned release certificate"
+    },
+    "tests": [
+      "00:00 +0: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC01 additive schema-1 migration is idempotent and preserves every old field",
+      "00:00 +1: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC04 known zero days differ from unknown history; charts share the summary total",
+      "00:00 +2: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC05 UTC->WIB midnight splits Sunday/Monday across a month boundary",
+      "00:00 +3: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC06 TWK/TIU accuracy and weighted TKP quality use final answered denominators",
+      "00:00 +4: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC07 retry copies deduplicate session and attempt+question identities",
+      "00:00 +5: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC08 empty state has no fabricated points, accuracy, delta or targets",
+      "00:00 +6: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC09 score-only history keeps CAT scores without inferring any study time",
+      "00:00 +7: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC10 idle at 120 seconds and background never add unobserved duration",
+      "00:00 +8: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC10 changing wall clock does not inflate monotonic active time",
+      "00:00 +9: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC11 A/B/guest cache and delayed study flush remain isolated across namespaces",
+      "00:00 +10: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: AC12 encrypted cold reopen keeps additive payload, raw CAT and pending operation IDs",
+      "00:00 +11: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: multi-device UUID union is idempotent and rejects conflicting immutable records",
+      "00:00 +12: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: target changes preserve old days and exclude today, no-target and unknown days",
+      "00:00 +13: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: zero comparator produces an absolute delta, never infinity or fake decline",
+      "00:00 +14: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: recommendation quality needs ten answers within thirty WIB days",
+      "00:00 +15: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: only comparable CAT blueprints share a score cohort; active attempts stay separate",
+      "00:00 +16: D:/Project_Ai/cpns/test/analytics_aggregation_test.dart: weekly category stacks, unknown category and mode filters conserve durations",
+      "00:01 +17: D:/Project_Ai/cpns/test/analytics_preview_test.dart: capture PRD v2.1 real Flutter UI (daily)",
+      "00:02 +17 ~1: D:/Project_Ai/cpns/test/analytics_ui_test.dart: charts: daily/weekly/monthly ranges and category at 360x800 1.3x dark",
+      "00:05 +18 ~1: D:/Project_Ai/cpns/test/analytics_ui_test.dart: charts: daily/weekly/monthly ranges and category at 360x800 1.3x light",
+      "00:06 +19 ~1: D:/Project_Ai/cpns/test/analytics_ui_test.dart: empty chart has a working first-practice action",
+      "00:06 +20 ~1: D:/Project_Ai/cpns/test/analytics_ui_test.dart: previous illustrated home remains and its analytics shortcut opens charts",
+      "00:07 +21 ~1: D:/Project_Ai/cpns/test/cat_flow_test.dart: AC14 complete 110-question CAT through real widgets, reload result and analytics",
+      "00:58 +22 ~1: D:/Project_Ai/cpns/test/core_test.dart: a delayed account A read cannot overwrite active account B",
+      "00:58 +23 ~1: D:/Project_Ai/cpns/test/core_test.dart: quick practice has exactly 15 unique questions and immutable snapshots",
+      "00:58 +24 ~1: D:/Project_Ai/cpns/test/core_test.dart: corrupt content package rolls back; valid version retains old attempt snapshot",
+      "00:58 +25 ~1: D:/Project_Ai/cpns/test/core_test.dart: 450 valid original questions, 3 complete disjoint CAT packs",
+      "00:58 +26 ~1: D:/Project_Ai/cpns/test/core_test.dart: all maximum answers = TWK150 TIU175 TKP225, total550",
+      "00:58 +27 ~1: D:/Project_Ai/cpns/test/core_test.dart: blank zero; wrong single answers zero; lowest TKP gives45",
+      "00:58 +28 ~1: D:/Project_Ai/cpns/test/core_test.dart: every TKP weight is respected independently",
+      "00:58 +29 ~1: D:/Project_Ai/cpns/test/core_test.dart: deadline survives serialization and disallows late answers",
+      "00:58 +30 ~1: D:/Project_Ai/cpns/test/core_test.dart: submit is idempotent and freezes answers, including timeout",
+      "00:58 +31 ~1: D:/Project_Ai/cpns/test/core_test.dart: snapshot survives changes to the content master",
+      "00:58 +32 ~1: D:/Project_Ai/cpns/test/core_test.dart: D3 underway does not count as completed D3",
+      "00:58 +33 ~1: D:/Project_Ai/cpns/test/core_test.dart: quiet hours respect same-day and overnight windows",
+      "00:58 +34 ~1: D:/Project_Ai/cpns/test/core_test.dart: Drift cold reopen preserves answers, deadlines, score and immutable submission",
+      "00:58 +35 ~1: D:/Project_Ai/cpns/test/core_test.dart: SQLite namespaces and outbox isolate two users; duplicate operation is idempotent",
+      "00:58 +36 ~1: D:/Project_Ai/cpns/test/core_test.dart: profile and cycle edits preserve past attempts and prior-cycle documents",
+      "00:59 +37 ~1: D:/Project_Ai/cpns/test/papercut_preview_test.dart: all papercut icons are packaged as PNG assets",
+      "00:59 +38 ~1: D:/Project_Ai/cpns/test/papercut_preview_test.dart: capture real Flutter papercut screens at phone size",
+      "01:01 +38 ~2: D:/Project_Ai/cpns/test/security_test.dart: official links reject spoofed hosts, embedded credentials and nonstandard ports",
+      "01:01 +39 ~2: D:/Project_Ai/cpns/test/security_test.dart: minimum content version follows the shipped app version",
+      "01:01 +40 ~2: D:/Project_Ai/cpns/test/security_test.dart: device encryption key persists through secure storage and is never recreated on a missing-key read",
+      "01:01 +41 ~2: D:/Project_Ai/cpns/test/security_test.dart: auth sessions and PKCE verifiers remain isolated between Supabase projects",
+      "01:01 +42 ~2: D:/Project_Ai/cpns/test/security_test.dart: encryption uses fresh nonces, rejects tampering and account swapping",
+      "01:01 +43 ~2: D:/Project_Ai/cpns/test/security_test.dart: missing secure key fails closed and never resets existing progress",
+      "01:01 +44 ~2: D:/Project_Ai/cpns/test/security_test.dart: legacy SQLite progress migrates atomically and survives encrypted cold reopen",
+      "01:01 +45 ~2: D:/Project_Ai/cpns/test/security_test.dart: failed encryption migration leaves every legacy row and outbox intact",
+      "01:01 +46 ~2: D:/Project_Ai/cpns/test/security_test.dart: Supabase origin rejects credentials, paths, spoofed hosts and ports",
+      "01:01 +47 ~2: D:/Project_Ai/cpns/test/security_test.dart: public key validator rejects secret/service-role and malformed JWT values",
+      "01:01 +48 ~2: D:/Project_Ai/cpns/test/security_test.dart: content must use public storage in the connected project",
+      "01:01 +49 ~2: D:/Project_Ai/cpns/test/security_test.dart: content downloader refuses redirects and sends no authorization token",
+      "01:01 +50 ~2: D:/Project_Ai/cpns/test/security_test.dart: content downloader enforces streamed size without trusting content-length",
+      "01:01 +51 ~2: D:/Project_Ai/cpns/test/security_test.dart: CSV exports neutralize formula prefixes after whitespace and control characters",
+      "01:03 +52 ~2: D:/Project_Ai/cpns/test/ui_v12_preview_test.dart: capture v1.2 profile-icons",
+      "01:04 +52 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: profile icons match their purpose and unrelated controls never fall back to a sprout",
+      "01:04 +53 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: Remotion animation is decodable, plays once, and lasts 3.2 seconds",
+      "01:04 +54 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: preparation cards are 3+3+1 centered at 360.0dp and 1.3x",
+      "01:05 +55 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: preparation cards are 3+3+1 centered at 430.0dp and 1.3x",
+      "01:05 +56 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: history tabs/search/kind filters preserve raw attempts and separate Tryout from Latihan",
+      "01:07 +57 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: Soal search finds actual topics and keeps history on its own tab",
+      "01:07 +58 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: answered navigator buttons remain green even when flagged",
+      "01:08 +59 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: intro can be skipped and is only automatic the first time",
+      "01:09 +60 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: replayed intro gets a fresh animation and completes once",
+      "01:09 +61 ~3: D:/Project_Ai/cpns/test/ui_v12_test.dart: reduced motion uses a static logo and advances without an animation",
+      "01:10 +62 ~3: D:/Project_Ai/cpns/test/widget_test.dart: five tabs at 360.0dp with 1.3x text and dark theme",
+      "01:12 +63 ~3: D:/Project_Ai/cpns/test/widget_test.dart: five tabs at 360.0dp with 1.3x text and light theme",
+      "01:14 +64 ~3: D:/Project_Ai/cpns/test/widget_test.dart: five tabs at 430.0dp with 1.3x text and dark theme",
+      "01:15 +65 ~3: D:/Project_Ai/cpns/test/widget_test.dart: five tabs at 430.0dp with 1.3x text and light theme",
+      "01:15 +66 ~3: D:/Project_Ai/cpns/test/widget_test.dart: onboarding provides local start and historical/Medan disclosure"
+    ]
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "beforeSha256": "5620911bc2ce71cd074e7dd03655683cf0f3f724bf17978145df46105b872463",
+      "afterSha256": "6902efbeae41aed36ff0d9312cc475426b010d3cadd34f04565cb583fbcbb458",
+      "purpose": "Perbarui status release, panduan dan bukti terbaru; pertahankan hasil lama sebagai arsip.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/drawable-v21/launch_background.xml",
+      "status": "modified",
+      "beforeSha256": "dca312ec77de83e43ef70a825c299b51451247286c29167d62f19165750b8793",
+      "afterSha256": "19a9bae44553cc6229df9d040273908bf08bb11ed29ed0e2b8f9eb592cb03762",
+      "purpose": "Splash/normal background navy dan logo baru, termasuk Android 12+ dan tema gelap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/drawable/launch_background.xml",
+      "status": "modified",
+      "beforeSha256": "2df60e2cfbee873ce2858088cf003e6b93498f2f568476da437610467ea1a9d7",
+      "afterSha256": "19a9bae44553cc6229df9d040273908bf08bb11ed29ed0e2b8f9eb592cb03762",
+      "purpose": "Splash/normal background navy dan logo baru, termasuk Android 12+ dan tema gelap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "bdf49469616b85c00d61c72dc4ca0384760ddf6b396967a8b96c70ce29035afd",
+      "purpose": "Adaptive launcher memakai foreground dan background navy.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "status": "modified",
+      "beforeSha256": "7f7e2b904a853babd0aad5069a22ffd3973b3b3aa97e4d7845e51f7af36890d4",
+      "afterSha256": "67974198fabbb281baa9895d580ff4133463550d9233290cfe22edc61c453bf8",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "769247a477848da3841c9e65e713ee4458ec44a4e332c5d67a68d8399333a955",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "status": "modified",
+      "beforeSha256": "f0070557bcb2cffab7632a6e78f2c332d1bccb86fd16536bcc0af8eed3defce9",
+      "afterSha256": "d013bbd3c3fa8782c107b7a5392245e92499ba82dca65121db9c25ccad9c1dc8",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ddabc3969187f00ba92b74e7fb95e1f1aa5f58d34325ed5d23deafb132a48d9d",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "status": "modified",
+      "beforeSha256": "51b05a811e88751b3b2fc52e1c63c8fce80c9a9979f18173a809a3ef261c6703",
+      "afterSha256": "14fe3a0c1c68fa1b887a8f01c88b49722b1e6aaac9ac7ee275fe5f3833d4416e",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "792b3ad5ba5d9da588ff0f9f20221d9c9c8e718e9205bfe93b36706e29fe02ce",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "status": "modified",
+      "beforeSha256": "e6bf3441bef63837871a7d9b3b867f78b57d9909c0e32ef13242a664fad97a08",
+      "afterSha256": "390befa653b6b446e6f60c1993bd904a4ee47e14e77bdf75ee381a7262a377fc",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "de5f998c95677942b7f17441037fc9f482eabd76b07720ea90c7b22c0c3aa83e",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "status": "modified",
+      "beforeSha256": "5ac9508f547f905f2f49dee8889ac6bea3f1e428461e45b364eb1731788ffef2",
+      "afterSha256": "0a16af444f8b361c0e66b5d334bb05af7c2b083104bf23298136a5259b7838e3",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2272fcad21582a34ea1fa6414886a5779c7cd71e158c5c94ec1b3f5d09e7eaf3",
+      "purpose": "Launcher/foreground Android dari logo baru pada density terkait.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values-night-v31/styles.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b6baaaf108701533aa1db723d7316528020f9e9413ee51316c95dff341646d07",
+      "purpose": "Splash/normal background navy dan logo baru, termasuk Android 12+ dan tema gelap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values-night/styles.xml",
+      "status": "modified",
+      "beforeSha256": "ea763597dc1a84c8034251caee98d7753e0fbf57340ffc94677427de4b537516",
+      "afterSha256": "bfc785f5a891a8023c346d88ca02731817a545cdca348f19c7bb7433a7d9649b",
+      "purpose": "Splash/normal background navy dan logo baru, termasuk Android 12+ dan tema gelap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values-v31/styles.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b6a6ef244692f02e9bb63f9535f411c3830e1b63ffc0d905f5ee5fe75a12ff87",
+      "purpose": "Splash/normal background navy dan logo baru, termasuk Android 12+ dan tema gelap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values/launcher_colors.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7ccf88dd81f84d5f8321a83553125bda8aff2e2369c5c267e449547e5474185f",
+      "purpose": "Warna background logo/splash navy.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "status": "modified",
+      "beforeSha256": "cca15a99b59380a548bf6a890f7ca5380ee509b1f9bbb2f5f9ec3589fa25c2f7",
+      "afterSha256": "c40716842a1c4f5211a53714bbe00ac65a18de7b9035e3b448a25bbbf84fded8",
+      "purpose": "Splash/normal background navy dan logo baru, termasuk Android 12+ dan tema gelap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled APK verification"
+      ]
+    },
+    {
+      "path": "assets/brand/logo.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "bb06736eaa2b726a568ae01436f10d71552c9fe63ee5038fb2342db8e39369a2",
+      "purpose": "Logo merek papercut buku/jalan/bendera, PNG transparan.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/intro/papercut-intro.webp",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "fb53cda8e436f109b1c073df2a08c0ed5a0ecb73f7d2226dcadfa5b047f22184",
+      "purpose": "Intro WebP offline 3,2 detik, 540×960, 41 frame setelah penggabungan frame diam.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/analytics.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "efb4d322fe72b2edbcff0fee4a42b0d37fc9ef881a44e68aaba3556c8698e55c",
+      "purpose": "Ikon fungsi analytics dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/announcements.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b47d0e4d612d4eb8aa996b52670ed8950bf815193430572d39d3dff154926268",
+      "purpose": "Ikon fungsi announcements dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/backup.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ca85fae749cc1976f32dbe5efab63d30791c2a9f1ba571d467ce4edfe326d9cd",
+      "purpose": "Ikon fungsi backup dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/briefcase.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "674e040152d6a1a6757cd7171d617110d746d3b6f2f23b6c0ed5b3f74a2e0dcf",
+      "purpose": "Ikon fungsi briefcase dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/cloudSync.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "5f55816ec4ca80f2b8cfe3b7b354e7700e42ce6aa08a13d8208e1617bda97786",
+      "purpose": "Ikon fungsi cloudSync dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/device.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "553ea06924891b4248433a184c337921068535e901654660f3b5b7fe46627ee8",
+      "purpose": "Ikon fungsi device dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/download.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "6b90494eb5d2c8da1f02b71710ed98e100e8785f8d9374dde1c758cf24976fd7",
+      "purpose": "Ikon fungsi download dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/formation.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "3d7df6415b541a8c5167520101cb4e636a6fd02e251c49b97cb390654c8d2d06",
+      "purpose": "Ikon fungsi formation dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/help.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "5931a61839e5c2620d4f1af51dc96d8939d5379b44abd6b384de2e5b70e54e9e",
+      "purpose": "Ikon fungsi help dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/logout.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "cb4f3b8430ef37c0b3519583d7c0bad44495e006a665922acdeaa8cd89a44904",
+      "purpose": "Ikon fungsi logout dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/moon.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "8452fc5f44a6a401cd1fe691a828137335b5b5af6a7bdb8d8720f10625782298",
+      "purpose": "Ikon fungsi moon dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/plan.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b22ff335bc43241450b1c353b7cb934617d1ecf877d05687461ae3a8ba1e5d85",
+      "purpose": "Ikon fungsi plan dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/privacy.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ada3ea5d85060010a102597c66ba9f71deb714743bdac48f3bbb8aa9f07bc278",
+      "purpose": "Ikon fungsi privacy dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/results.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "1b9b0936562d73d53f979aa08d53646f60d2b931ed782799e20c34924c683e9d",
+      "purpose": "Ikon fungsi results dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/review.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "99197b16857d0a31abbfb3b2da3abde09771990bde5bb9140ee3ec08c18e2879",
+      "purpose": "Ikon fungsi review dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/search.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ff5af4af829cc34acd0264b16a1a0ea25348b58d5838c5705bed061ba44aad21",
+      "purpose": "Ikon fungsi search dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/settings.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "205d27ba0ab13e0cd2bc598c9559d0762452e50623cbbf70b96865d915bb515a",
+      "purpose": "Ikon fungsi settings dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/sources.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ac7985205a90999b1366e369a9c7a3ae4428e816ae1a974211cd757ee83aec3a",
+      "purpose": "Ikon fungsi sources dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/verified.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "c558ba2ebd37f82760646ccf74d1eb2564dbd35bc92be13f3ab1fd9dc28153e9",
+      "purpose": "Ikon fungsi verified dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "assets/papercut_functions/wallet.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "74aa7f5ffde779bc24cbf7166c75aca9836dc35975f13b7f0abe19c66b1a2dca",
+      "purpose": "Ikon fungsi wallet dipotong dari atlas bersih.",
+      "validation": [
+        "Flutter asset loading",
+        "UI/intro rendering",
+        "release packaging"
+      ]
+    },
+    {
+      "path": "docs/KEAMANAN.md",
+      "status": "modified",
+      "beforeSha256": "83f4f56ef673f8e3feaf133f75fdfd25c53de9117e7e1f427aa8cec9fc453cc2",
+      "afterSha256": "2b5b7216d21a943276c22c18bc1559567506680947a8ae460059b7bbb7d8e66f",
+      "purpose": "Perbarui status release, panduan dan bukti terbaru; pertahankan hasil lama sebagai arsip.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/LANJUTKAN_DI_CODEX.md",
+      "status": "modified",
+      "beforeSha256": "2924cd2e1c62987f5bf2ce10cf00c182fdf0bd51d8179ba68b48f09465521ca4",
+      "afterSha256": "bc6d57ac2b2cd9b01f645a27342c2e7a865738cde7f7680e2f73279f7dc6f4a6",
+      "purpose": "Perbarui status release, panduan dan bukti terbaru; pertahankan hasil lama sebagai arsip.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/UPGRADE_UI_V1_2.md",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "470e2b0ce70c72dfbc623910564d552a7b5dcc912c5e43502d81070fe843137f",
+      "purpose": "Laporan perubahan per file dan hasil pengujian tahap UI 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/UPGRADE_UI_V1_2_FILES.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": null,
+      "purpose": "Laporan perubahan per file dan hasil pengujian tahap UI 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/VERIFIKASI.md",
+      "status": "modified",
+      "beforeSha256": "3a936a5bc4e0590e38b89113eb557249265cdda84f548d04c0ee0262f5e7239e",
+      "afterSha256": "5eb15714026bb5e440faa342a659aec00ac30b2caf8d16793a413bd34bc21682",
+      "purpose": "Perbarui status release, panduan dan bukti terbaru; pertahankan hasil lama sebagai arsip.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/PAPERCUT.md",
+      "status": "modified",
+      "beforeSha256": "b4d9cd573a35f94817ad95b0525ff4be834e85efc57cb38740b2f84edcd460e7",
+      "afterSha256": "dfda19ca1108af65b02c8e9bfe98630c8e027cd59cb5614ebf6e029204fbc504",
+      "purpose": "Perbarui status release, panduan dan bukti terbaru; pertahankan hasil lama sebagai arsip.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/category.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "347192330939940cde17f6c883a71eace3b7d77f7ba2f86fa770a243a4624286",
+      "purpose": "Screenshot category.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/daily.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "febe5e002f5b24c05615301e68664e5f64aee7e37736bb54fb732043f8c7a0cb",
+      "purpose": "Screenshot daily.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/history.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "fa7daf026f73e6999d294b7890f2471ed24efc49bbbfbaccc8744101d777ca7b",
+      "purpose": "Screenshot history.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/home.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2b7965bbe0ffb65c03980561dddfd85dbb5c3946b480718bc207f7d30a2b8443",
+      "purpose": "Screenshot home.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/light-large.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "dc2296d3d1c4ce130cb3eb6437d92953eb6113dfc40399d438a61f74672a576e",
+      "purpose": "Screenshot light-large.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/monthly.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "d352ac86688126ddcc37fdb6bb4ffbf250bceb7d3ced699fef97b0ebd551ec71",
+      "purpose": "Screenshot monthly.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/navigator.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "9e26b9a3637561a9efac649e358c0e7eb5cc5eabd14b970c1b7a8a8fd0434b7b",
+      "purpose": "Screenshot navigator.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/overview.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "89696fa39a3a4f260acceb40b4e6f9f644f3ad38fcd2170bfbb008ea1d12c231",
+      "purpose": "Montase enam screenshot Flutter nyata untuk tinjauan cepat.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/preparation.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ca1d7a8cd16e098f929e3602ccace37c5259c917b08b772a4d3ed4e7da9170ac",
+      "purpose": "Screenshot preparation.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/priorities.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "fbe7024ab4680ad984cca61cf51bdd2dc3d8feef0dbe5ca691ba0ece89f8823e",
+      "purpose": "Screenshot priorities.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/profile-icons.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ffb46bf6995eff5f7ac3e453f69bf0d572e654e0b3091f15621ccfb2f63596fa",
+      "purpose": "Screenshot profile-icons.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/profile.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "66363702bad072203898ddaf67bfb31bdc97d7f720837105da8a03752876d04a",
+      "purpose": "Screenshot profile.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/screenshots.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "025929e471843130371809b75c1d82a21232fecb025f28667286fe9b627921ad",
+      "purpose": "Metadata dimensi, viewport dan SHA-256 ke-13 screenshot Flutter.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/tryouts.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "5bd5d0c0ff7c4531eebd19ac0928690bd791e13bf1026142b3cb61d9a636b54f",
+      "purpose": "Screenshot tryouts.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/screenshots/v1.2.0/weekly.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "fd169e81054d36f87f1c42d64811f5afaa2605300336729b3834843da5880095",
+      "purpose": "Screenshot weekly.png dari renderer Flutter dengan label DATA UJI.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/ASSETS.md",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "77f897c1178535c1220d37cb1eea20778eeca670becf95d9c78676f43f4eb6ee",
+      "purpose": "Provenance dan sumber generasi ikon/logo; atlas utuh tidak dikemas ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/function-icons-atlas-clean.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "c62b4131d7175a6a20f44e555cab11cc8051a364084a2d64b531c60efb8f6ceb",
+      "purpose": "Provenance dan sumber generasi ikon/logo; atlas utuh tidak dikemas ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/function-icons-atlas.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "da06b067738226e52ca26d6f638b95e9b0af8007f58c97f8f4ebc06b328c7501",
+      "purpose": "Provenance dan sumber generasi ikon/logo; atlas utuh tidak dikemas ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/asset-metadata.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "3253e49fb87023e616096c9770ab5933e54ebf5acba30d167686aba3bd48154e",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/frame-20.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "d3475d6fce0a2de2f66efcc50f7dfcec9e6ad1ce077ddd77943cc881e89d4c3c",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/frame-48.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "a48c5842670e6850ea68a5543e2907b03b2637bb34b6e33b1bc7a1103b3b0439",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/frame-95.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "11f8236a865eef5e22e0c4b7a29e7cc7f733ccc16941abcd4b44124a272b2e3d",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/intro-still.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "9faa034deba19cfc148403c5c19ff97c4bc7ce4aa93973cdf5dc936ace2557d3",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/papercut-intro.mp4",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "49618d1c8a863378c775df91230771f806d169e17aefca987201b61f42d12be7",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/qa-contact-sheet.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7ace594bf4cb0fc26d1e975f1524e753b58729a3c82d885a5a9142251407fcdd",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/qa.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "de9f30c042aae08030ac1e6131f142aa19d525fdb16a3bc484a8397d0ade273e",
+      "purpose": "Artefak video/still/QA intro final, tidak dikemas sebagai MP4 ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/logo-source.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "a81aa5d83790c4063d36a1fb1982d876775330bbc8ceba52bb55d8b0b45920e5",
+      "purpose": "Provenance dan sumber generasi ikon/logo; atlas utuh tidak dikemas ke APK.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/dependency-audit-1.1.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2c6a359fa46a1ae427336236ff042ec95ce9f8f815d821edcaaacc329adb04be",
+      "purpose": "Arsip bukti keamanan release 1.1.0 sebelum hasil terbaru diganti.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/dependency-audit-1.2.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "f08117e203f91db1ed788adac37c4379221b79be4604e2830b42504bb354ff0b",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/dependency-audit.json",
+      "status": "modified",
+      "beforeSha256": "2c6a359fa46a1ae427336236ff042ec95ce9f8f815d821edcaaacc329adb04be",
+      "afterSha256": "f08117e203f91db1ed788adac37c4379221b79be4604e2830b42504bb354ff0b",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/intro-npm-audit-1.2.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2bacdc817f5707f6663a9002ce9970eabf301ec7ed49b4f84845ec634dd49ca9",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/lint-results-release-1.1.0.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7160c75eac6612b37a0dce1a76cdfd5f17d967da8126a23bea64e51d002b199a",
+      "purpose": "Arsip bukti keamanan release 1.1.0 sebelum hasil terbaru diganti.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/lint-results-release-1.2.0.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7160c75eac6612b37a0dce1a76cdfd5f17d967da8126a23bea64e51d002b199a",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/regression-1.2.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "00839e3254a1b7d73746e6b441518e24e705a09ab86909a1ef43cfe59934ac32",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/release-security-1.1.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "1dbc5dcb0bafb52a8883838c403296042e0a903b887b185a181ffea6cae6b650",
+      "purpose": "Arsip bukti keamanan release 1.1.0 sebelum hasil terbaru diganti.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/release-security-1.2.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "aedd4178b2e2c70909b4a155084d508629b00034267b1e781c4f84043791f35e",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/release-security.json",
+      "status": "modified",
+      "beforeSha256": "1dbc5dcb0bafb52a8883838c403296042e0a903b887b185a181ffea6cae6b650",
+      "afterSha256": "aedd4178b2e2c70909b4a155084d508629b00034267b1e781c4f84043791f35e",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/source-secrets-1.1.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "bb17e688b0e0ef913d5ae5943c577dd9ab7419219c8c4e5a429e6e49c1011a9a",
+      "purpose": "Arsip bukti keamanan release 1.1.0 sebelum hasil terbaru diganti.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/source-secrets-1.2.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "010ad22e6aa4fa67a473862937710690f7254a25cd7df87c4f35b2eeca22005a",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/source-secrets.json",
+      "status": "modified",
+      "beforeSha256": "bb17e688b0e0ef913d5ae5943c577dd9ab7419219c8c4e5a429e6e49c1011a9a",
+      "afterSha256": "010ad22e6aa4fa67a473862937710690f7254a25cd7df87c4f35b2eeca22005a",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "docs/security/ui-assets-1.2.0.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2758dfd45403b0123f6a8c507bba1ac8cf29b1d0080048296a20b630c27724fb",
+      "purpose": "Bukti pemeriksaan release/dependensi/source 1.2.0.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "lib/app/intro.dart",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "e3a1e04786c7320ca9cad26eef61db29822a78dce5c647b5d822f94e9677918c",
+      "purpose": "Intro offline sekali tampil, skip/replay, codec baru dan reduced motion; preferensi terpisah dari snapshot.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/app/paper.dart",
+      "status": "modified",
+      "beforeSha256": "9482fe7a5db72d1f34458486ebd7bce3a6af5ff166d27bf1ad7884d0bbe0236a",
+      "afterSha256": "9fe5e1a46d5e56692de3ac1e0de59faabb4086f344292f229e27d4d29e40f485",
+      "purpose": "20 aset fungsi dan pemetaan semantik; hapus fallback tanaman untuk kontrol tanpa pemetaan.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/app/theme.dart",
+      "status": "modified",
+      "beforeSha256": "c9f73a4122402cfe37e36253af253981af2b8a4fffb35f339f35f27c327a5971",
+      "afterSha256": "8dd353ef19360baa0eb76d6b44c89325d9fb705c42c9992057ac15f5d2b398a4",
+      "purpose": "Warna hijau jawaban yang dapat dibaca pada tema gelap/terang.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/app/widgets.dart",
+      "status": "modified",
+      "beforeSha256": "9d49b71c85abefea111b6fd99756e102c509f649af64cede8a64f25b62c2e098",
+      "afterSha256": "5395f4a106489601f3914138987e0c1b5e96be27300c2296d29b951b1998429d",
+      "purpose": "ActionTile mendukung aset/leading eksplisit; BrandMark memakai logo baru; fallback Material sesuai fungsi.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/core/app_version.dart",
+      "status": "modified",
+      "beforeSha256": "4187b490caec28ed6b820b9dc4473b1448277abcb16a580dfcc98ac79cf93569",
+      "afterSha256": "77c86fe5ea57547146fea8c33e9117cb5a92ec7a53fda852e04aadce340b80e8",
+      "purpose": "Versi aplikasi menjadi 1.2.0 untuk kontrak konten.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/features/analytics.dart",
+      "status": "modified",
+      "beforeSha256": "85ff79bfe87bedef24085a19b900e79f7a044a8b2a03b5a716971610cc8c2f59",
+      "afterSha256": "9215617ecd5877dfb6e98ffd5df3df3575217e16bb9b6c53393a222de84e3997",
+      "purpose": "Ringkasan tiga angka, filter ringkas, rincian/sumber dapat dibuka tanpa mengubah rumus.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/features/analytics_charts.dart",
+      "status": "modified",
+      "beforeSha256": "3bbe92704fd69655d9de7a5ad70a54c8ac5f9a9484cc25137a6c3c7f2fb1fbb6",
+      "afterSha256": "6e147f257d2f5e5f7aaeae0f56ed4257484784aaba36f7e7106475a6bbda862b",
+      "purpose": "Caption, legenda dan tabel grafik lebih ringkas; data serta skala dipertahankan.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/features/home.dart",
+      "status": "modified",
+      "beforeSha256": "c7069af946c5ca27f24ba471a75bbaf01897ef68166bb13aa564d507de2e94d7",
+      "afterSha256": "546d8a78d79e80d6ef64199c8404296a68eee5c57181b2757ba374c3fb51bc1b",
+      "purpose": "Prioritas belajar menjadi kartu bernomor; perbaiki label sumbu skor 100%.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/features/journey.dart",
+      "status": "modified",
+      "beforeSha256": "70cc7b56f7dfadd671f24d183b5e841e28f3d52106da96d5ca5a3e481c883d3c",
+      "afterSha256": "038e11f4d7f923da6481c9202a556b0e1ea5767ae299b0a856fb45ad8fba7231",
+      "purpose": "Tujuh menu persiapan menjadi kartu seragam 3–3–1 dengan kartu terakhir di tengah.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/features/profile.dart",
+      "status": "modified",
+      "beforeSha256": "b9e8993140fd6440f827993a64a0a01494b9e9370dcef0190210c5d930d68d13",
+      "afterSha256": "600e8770578c2249001a799a13c653dfa4cf0553520aec019ea8e07ca5d3bc80",
+      "purpose": "Ikon perangkat/sync/backup/privasi/sumber berbeda dan akses replay intro.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/features/tryout.dart",
+      "status": "modified",
+      "beforeSha256": "3121c518573cb2eada0bcecaf61e9db968144303bdd6b4ac36424b46725eca22",
+      "afterSha256": "4ab6a18068a5c7af307695de302faf55adc7ba289bcc6e2d23bb84ec6642341b",
+      "purpose": "Tab Soal/Riwayat, pencarian, filter dan batch riwayat, urutan tanggal aman untuk metadata lama; jawaban/navigator hijau.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "lib/main.dart",
+      "status": "modified",
+      "beforeSha256": "2c8c8c2a7b1ad497ae2c172a0eb8b2f3dd56cc9e0d5d8422a5ef33db8d02eb3c",
+      "afterSha256": "e23af50416a53c6b2162f2fc90949157b6ab80d838ce49d55883228e8c7af3d6",
+      "purpose": "IntroGate di runtime dan route replay /intro, routing existing tetap tersedia.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "pubspec.yaml",
+      "status": "modified",
+      "beforeSha256": "36aa44e0302f16ebb8097174b5ca1972b1061526b4e77c7daaa1c3a8ff9c2e1d",
+      "afterSha256": "74dbe609f8f038c4c596ef21db10fef7f3ec155562fee2efd6f177cbc0d4ab10",
+      "purpose": "Versi 1.2.0+5 dan bundel folder aset baru; tidak menambah dependensi Flutter.",
+      "validation": [
+        "reviewed report/artifact",
+        "source pattern scan for text files"
+      ]
+    },
+    {
+      "path": "scripts/build_verified_release_windows.ps1",
+      "status": "modified",
+      "beforeSha256": "f84e16b29764c5fb6be830e5864e13c41f490f91f148c544e5cd91a981e80995",
+      "afterSha256": "2dfee2512aa4629ad0b6d888711959934c09f995f412314906c0a64eea210d2a",
+      "purpose": "Tambahkan verifikasi byte artwork dan pixel launcher ke pipeline release existing.",
+      "validation": [
+        "PowerShell parse or execution",
+        "documented generated outputs"
+      ]
+    },
+    {
+      "path": "scripts/capture_design_previews.ps1",
+      "status": "modified",
+      "beforeSha256": "10a4cad91f579161d20b2ef4e05c235335e7b061592161c7b02847eb031b8b41",
+      "afterSha256": "9de848c61f4c8611dc426c7d8771c0b752e49357ae007c6df13a64d0973333f9",
+      "purpose": "Capture 13 skenario UI 1.2.0 tanpa database pengguna.",
+      "validation": [
+        "PowerShell parse or execution",
+        "documented generated outputs"
+      ]
+    },
+    {
+      "path": "scripts/prepare_papercut_v12.ps1",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "a9e2d905beefa6616262620c748dd482f9e683795d62356ce214f8575dbf0e36",
+      "purpose": "Pemotongan atlas bersih dan resize logo/launcher lima density dengan alpha.",
+      "validation": [
+        "PowerShell parse or execution",
+        "documented generated outputs"
+      ]
+    },
+    {
+      "path": "scripts/render_papercut_intro.ps1",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "c8b465190a442b10c2589c9108f0024f261256ec75140a021c8901c47baf86d5",
+      "purpose": "Render MP4/PNG Remotion, encode WebP, decode dan QA dengan tooling lokal.",
+      "validation": [
+        "PowerShell parse or execution",
+        "documented generated outputs"
+      ]
+    },
+    {
+      "path": "scripts/verify_ui_release_assets.ps1",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "0f856842851e08bf7350c14c0466713b70985472a39c937faaca50a99e637dbf",
+      "purpose": "Periksa 40 aset artwork Flutter, pixel lima density launcher/foreground, adaptive XML dan monochrome pada APK final.",
+      "validation": [
+        "PowerShell parse or execution",
+        "documented generated outputs"
+      ]
+    },
+    {
+      "path": "test/analytics_preview_test.dart",
+      "status": "modified",
+      "beforeSha256": "f424d4ee74c1aa9ae1abc0cbfdc20bb373aa904665238d261d01b428a9e5f993",
+      "afterSha256": "dee704e38d57386c6d3c69bd9f99e088d2b9c944e9ba40508176edc6b602ea0c",
+      "purpose": "Precache path aset lama/baru; fixture preview dipakai ulang.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "test/analytics_ui_test.dart",
+      "status": "modified",
+      "beforeSha256": "c488fee136c84bc7c54409e7b8cf4108b331136ea81de83ef4abf2083dd4619f",
+      "afterSha256": "4e38209651253eca7b04144ca3585bf865debfe699f7c8369ad83e76ebf11f47",
+      "purpose": "Sesuaikan interaksi rentang dropdown pada regresi grafik dan tema/font besar.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "test/papercut_preview_test.dart",
+      "status": "modified",
+      "beforeSha256": "b414e9f64ee6773bfa573eb755948e90426b52ebb9191d5728fac774e221248e",
+      "afterSha256": "4838eef29938ad3c7c9ab04be701ce3ad0b4506e88caf85d36cc4606fe0f3ff7",
+      "purpose": "Verifikasi seluruh 36 ikon dikemas dan gunakan path aset per keluarga.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "test/security_test.dart",
+      "status": "modified",
+      "beforeSha256": "707aa1347bae9f307c29db46ee7d016247d50d241c2aaadf46a7fbccb4f22f63",
+      "afterSha256": "246bbb658bed6737601f91860d67cc6d37eb5573cdd212f394a764f434222929",
+      "purpose": "Sesuaikan versi konten tak didukung terhadap release 1.2.0.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "test/ui_v12_preview_test.dart",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b02539d0cfc827c371b6f2fca432c2a50e0e2ee943e6c65f78a415ac51e04e09",
+      "purpose": "Renderer 13 screenshot UI/data uji terisolasi, opt-in.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "test/ui_v12_test.dart",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "56d7e445f23ea246574bec3eaf60262e46a63255078a2b4a78b33a8a49dd640f",
+      "purpose": "Regresi ikon, simetri kartu, pencarian/filter/history lama, hijau jawaban, durasi/skip/replay/reduced motion intro.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "test/widget_test.dart",
+      "status": "modified",
+      "beforeSha256": "2cff0cc81edb352d891d0871a4f28d12db9bb432bfe6d436e80c8cf05c2ac26e",
+      "afterSha256": "c68638a9fcbdd323c43b9f4c9cde345693ea594bee077862b70565cbcc4632bd",
+      "purpose": "Regresi lima tab pada 360/430 dp, teks 1,3×, kedua tema serta onboarding.",
+      "validation": [
+        "flutter analyze",
+        "flutter test",
+        "UI previews where applicable"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/.gitignore",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "034a0419c90e9c78aecfab8f74649db5d7961c9665cb46ecf44fcc8f7ac330f2",
+      "purpose": "Konfigurasi, brief atau panduan render intro lokal.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/README.md",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "1d853d0501ecd3d522cef21ae9e69255e9352719367dacf28af11def5c70291b",
+      "purpose": "Konfigurasi, brief atau panduan render intro lokal.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/brief.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "08c94bfe8824f6b20a9933902ec9d8b38ebbfce4a2c7f9ccfce36a1cf3be04d6",
+      "purpose": "Konfigurasi, brief atau panduan render intro lokal.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/contact-sheet.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "95af2d926abe79fccd289fb3041d6394eae265307f1a0a2745b0e01d3b6b9107",
+      "purpose": "Gabungkan capture Flutter nyata ke overview; catat dimensi/hash ke-13 screenshot.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/encode-webp.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "6e1bdcbb87ab0809309fe39f65bc8c9fa023a6d15d2478a16724f5fd23bc624c",
+      "purpose": "Gabungkan PNG Remotion menjadi WebP dengan pemeriksaan dimensi/durasi.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/package-lock.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "bf4d7c9516847a1d49e139c44466d26ec0b6276339bf2c97b36d9c56b1abef50",
+      "purpose": "Dependensi tooling Remotion/React/Sharp dikunci; terpisah dari APK.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/package.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "d15fc08d89b40eb8a3fa323373913b79835538ecc842a06669d41e41d2e88851",
+      "purpose": "Dependensi tooling Remotion/React/Sharp dikunci; terpisah dari APK.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/public/PlusJakartaSans.ttf",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "89b3fb38aa0d275d7a731d0d817a4f1622b316b4d7fbdedcf02ee9099ff68bc8",
+      "purpose": "Salinan lokal logo/font untuk renderer Remotion; sumber aplikasi tetap tersedia.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/public/logo.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "bb06736eaa2b726a568ae01436f10d71552c9fe63ee5038fb2342db8e39369a2",
+      "purpose": "Salinan lokal logo/font untuk renderer Remotion; sumber aplikasi tetap tersedia.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/qa.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2dfdaf2974cfa03cedbf4de2ba9c2769eb601eabf8961f7971e086b468ce8ad8",
+      "purpose": "QA seluruh frame final/debug, safe area teks dan contact sheet.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/src/debug.tsx",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "333ac34d09cf8e90b70247e0584576df46cad983fd38316ee33f8d9fd7649b11",
+      "purpose": "Komposisi/warna/debug Remotion intro papercut.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/src/index.tsx",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2b4f1c30e4664c60a82c98e7481e2f2556bcc73457dd64cf53d9e4bf1a572842",
+      "purpose": "Komposisi/warna/debug Remotion intro papercut.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/src/style.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "928fbe5be48a9494e026aba6be1783334e31f43559cc0906fa61a3dcc4a0b2bd",
+      "purpose": "Komposisi/warna/debug Remotion intro papercut.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/tsconfig.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "c5f4031c51162689342b0b478d8756df97f4d06396fea92b77dbdbbce98ad492",
+      "purpose": "Konfigurasi, brief atau panduan render intro lokal.",
+      "validation": [
+        "TypeScript noEmit",
+        "Remotion render + frame QA",
+        "npm audit"
+      ]
+    }
+  ],
+  "selfHashNote": "This manifest lists itself with a null hash to avoid recursive self-hashing. Markdown report hash includes the final generated file table."
+}

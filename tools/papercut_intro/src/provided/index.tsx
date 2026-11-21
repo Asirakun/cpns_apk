@@ -1,0 +1,1 @@
+import React from 'react';import{registerRoot,Composition}from'remotion';import{CpnsIntro}from'./CpnsIntro';registerRoot(()=> <Composition id='ProvidedIntro' component={CpnsIntro} width={1440} height={3200} fps={30} durationInFrames={200}/>);

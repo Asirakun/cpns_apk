@@ -7,6 +7,7 @@ import '../core/controller.dart';
 import '../core/services.dart';
 import '../app/widgets.dart';
 import '../app/theme.dart';
+import '../app/paper.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -51,8 +52,14 @@ class _OnboardingState extends ConsumerState<OnboardingScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40),
-                  const Tag('LANGKAH PERTAMA', color: teal),
+                  const SizedBox(height: 24),
+                  const Row(
+                    children: [
+                      Expanded(child: Tag('LANGKAH PERTAMA', color: teal)),
+                      SizedBox(width: 25),
+                      PaperArt(PaperAsset.balloon, size: 88),
+                    ],
+                  ),
                   const SizedBox(height: 18),
                   Text(
                     'Perjalanan besar.\nMulai dari hari ini.',

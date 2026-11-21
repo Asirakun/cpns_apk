@@ -163,7 +163,7 @@ Json initialData() => {
   'target_city': 'Medan',
   'minutes': 45,
   'plan_days': 30,
-  'theme': 'system',
+  'theme': 'dark',
   'bookmarks': <String>[],
   'completed': <String>[],
   'lesson_positions': <String, dynamic>{},

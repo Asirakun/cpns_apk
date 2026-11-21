@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "voice": "Bella - Professional, Bright, Warm",
+  "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+  "model": "eleven_multilingual_v2",
+  "language": "id",
+  "audioSource": "audio/elevenlabs-final.wav",
+  "sha256": "93cd61c79925e19e25a40015f82bd8e0e7190d18ad09c32ae387ee052336c201",
+  "scenes": 12,
+  "naturalSpeech": true,
+  "speedAdjustment": 1,
+  "duration": 121.33333333333333
+}

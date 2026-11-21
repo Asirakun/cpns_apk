@@ -6,13 +6,15 @@ Untuk melanjutkan melalui ekstensi Codex di VS Code, baca [panduan lanjutan](doc
 
 ## Menjalankan aplikasi dan status APK
 
-**Status sesi ini:** kode Flutter dan build web lokal telah diuji. Build APK belum berhasil karena unduhan dependensi Android berulang kali mengembalikan HTTP 503 (termasuk `androidx.datastore:datastore-core-android:1.2.1`). Belum ada APK yang siap dipasang dari sesi ini.
+**Status 21 November 2026:** versi 1.2.3 memakai navbar kapsul mengambang dengan lima ikon lama. Intro cpns-intro dengan SFX, latar aplikasi dan tanpa tombol Lewati ikut dalam APK. Data, fitur dan kunci release existing dipertahankan. [APK](build/releases/cpns-journey-1.2.3-arm64-v8a.apk), [laporan file/tes](docs/NAVBAR_V1_2_3.md), [screenshot](docs/design/screenshots/v1.2.3/home.png). 70 tes Flutter/33 SQL/42 APK/118 aset lulus. Uji audio HP fisik belum dilakukan.
 
-Setelah build Android berhasil:
+Untuk memasang APK release:
 
-1. Pasang APK pada Android 6.0+ **ARM64**. Izinkan instalasi dari sumber yang kamu pilih saat Android meminta.
+1. Pasang APK pada Android 7.0+ **ARM64**. Izinkan instalasi dari sumber yang kamu pilih saat Android meminta.
 2. Buka aplikasi, isi nama panggilan, lalu **Mulai di perangkat**. Materi, CAT dan checklist bisa digunakan tanpa akun/internet.
-3. Untuk cloud, siapkan proyek Supabase sendiri, jalankan SQL di bawah, lalu Profil → Akun → masukkan Project URL dan publishable/anon key. Jangan masukkan secret/service_role key.
+3. Untuk cloud, hubungkan proyek Supabase existing milikmu, jalankan SQL di bawah, lalu Profil → Akun → masukkan Project URL dan publishable/anon key. Jangan masukkan secret/service_role key.
+
+Jika APK debug sebelumnya sudah terpasang, identitas penandatangan berbeda dan Android dapat menolak update. Jangan menghapus aplikasi/data sebelum mengekspor progres dan memastikan cara pemulihannya; UI impor JSON belum tersedia. Pemeriksaan ini tidak menghapus data perangkat.
 
 Konfigurasi signed release telah disiapkan; simpan kunci rilis milikmu di tempat privat agar pembaruan berikutnya memakai tanda tangan yang sama. Source tidak menyertakan private key. Mode perangkat dan mode akun sengaja mempunyai namespace terpisah; progres tamu tidak otomatis dipindah ke akun. Ekspor sebelum beralih atau menghapus data.
 
@@ -38,12 +40,12 @@ flutter analyze
 flutter test
 ```
 
-Versi build: Flutter 3.50.1 / Dart 3.14.0, JDK 21, compile/target SDK 36, minimum SDK 23. Material UI dipakai melalui paket resmi `material_ui` karena Flutter 3.50 telah memindahkan library Material dari impor lama. Dependency `image` dipin 4.5.4 untuk kompatibilitas dengan `archive` yang tersedia; lockfile disertakan.
+Versi build: Flutter 3.50.1 / Dart 3.14.0, JDK 21, compile/target SDK 36, minimum SDK 24 (Android 7.0), mengikuti minimum yang didukung Flutter ini. Material UI dipakai melalui paket resmi `material_ui` karena Flutter 3.50 telah memindahkan library Material dari impor lama. Dependency `image` dipin 4.5.4 untuk kompatibilitas dengan `archive` yang tersedia; lockfile disertakan.
 
 ## Supabase
 
 1. Buat proyek Supabase. Paket/kuota/pausing mengikuti ketentuan Supabase, bukan jaminan aplikasi.
-2. Jalankan `supabase/migrations/202611200001_initial.sql`, kemudian `supabase/seed.sql` di SQL Editor. Supabase CLI `supabase db push` dapat dipakai sebagai alternatif.
+2. Gunakan proyek Supabase existing. Terapkan hanya migrasi yang belum terpasang sesuai urutan: initial, optional private storage, security hardening, lalu `202611210001_analytics_additive.sql`. Jika 001–003 sudah terpasang, cukup migration analitik baru. Jangan membuat ulang database atau menjalankan seed ulang untuk upgrade. Supabase CLI dapat dipakai dengan riwayat migration yang sesuai.
 3. Migration kedua berisi bucket **private** untuk pengembangan unggah di masa depan; UI v1 tetap metadata-only. Tidak ada kebutuhan mengunggah KTP/KK.
 4. Aktifkan email/password dan email confirmation. Tambahkan `id.cpnsjourney://login-callback` pada Auth → URL Configuration → Redirect URLs, dan konfigurasi email/SMTP untuk verifikasi/reset sesuai layananmu.
 5. Hubungkan Project URL dan **publishable/anon** key dari aplikasi. Alternatif build: `--dart-define-from-file=.env.json` dengan objek JSON public settings. Jangan menyimpan secret/service-role key dalam source/APK.
@@ -52,7 +54,7 @@ Versi build: Flutter 3.50.1 / Dart 3.14.0, JDK 21, compile/target SDK 36, minimu
 
 RLS aktif pada 27 tabel public. Master hanya dapat dibaca jika published; penulisan user dilakukan lewat RPC `sync_user_state` yang mengambil identitas dari JWT, menggunakan lock/version, UUID operation id dan transaksi. Snapshot adalah sumber sinkronisasi utama; profil, attempt/jawaban, dokumen, tahap dan progres juga diproyeksikan ke tabel terstruktur. Kolom/tabel lain disiapkan untuk pengembangan; bukan semua diisi sebagai data terpisah oleh UI saat ini.
 
-SQLite/Drift menyimpan snapshot per namespace dan outbox atomik di Android. Jawaban dan deadline disimpan setelah tiap perubahan. Retry menggunakan backoff; UI menyatakan **tersimpan di HP** sampai cloud mengonfirmasi. Konflik versi meminta pemilihan data. Memilih perangkat tidak boleh mengubah attempt cloud yang sudah submitted; jika riwayat berbeda, gunakan data cloud atau backup lengkap. Logout menghapus cache akun di perangkat setelah konfirmasi. Hapus akun memanggil RPC dan cascade ke seluruh data miliknya.
+SQLite/Drift menyimpan snapshot per namespace dan outbox atomik di Android. Payload snapshot dienkripsi AES-256-GCM menggunakan kunci acak melalui secure storage; metadata namespace/outbox tetap terbuka. Jawaban dan deadline disimpan setelah tiap perubahan. Retry menggunakan backoff; UI menyatakan **tersimpan di HP** sampai cloud mengonfirmasi. Konflik versi meminta pemilihan data. Memilih perangkat tidak boleh mengubah attempt cloud yang sudah submitted; jika riwayat berbeda, gunakan data cloud atau backup lengkap. Logout menghapus cache akun di perangkat setelah konfirmasi. Hapus akun memanggil RPC dan cascade ke seluruh data miliknya.
 
 ## Fitur yang tersedia
 
@@ -74,13 +76,13 @@ Tidak ada data resmi formasi/jadwal 2026 yang diasumsikan benar. Portal merupaka
 
 ## Build signed release
 
-Buat `android/key.properties` dari contohnya, lalu arahkan ke JKS privat milikmu pada D. Untuk memperbarui APK kelak, gunakan kunci rilis yang sama. Naikkan angka `+versionCode` pada pubspec untuk update.
+Pada komputer pemilik ini, kunci release privat sudah dibuat di `D:\Development\keys\cpns-journey-release.p12` dan `android/key.properties` sudah dikonfigurasi secara lokal. Simpan backup privat kunci dan kredensial; gunakan kunci yang sama untuk pembaruan. Jangan mengganti identitas penandatangan saat merilis update. Pada mesin baru, siapkan `android/key.properties` dari contoh dan arahkan ke kunci privat milik sendiri. Naikkan angka `+versionCode` pada pubspec untuk update.
 
 ```powershell
-flutter build apk --release --target-platform android-arm64
+.\scripts\build_verified_release_windows.ps1
 ```
 
-Untuk perangkat ARM 32-bit, build terpisah dengan `--target-platform android-arm`. Play Store/AAB berada di luar distribusi pribadi ini. Jangan commit `key.properties`, JKS, atau kredensial privat.
+Skrip menjalankan analisis, tes Flutter/SQL, pemindaian secret, build release ARM64, Android Lint, audit advisori dan verifikasi APK; membutuhkan `npm ci --ignore-scripts` lebih dahulu. Lihat [laporan keamanan](docs/KEAMANAN.md) untuk bukti dan batas pemeriksaan. Untuk perangkat ARM 32-bit, build dan verifikasi terpisah diperlukan. Play Store/AAB berada di luar distribusi pribadi ini. Jangan commit `key.properties`, JKS/PKCS12, atau kredensial privat.
 
 ## Verifikasi
 
@@ -100,3 +102,8 @@ Pengujian database memakai PostgreSQL embedded PGlite dengan fixture auth/storag
 `lib/app` tema/router widgets; `lib/core` model, Drift, cloud/sync, notifikasi/ekspor; `lib/features` layar lima tab dan alurnya; `assets/content` paket berversi; `supabase` migrasi/seed/security tests; `scripts` setup drive D dan generator/import konten. Target web hanya digunakan untuk pengujian UI lokal, bukan website yang di-host.
 
 Aplikasi independen, bukan produk BKN/Kemenkeu; tidak terhubung SSCASN serta tidak menjamin kelulusan atau lokasi Medan.
+
+
+## Video demo dan sumber animasi
+
+Proyek video Remotion terintegrasi tersedia di [video-demo](video-demo/README.md), mencakup naskah, aset, narasi wanita ElevenLabs dan skrip render RTX 3050/NVENC. Video 1080p60 sekitar 121 detik menampilkan fitur aplikasi dengan kamera kontinu. Ikuti [panduan render](video-demo/README.md) untuk mengekspor MP4 di disk D. Voicebox telah dikeluarkan dari proyek video.

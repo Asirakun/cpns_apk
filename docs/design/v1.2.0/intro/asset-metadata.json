@@ -1,0 +1,12 @@
+{
+  "source": "Remotion Intro 96 frames / 30 fps",
+  "asset": "assets/intro/papercut-intro.webp",
+  "width": 540,
+  "height": 960,
+  "sourceFrames": 96,
+  "encodedFrames": 41,
+  "durationMs": 3200,
+  "loop": 1,
+  "bytes": 248614,
+  "silent": true
+}

@@ -1,0 +1,276 @@
+[
+  {
+    "scene": 0,
+    "slotStart": 0,
+    "slotEnd": 8.35175,
+    "baseStart": 0,
+    "baseEnd": 8,
+    "start": 0.45,
+    "duration": 7.15175,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 0.45,
+        "end": 2.621,
+        "text": "Mau mulai persiapan CPNS."
+      },
+      {
+        "start": 2.7950000000000004,
+        "end": 6.255,
+        "text": "Tapi materi, latihan, dan berkas terasa datang bersamaan."
+      },
+      {
+        "start": 6.429,
+        "end": 7.602,
+        "text": "Mulai dari mana?"
+      }
+    ]
+  },
+  {
+    "scene": 1,
+    "slotStart": 8.35175,
+    "slotEnd": 18.35175,
+    "baseStart": 8,
+    "baseEnd": 18,
+    "start": 8.801749999999998,
+    "duration": 7.523270833333333,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 8.801749999999998,
+        "end": 10.902749999999997,
+        "text": "Kenali CPNS Journey."
+      },
+      {
+        "start": 11.158749999999998,
+        "end": 16.324749999999998,
+        "text": "Teman untuk menata persiapanmu, dari belajar hari ini sampai mencatat langkah seleksi."
+      }
+    ]
+  },
+  {
+    "scene": 2,
+    "slotStart": 18.35175,
+    "slotEnd": 28.35175,
+    "baseStart": 18,
+    "baseEnd": 28,
+    "start": 18.80175,
+    "duration": 8.31275,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 18.80175,
+        "end": 22.388749999999998,
+        "text": "Buka materi TWK, TIU, dan TKP."
+      },
+      {
+        "start": 22.725749999999998,
+        "end": 27.11475,
+        "text": "Pilih satu topik, lalu simpan bagian yang ingin kamu pelajari lagi."
+      }
+    ]
+  },
+  {
+    "scene": 3,
+    "slotStart": 28.35175,
+    "slotEnd": 40.351749999999996,
+    "baseStart": 28,
+    "baseEnd": 40,
+    "start": 28.80175,
+    "duration": 8.127,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 28.80175,
+        "end": 32.80675,
+        "text": "Dari jawaban yang keliru, kamu bisa melihat topik yang perlu diulang."
+      },
+      {
+        "start": 33.09775,
+        "end": 36.92875,
+        "text": "Kartu pengulangan membantu menjadwalkan belajar berikutnya."
+      }
+    ]
+  },
+  {
+    "scene": 4,
+    "slotStart": 40.351749999999996,
+    "slotEnd": 50.56110416666666,
+    "baseStart": 40,
+    "baseEnd": 50,
+    "start": 40.80175,
+    "duration": 9.009354166666666,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 40.80175,
+        "end": 45.81775,
+        "text": "Saatnya mencoba simulasi CAT: seratus sepuluh soal dalam seratus menit."
+      },
+      {
+        "start": 46.07275,
+        "end": 49.81075,
+        "text": "Latih ketelitian, sekaligus cara membagi waktu."
+      }
+    ]
+  },
+  {
+    "scene": 5,
+    "slotStart": 50.56110416666666,
+    "slotEnd": 62.56110416666666,
+    "baseStart": 50,
+    "baseEnd": 62,
+    "start": 51.01110416666666,
+    "duration": 9.47375,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 51.01110416666666,
+        "end": 51.882104166666664,
+        "text": "Belum yakin?"
+      },
+      {
+        "start": 52.13710416666666,
+        "end": 54.63310416666666,
+        "text": "Tandai ragu-ragu, lalu lanjutkan."
+      },
+      {
+        "start": 54.970104166666665,
+        "end": 60.48510416666666,
+        "text": "Jawaban tersimpan di perangkat, sehingga kamu bisa kembali memeriksanya selama waktu tersedia."
+      }
+    ]
+  },
+  {
+    "scene": 6,
+    "slotStart": 62.56110416666666,
+    "slotEnd": 74.56110416666667,
+    "baseStart": 62,
+    "baseEnd": 74,
+    "start": 63.01110416666666,
+    "duration": 7.801916666666667,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 63.01110416666666,
+        "end": 65.89010416666666,
+        "text": "Setelah latihan, lihat skor dan pembahasan."
+      },
+      {
+        "start": 66.22710416666666,
+        "end": 70.81310416666666,
+        "text": "Temukan bagian yang sudah kamu pahami, dan bagian yang masih perlu diperkuat."
+      }
+    ]
+  },
+  {
+    "scene": 7,
+    "slotStart": 74.56110416666667,
+    "slotEnd": 86.56110416666667,
+    "baseStart": 74,
+    "baseEnd": 86,
+    "start": 75.01110416666667,
+    "duration": 9.4273125,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 75.01110416666667,
+        "end": 77.14710416666667,
+        "text": "Persiapan juga punya banyak tahapan."
+      },
+      {
+        "start": 77.40310416666667,
+        "end": 84.43810416666668,
+        "text": "Di Journey, catat perjalanan S nol nol sampai S sebelas, beserta status dan catatan pribadimu."
+      }
+    ]
+  },
+  {
+    "scene": 8,
+    "slotStart": 86.56110416666667,
+    "slotEnd": 98.56110416666667,
+    "baseStart": 86,
+    "baseEnd": 98,
+    "start": 87.01110416666667,
+    "duration": 9.102229166666667,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 87.01110416666667,
+        "end": 90.92410416666667,
+        "text": "Rapikan checklist berkas, tambahkan catatan, dan susun agenda."
+      },
+      {
+        "start": 91.26010416666666,
+        "end": 96.11310416666667,
+        "text": "Jadi, persiapan belajar dan urusan administrasi bisa kamu pantau bersama."
+      }
+    ]
+  },
+  {
+    "scene": 9,
+    "slotStart": 98.56110416666667,
+    "slotEnd": 108.56110416666667,
+    "baseStart": 98,
+    "baseEnd": 108,
+    "start": 99.01110416666667,
+    "duration": 8.684270833333333,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 99.01110416666667,
+        "end": 104.22410416666666,
+        "text": "Materi, latihan, dan checklist bisa digunakan tanpa akun dan tanpa internet."
+      },
+      {
+        "start": 104.67710416666667,
+        "end": 107.69510416666667,
+        "text": "Mulai dari perangkatmu, sedikit demi sedikit."
+      }
+    ]
+  },
+  {
+    "scene": 10,
+    "slotStart": 108.56110416666667,
+    "slotEnd": 116.58777083333334,
+    "baseStart": 108,
+    "baseEnd": 116,
+    "start": 109.01110416666667,
+    "duration": 6.826666666666667,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 109.01110416666667,
+        "end": 111.96010416666667,
+        "text": "Kamu tidak harus menyelesaikan semuanya hari ini."
+      },
+      {
+        "start": 112.13410416666667,
+        "end": 115.83810416666667,
+        "text": "Cukup tahu langkah berikutnya, lalu mulai menjalaninya."
+      }
+    ]
+  },
+  {
+    "scene": 11,
+    "slotStart": 116.58777083333334,
+    "slotEnd": 121.31720833333334,
+    "baseStart": 116,
+    "baseEnd": 120,
+    "start": 117.03777083333334,
+    "duration": 3.5294375,
+    "rate": 1,
+    "captions": [
+      {
+        "start": 117.03777083333334,
+        "end": 118.76777083333334,
+        "text": "CPNS Journey."
+      },
+      {
+        "start": 118.98777083333334,
+        "end": 120.56677083333334,
+        "text": "Mulai langkahmu hari ini."
+      }
+    ]
+  }
+]

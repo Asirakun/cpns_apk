@@ -10,7 +10,9 @@ import 'controller.dart';
 
 String csvCell(Object? value) {
   var text = '$value';
-  if (RegExp(r'^[=+@-]').hasMatch(text)) text = "'$text";
+  if (RegExp(r'^[\s\x00-\x1f]*[=+@\-＝＋＠－]|^[\t\r\n]').hasMatch(text)) {
+    text = "'$text";
+  }
   return '"${text.replaceAll('"', '""')}"';
 }
 

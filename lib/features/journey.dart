@@ -4,8 +4,10 @@ import 'package:go_router/go_router.dart';
 
 import '../core/controller.dart';
 import '../core/models.dart';
+import '../core/network_policy.dart';
 import '../app/widgets.dart';
 import '../app/theme.dart';
+import '../app/paper.dart';
 
 class JourneyScreen extends ConsumerWidget {
   const JourneyScreen({super.key});
@@ -36,7 +38,7 @@ class JourneyScreen extends ConsumerWidget {
             IconButton(
               tooltip: 'Arsip & tahun seleksi',
               onPressed: () => _cycles(context, app),
-              icon: const Icon(Icons.inventory_2_outlined),
+              icon: const PaperArt(PaperAsset.route, size: 64),
             ),
           ],
         ),
@@ -46,31 +48,62 @@ class JourneyScreen extends ConsumerWidget {
           icon: Icons.location_on_outlined,
         ),
         const SectionTitle('Pusat persiapan'),
-        Wrap(
-          spacing: 10,
-          runSpacing: 10,
-          children:
-              [
-                    ('Formasi', Icons.location_city_outlined, 'formations'),
-                    ('Pengumuman', Icons.campaign_outlined, 'sources'),
-                    ('Berkas', Icons.folder_open_rounded, 'documents'),
-                    ('Agenda WIB', Icons.calendar_month_outlined, 'calendar'),
-                    ('Hasil & sanggah', Icons.assignment_outlined, 'results'),
-                    ('Persiapan SKB', Icons.work_outline_rounded, 'skb'),
-                    (
-                      'Anggaran',
-                      Icons.account_balance_wallet_outlined,
-                      'budget',
-                    ),
-                  ]
-                  .map(
-                    (v) => ActionChip(
-                      avatar: Icon(v.$2, size: 18),
-                      label: Text(v.$1),
-                      onPressed: () => context.push('/journey/${v.$3}'),
-                    ),
-                  )
-                  .toList(),
+        LayoutBuilder(
+          builder: (context, box) {
+            final width = (box.maxWidth - 20) / 3;
+            final scale = MediaQuery.textScalerOf(context).scale(12) / 12;
+            return Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 10,
+              runSpacing: 10,
+              children:
+                  [
+                        ('Formasi', PaperAsset.formation, 'formations'),
+                        ('Pengumuman', PaperAsset.announcements, 'sources'),
+                        ('Berkas', PaperAsset.documents, 'documents'),
+                        ('Agenda WIB', PaperAsset.calendar, 'calendar'),
+                        ('Hasil & sanggah', PaperAsset.results, 'results'),
+                        ('Persiapan SKB', PaperAsset.briefcase, 'skb'),
+                        ('Anggaran', PaperAsset.wallet, 'budget'),
+                      ]
+                      .map(
+                        (item) => SizedBox(
+                          width: width,
+                          height: 116 + (scale - 1).clamp(0, 2) * 28,
+                          child: Card(
+                            key: ValueKey('preparation-${item.$3}'),
+                            child: InkWell(
+                              onTap: () => context.push('/journey/${item.$3}'),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 7,
+                                  vertical: 12,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    PaperArt(item.$2, size: 42),
+                                    const SizedBox(height: 9),
+                                    Text(
+                                      item.$1,
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                        height: 1.3,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
+            );
+          },
         ),
         SectionTitle(
           'Perjalanan S00–S11',
@@ -313,11 +346,6 @@ class JourneyScreen extends ConsumerWidget {
       ),
     );
   }
-}
-
-bool isGovernmentUrl(String text) {
-  final u = Uri.tryParse(text.trim());
-  return u != null && u.scheme == 'https' && (u.host.endsWith('.go.id'));
 }
 
 class JourneyDetailScreen extends ConsumerStatefulWidget {

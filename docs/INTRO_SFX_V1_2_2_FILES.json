@@ -1,0 +1,504 @@
+{
+  "checkedAt": "2026-11-21T04:44:13.255Z",
+  "sourceInput": "cpns-intro/ supplied by user; not attributed as agent-created",
+  "verification": {
+    "checkedAt": "2026-11-21T04:42:40.093Z",
+    "tests": 70,
+    "skipped": 3,
+    "sqlChecks": 33,
+    "apkChecks": 42,
+    "assetChecks": 118,
+    "lintErrors": 0,
+    "lintWarnings": 7,
+    "osvActiveFindings": 0,
+    "source": "cpns-intro supplied by user (spns-intro in request)",
+    "durationMs": 6667,
+    "frames": 200,
+    "sfxMixIdentical": true,
+    "wavPeak": 0.849945068359375,
+    "skipButton": false,
+    "background": "Native app PaperBackdrop, original gradient/rings/glow omitted",
+    "physicalAndroidAudioTest": false,
+    "artifact": {
+      "path": "build/releases/cpns-journey-1.2.2-arm64-v8a.apk",
+      "bytes": 30618150,
+      "sha256": "46cb55ad5e0a9d366a6559398e19276f773d54deaf3cab4ff0c6a87652a7f795",
+      "version": "1.2.2",
+      "versionCode": 2007,
+      "signer": "Same pinned release certificate"
+    }
+  },
+  "unrelatedCorePreserved": true,
+  "files": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "beforeSha256": "963eea096b6ef91156274e33a37280e584512d57ec8d561cf370e3720c9b0929",
+      "afterSha256": "edab74314abf5ebba308eacb8a94e1e751a7fed5e6d859c88b17c87f08dd884d",
+      "change": "Versi 1.2.2 / pipeline verifikasi aset audio."
+    },
+    {
+      "path": "android/app/src/main/kotlin/id/cpnsjourney/cpns_journey/MainActivity.kt",
+      "status": "modified",
+      "beforeSha256": "61a7c1a9cb9455f2c9a9289a89e5bc3e73e0c3914cc4ed7d6a6b3ce64fa81909",
+      "afterSha256": "1b4b4492d0e92ea25e2d5870a334ffd2b180f3a91d39950db01c66e192472864",
+      "change": "Bridge MediaPlayer/audio focus/volume media, isolasi sesi dan cleanup."
+    },
+    {
+      "path": "assets/intro/book-closed.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "96951447b195f3231cedda8d352b0387373d839ed8081bc6ea5e6ae413a77abd",
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "assets/intro/book-open.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "f3b09b660a6b442139afb68a6745a135464ed44d724693a0d6ef554665412ed5",
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "assets/intro/flag.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "cb009c20680e8d2e22df62de0983a1daea6b97c9ed1cf124386831f13596b5a4",
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "assets/intro/intro-sfx.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "bf3a96e74b32e27a42d5f2750bd38e0e0d015a62966af6680f45f3e712355b06",
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "assets/intro/papercut-mark-hd.png",
+      "status": "removed",
+      "beforeSha256": "612d584bbbaeda2ce3b4a4f05f5a1b7a05995e393bc7c55605d9f3317cc25582",
+      "afterSha256": null,
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "assets/intro/provided-motion.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "96b41ffe4b4c2e50202778aa80100afdae195ecbb3c20a54860cb73dec4e76aa",
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "assets/intro/remotion-motion.json",
+      "status": "removed",
+      "beforeSha256": "ae36364f2389c9354c4e1acba5f6e4b318c50c0f9f5f6ab912997b7654a62d32",
+      "afterSha256": null,
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "assets/intro/road-rot.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b9ca2ad1ff49dc3ef6d3628d422d41dfbe8ff77da80b0aa2bf068ce86b9eaaa9",
+      "change": "Aset buku/jalan/bendera, mix WAV asli dan kurva Remotion pengganti."
+    },
+    {
+      "path": "docs/INTRO_HD_V1_2_1_FILES.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "a59ec1171ce9d2be4da012f44a3997751cd67efa6de5d75d0537c013ba6003c1",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/INTRO_SFX_V1_2_2.md",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "f632286ec585b57642b0fc6d27a045529cb368d4e31b6e3e285a09a919d30ada",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/INTRO_SFX_V1_2_2_FILES.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": null,
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/KEAMANAN.md",
+      "status": "modified",
+      "beforeSha256": "4a132c64f361fa59389977995b60c8b9f1407636ead84d63d28b0f0c1470d59e",
+      "afterSha256": "80eef1dd37bea38ed611e70e87690fe4c20cd106c1daebe28650ff310d6ff568",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/LANJUTKAN_DI_CODEX.md",
+      "status": "modified",
+      "beforeSha256": "5fec218510e3b0d7438a63c178d54b83794943ad840d49571f1dfc5dc3224f03",
+      "afterSha256": "8f2464b2d77a6ca6f7d690308c6bb7d2cd2b85baba2b5e4c1c353647aef139fa",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/VERIFIKASI.md",
+      "status": "modified",
+      "beforeSha256": "7136d91430215348321a3b5994983f020af3af4b4b452abe499901b4d98e5a9f",
+      "afterSha256": "36fb78a881ca7725d359002e1e89345ac874c842fca81936627e957e2cf6f176",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/PAPERCUT.md",
+      "status": "modified",
+      "beforeSha256": "e7acd6091e915e80f40f3794d0b7acbb30e25f07ac867aab19162a229d1685e0",
+      "afterSha256": "f685df54c3a7297ab37d2b85db6ef37f30f487b189b89d44d286a5a9b9417ed9",
+      "change": "Perbarui entry render/QA atau dokumentasi ke intro cpns-intro dengan SFX."
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/papercut-mark-hd.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "612d584bbbaeda2ce3b4a4f05f5a1b7a05995e393bc7c55605d9f3317cc25582",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/remotion-motion.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ae36364f2389c9354c4e1acba5f6e4b318c50c0f9f5f6ab912997b7654a62d32",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/contact-sheet.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "42f4a9a12933e6fab4e7520679cf6e91ba4679b3fcf826c1f167d3bf2ecec098",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/flutter-dark-16x9-large-text.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "9ab021eee90482a0a6cea4002dabeed829cec4690c7f3e0aeff7c875b3396e7a",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/flutter-dark-20x9.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "75917f7dc45f2b4dad6ea1f92de0b8cd22d41fb42bc7762ad5e3ad5ce5f5fe21",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/flutter-light-20x9.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "9652f5223bb2114b6a0bcc3ac5ae6b72502c2644f990c285a4bcb0e876825082",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/frame-180.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "e3fac595ad8cda548fc454e96f8cebd3aa17e7e57c2a904df748a640c60e3217",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/frame-30.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "823108319601cd70947be7fdfcd8a92edd94e7dc0bd6202d4e558fc51cfd556e",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/frame-90.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "fec3015780622e0e6836f6e4c86fc48afea9bdd81c2bd4d779b08f63fdb86ed8",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/gpu-render.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "9f8f38a4bc89292c542c13ae9a021a404ba72418f53b5a88cf90df77e2194c31",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/provided-intro-with-sfx.mp4",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "20526bdaf01194306be9f16b602bac105ae8ee9c8a33f8c29eebd1bd8ab865e1",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/provided-still.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "62d616dfcc2448d6f13d39390b5fbfaab3a2675c6c065535a9b9b3e75ec1bc10",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/design/v1.2.2/intro/qa.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "5a91bcb6fee949c59ca72e30d915b71eae23366bd38e0dfcf8a3f1324e55b3af",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/dependency-audit-1.2.2.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "4601f9d8951ba3536d78dc2a7de2f10211b751bbdb2b2c2cae6c691943278fd4",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/dependency-audit.json",
+      "status": "modified",
+      "beforeSha256": "125013789c46da5271a8ce1f133b86cf24016fcfbf755e3c05fe3b000447583d",
+      "afterSha256": "4601f9d8951ba3536d78dc2a7de2f10211b751bbdb2b2c2cae6c691943278fd4",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/lint-results-release-1.2.2.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7160c75eac6612b37a0dce1a76cdfd5f17d967da8126a23bea64e51d002b199a",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/regression-1.2.2.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "3a6f7cdff199d2978c8bb372020c3ee66f8cf81efb486a55ff176e1c95ccf7a7",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/release-security-1.2.2.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ad255dee020e099e9196bdc5ad7432907c18f9bc0d58bf8903ac33ccce82f900",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/release-security.json",
+      "status": "modified",
+      "beforeSha256": "18770d50504fc1ae4029b2b14ea5c81929fe8d042585d7d73a8fe7a3c4008779",
+      "afterSha256": "ad255dee020e099e9196bdc5ad7432907c18f9bc0d58bf8903ac33ccce82f900",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/source-secrets-1.2.2.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7970baccfa21e884c02e24e1f7b5b23b2a43fcf90f41668d2d70a8b8006e525a",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/source-secrets.json",
+      "status": "modified",
+      "beforeSha256": "2cafa06afb012b2c0539b10ef77bc10ead152e78eb6c7486c70477b49e04e2d3",
+      "afterSha256": "7970baccfa21e884c02e24e1f7b5b23b2a43fcf90f41668d2d70a8b8006e525a",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "docs/security/ui-assets-1.2.2.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "07c96166a66d4773c9c00dd59c29a2707fa6b2c28d224202452d9d93d658eed2",
+      "change": "Bukti render, screenshot, hasil verifikasi atau dokumentasi terbaru."
+    },
+    {
+      "path": "lib/app/intro.dart",
+      "status": "modified",
+      "beforeSha256": "411e98355e3a657f183f66f4e624ec83630f19fb1567556eeb0381f2e9fcd202",
+      "afterSha256": "dde592268739856992312a2a4995fb256a2b787beab86a385e187f2b596e6d4c",
+      "change": "Layer animasi dari sumber, 200-frame timeline, audio lifecycle, tanpa Lewati."
+    },
+    {
+      "path": "lib/core/app_version.dart",
+      "status": "modified",
+      "beforeSha256": "bfbcf09a19152b5cf663a0a6c1a2a605a4740d35d6fad4a84f76ff894c7615b5",
+      "afterSha256": "5ae7db690be1a5924125ebc0f8cbbe16d1a8ca02c25113e1331bd8477e197f65",
+      "change": "Versi 1.2.2 / pipeline verifikasi aset audio."
+    },
+    {
+      "path": "pubspec.yaml",
+      "status": "modified",
+      "beforeSha256": "9ec2b0be37ecf5829f1fd44eb9e7863d03151b55e872ed2ad743dc49bb0b153e",
+      "afterSha256": "f33a1c0fa82eacbc29bb824f59e90107cb2a1869c2e4c8dd908d777cc21932f9",
+      "change": "Versi 1.2.2 / pipeline verifikasi aset audio."
+    },
+    {
+      "path": "scripts/render_papercut_intro.ps1",
+      "status": "modified",
+      "beforeSha256": "1b6725dedcc87b1d0ffce5f7a80569df027f06fe96a0d047cb0b7f3d815cd3ce",
+      "afterSha256": "60dcd8f20ec922114205e7851ac84647e78eddb674206934ff534bf4e60721e7",
+      "change": "Perbarui entry render/QA atau dokumentasi ke intro cpns-intro dengan SFX."
+    },
+    {
+      "path": "scripts/verify_ui_release_assets.ps1",
+      "status": "modified",
+      "beforeSha256": "4f00efbf549555af2c8f0cd1960a4437766d55c0b28e3782b54f9914caff36ce",
+      "afterSha256": "b27aaa119fea6db6238139c337b5daff2eafb846043e080285357cba4838a525",
+      "change": "Versi 1.2.2 / pipeline verifikasi aset audio."
+    },
+    {
+      "path": "test/intro_hd_test.dart",
+      "status": "modified",
+      "beforeSha256": "e335fd303e86a84da931fab26d7c7725398e7b7bb71d26e26a4af8725649b591",
+      "afterSha256": "1910503dcb63edc1aabe818d98bcb9053b17448ce78be0d40b043ae8d745dbaf",
+      "change": "Regresi intro/SFX/background/first-launch/lifecycle dan versi konten."
+    },
+    {
+      "path": "test/provided_intro_test.dart",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "0ab1e3ff670214a84f9bf518e842791d0ac45b5167c67d81ecd1434b94f5b63b",
+      "change": "Regresi intro/SFX/background/first-launch/lifecycle dan versi konten."
+    },
+    {
+      "path": "test/security_test.dart",
+      "status": "modified",
+      "beforeSha256": "d86ee97f5620157248d23141580edfe7645b3b4d90255edfe0f1b6d74535d5cd",
+      "afterSha256": "3e4fcbbf853f4025704210fd7625c64673e417f0400c94951a62cc02e56acd79",
+      "change": "Regresi intro/SFX/background/first-launch/lifecycle dan versi konten."
+    },
+    {
+      "path": "test/ui_v12_test.dart",
+      "status": "modified",
+      "beforeSha256": "ba177e32d55e8b5dfe08746fe5133088bca6d311f88ff02af0daa31274798ab2",
+      "afterSha256": "58b4b59841cdd0af0febd4ba9e718fa6319dfe2843e4024b684d6d436b61f565",
+      "change": "Regresi intro/SFX/background/first-launch/lifecycle dan versi konten."
+    },
+    {
+      "path": "tools/papercut_intro/README.md",
+      "status": "modified",
+      "beforeSha256": "793043cbdf7a15360f9c3b4b5ddba2a2a66a9b899184e335d4c23f1c026916c9",
+      "afterSha256": "7e090382cc10360b014f29e354c7e0b456fdebc3fcf64a899ad98d5812fe4c88",
+      "change": "Perbarui entry render/QA atau dokumentasi ke intro cpns-intro dengan SFX."
+    },
+    {
+      "path": "tools/papercut_intro/export-provided.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "44327816caa9a63098faf268c4fbaf145ed75a0275ded2d1af1790277776f364",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/package.json",
+      "status": "modified",
+      "beforeSha256": "ab9a8ff40372e9a70bf773c8c5712a635d99d4f5f95594158d714e098ff388cb",
+      "afterSha256": "8109837f7441885d0ba2be4392a7375220e61fefcfd075e3a4ed3952cb591484",
+      "change": "Perbarui entry render/QA atau dokumentasi ke intro cpns-intro dengan SFX."
+    },
+    {
+      "path": "tools/papercut_intro/public/book-closed.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "96951447b195f3231cedda8d352b0387373d839ed8081bc6ea5e6ae413a77abd",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/book-open.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "f3b09b660a6b442139afb68a6745a135464ed44d724693a0d6ef554665412ed5",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/flag.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "cb009c20680e8d2e22df62de0983a1daea6b97c9ed1cf124386831f13596b5a4",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/road-rot.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b9ca2ad1ff49dc3ef6d3628d422d41dfbe8ff77da80b0aa2bf068ce86b9eaaa9",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/sfx/book-appear.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "4aeaee5ac18ccaad6f32ae659b37a4e09cf9d77d52edabe6ee86f3388b3d4820",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/sfx/flag-pop.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "3743e6374613c032b14f089ffcce897508f196b6b3bfad0489795232e4d3534a",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/sfx/pad.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b22c94c1ce45de13cdaa5b7f2504410c2355ed6d1bd44829446ed7bf2d21091d",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/sfx/page-open.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2b2a4553adb1c54a982515bf4b532c55b4f45094884acae52003d84e7cc3f995",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/sfx/road-draw.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "75a88513299c27d999d2b8c2a2ccd1d7c245a56116f8dec9285c659e71880fda",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/sfx/sparkle-end.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "c8d3eac11d746c4b6f66c0011749de9fecf2628f4fb74c350294083596702c46",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/public/sfx/title-chime.wav",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "093f3fecdf20906c023f0aa4972338bf8ec1a946315ec9f10e184100146afdea",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/render-provided.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "1e855064235c864be6d198ea924c2e289b9b5d08d063ef763909dc29766b6f53",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/src/provided/BookImages.tsx",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "47146147aff17fef9293104101c4898a7b39268ca521c27c98047e66889201a5",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/src/provided/CpnsIntro.tsx",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7b2c54eb083a8cc52d8dbb3375c11c3327f4c9cd2f2c5ac09963f90eac31409a",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/src/provided/index.tsx",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "0af12a66250cf46c410eb2a6b53ecc461f0a9ad137cc053c4118d0af4deb492f",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    },
+    {
+      "path": "tools/papercut_intro/verify-provided.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "22f8ef3ebd6ddd052e233819600e116957438ee5f058f9849a3d79e0ad346325",
+      "change": "Ekspor/render/QA dari source cpns-intro, font lokal, tanpa background sumber."
+    }
+  ],
+  "selfHash": "Manifest intentionally unhashed"
+}

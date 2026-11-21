@@ -1,0 +1,10 @@
+{
+  "scene": 10,
+  "fingerprint": "23f71282c2e64d551a8d091a1892c56641bc461aa887a70458cc3aa9d0a05ea5",
+  "status": "completed",
+  "provider": "ElevenLabs",
+  "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+  "model": "eleven_multilingual_v2",
+  "request_id": "YCSkJXTZTgwAARYngwwD",
+  "audio": "audio/elevenlabs-v2/voice-10-23f71282c2e6.mp3"
+}

@@ -1,0 +1,9 @@
+{
+  "reference": "CPNS Journey existing papercut palette and supplied app screenshots",
+  "baseStyle": "pi-v2-dark adapted to hand-cut paper; no 3D/marketing/audio template",
+  "background": "#08223B",
+  "ink": "#FFF1D9",
+  "muted": "#B9D9F0",
+  "gold": "#F4C76B",
+  "layers": ["#123A5E", "#1F5680", "#3079A5", "#65A7C4"]
+}

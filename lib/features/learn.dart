@@ -6,6 +6,8 @@ import '../core/controller.dart';
 import '../core/models.dart';
 import '../app/widgets.dart';
 import '../app/theme.dart';
+import '../app/paper.dart';
+import '../app/study_activity.dart';
 
 class LearnScreen extends ConsumerStatefulWidget {
   const LearnScreen({super.key});
@@ -33,13 +35,12 @@ class _LearnState extends ConsumerState<LearnScreen> {
         .toList();
     return PageBody(
       children: [
-        Text('Ruang belajar', style: Theme.of(context).textTheme.headlineLarge),
-        const SizedBox(height: 8),
-        const Text(
-          'Pahami pelan-pelan. Kuasai satu per satu.',
-          style: TextStyle(fontSize: 13),
+        const PaperPageHeading(
+          title: 'Ruang belajar',
+          subtitle: 'Pahami pelan-pelan. Kuasai satu per satu.',
+          asset: PaperAsset.book,
+          eyebrow: 'LEMBAR PENGETAHUAN',
         ),
-        const SizedBox(height: 22),
         TextField(
           onChanged: (v) => setState(() => search = v),
           decoration: const InputDecoration(
@@ -106,6 +107,12 @@ class _LearnState extends ConsumerState<LearnScreen> {
                       children: [
                         Row(
                           children: [
+                            PaperArt(switch (l['domain']) {
+                              'TWK' => PaperAsset.shield,
+                              'TIU' => PaperAsset.target,
+                              _ => PaperAsset.avatar,
+                            }, size: 38),
+                            const SizedBox(width: 10),
                             Tag(l['domain'] as String, color: color),
                             const SizedBox(width: 8),
                             Text(
@@ -301,89 +308,96 @@ class _LessonState extends ConsumerState<LessonScreen> {
     final saved = (app.data['bookmarks'] as List).contains(widget.id);
     final done = (app.data['completed'] as List).contains(widget.id);
     final paragraphs = (l['body'] as List).cast<String>();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l['domain'] as String),
-        actions: [
-          IconButton(
-            tooltip: saved ? 'Hapus bookmark' : 'Simpan materi',
-            onPressed: () => guard(context, () => app.bookmark(widget.id)),
-            icon: Icon(
-              saved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
-            ),
-          ),
-        ],
-      ),
-      body: PageBody(
-        children: [
-          Tag(
-            '${l['minutes']} menit · tersedia offline',
-            color: teal,
-            icon: Icons.offline_pin_outlined,
-          ),
-          const SizedBox(height: 20),
-          Text(
-            l['title'] as String,
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            l['topic'] as String,
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: 24),
-          ...List.generate(
-            paragraphs.length,
-            (i) => Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Text(
-                paragraphs[i],
-                style: Theme.of(context).textTheme.bodyLarge,
+    return StudyActivity(
+      kind: 'lesson',
+      category: l['domain'] as String,
+      topic: l['topic'] as String,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(l['domain'] as String),
+          actions: [
+            IconButton(
+              tooltip: saved ? 'Hapus bookmark' : 'Simpan materi',
+              onPressed: () => guard(context, () => app.bookmark(widget.id)),
+              icon: Icon(
+                saved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
               ),
             ),
-          ),
-          const Note(
-            'Ringkasan latihan original. Gunakan naskah resmi untuk ketentuan hukum dan aturan seleksi; konten belum ditinjau ahli materi.',
-            color: indigo,
-          ),
-          const SizedBox(height: 20),
-          FilledButton.icon(
-            onPressed: () => guard(context, () async {
-              (app.data['lesson_positions'] as Json)[widget.id] =
-                  paragraphs.length;
-              await app.completeLesson(widget.id);
-              if (context.mounted) {
-                message(
-                  context,
-                  'Materi selesai. Progres tersimpan di perangkat.',
-                );
-              }
-            }),
-            icon: Icon(done ? Icons.check_circle_rounded : Icons.check_rounded),
-            label: Text(done ? 'Sudah dipelajari' : 'Tandai selesai'),
-          ),
-          const SizedBox(height: 12),
-          OutlinedButton.icon(
-            onPressed: () => guard(context, () async {
-              final a = await app.startAttempt(topic: l['topic'] as String);
-              if (context.mounted) context.push('/exam/${a.id}');
-            }),
-            icon: const Icon(Icons.edit_note_rounded),
-            label: const Text('Latihan topik ini'),
-          ),
-          const SectionTitle('Referensi resmi'),
-          ...sourceLinks.entries
-              .take(4)
-              .map(
-                (e) => TextButton.icon(
-                  onPressed: () => openOfficial(context, e.value),
-                  icon: const Icon(Icons.open_in_new_rounded, size: 16),
-                  label: Text(e.key),
+          ],
+        ),
+        body: PageBody(
+          children: [
+            Tag(
+              '${l['minutes']} menit · tersedia offline',
+              color: teal,
+              icon: Icons.offline_pin_outlined,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              l['title'] as String,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              l['topic'] as String,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 24),
+            ...List.generate(
+              paragraphs.length,
+              (i) => Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: Text(
+                  paragraphs[i],
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),
-        ],
+            ),
+            const Note(
+              'Ringkasan latihan original. Gunakan naskah resmi untuk ketentuan hukum dan aturan seleksi; konten belum ditinjau ahli materi.',
+              color: indigo,
+            ),
+            const SizedBox(height: 20),
+            FilledButton.icon(
+              onPressed: () => guard(context, () async {
+                (app.data['lesson_positions'] as Json)[widget.id] =
+                    paragraphs.length;
+                await app.completeLesson(widget.id);
+                if (context.mounted) {
+                  message(
+                    context,
+                    'Materi selesai. Progres tersimpan di perangkat.',
+                  );
+                }
+              }),
+              icon: Icon(
+                done ? Icons.check_circle_rounded : Icons.check_rounded,
+              ),
+              label: Text(done ? 'Sudah dipelajari' : 'Tandai selesai'),
+            ),
+            const SizedBox(height: 12),
+            OutlinedButton.icon(
+              onPressed: () => guard(context, () async {
+                final a = await app.startAttempt(topic: l['topic'] as String);
+                if (context.mounted) context.push('/exam/${a.id}');
+              }),
+              icon: const Icon(Icons.edit_note_rounded),
+              label: const Text('Latihan topik ini'),
+            ),
+            const SectionTitle('Referensi resmi'),
+            ...sourceLinks.entries
+                .take(4)
+                .map(
+                  (e) => TextButton.icon(
+                    onPressed: () => openOfficial(context, e.value),
+                    icon: const Icon(Icons.open_in_new_rounded, size: 16),
+                    label: Text(e.key),
+                  ),
+                ),
+          ],
+        ),
       ),
     );
   }
@@ -413,98 +427,108 @@ class _FlashcardState extends ConsumerState<FlashcardScreen> {
       return due == null ||
           !DateTime.parse(due).isAfter(DateTime.now().toUtc());
     }).toList();
-    return Scaffold(
-      appBar: AppBar(title: const Text('Kartu pengulangan')),
-      body: PageBody(
-        children: [
-          if (cards.isEmpty)
-            EmptyCard(
-              icon: Icons.style_outlined,
-              title: wrong.isEmpty
-                  ? 'Belum ada kartu'
-                  : 'Sesi hari ini selesai',
-              body: wrong.isEmpty
-                  ? 'Kartu dibuat dari jawaban yang belum maksimal pada latihan selesai.'
-                  : 'Kartu berikutnya muncul sesuai jadwal pengulanganmu.',
-            )
-          else ...[
-            Tag(
-              '${index % cards.length + 1} / ${cards.length} kartu jatuh tempo',
-              color: teal,
-            ),
-            const SizedBox(height: 20),
-            Card(
-              child: InkWell(
-                onTap: () => setState(() => flipped = !flipped),
-                child: Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        cards[index % cards.length].topic,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: Theme.of(context).colorScheme.secondary,
+    return StudyActivity(
+      kind: 'review',
+      enabled: cards.isNotEmpty,
+      category: cards.isEmpty ? null : cards[index % cards.length].domain,
+      topic: cards.isEmpty ? null : cards[index % cards.length].topic,
+      child: Scaffold(
+        appBar: AppBar(title: const Text('Kartu pengulangan')),
+        body: PageBody(
+          children: [
+            if (cards.isEmpty)
+              EmptyCard(
+                icon: Icons.style_outlined,
+                title: wrong.isEmpty
+                    ? 'Belum ada kartu'
+                    : 'Sesi hari ini selesai',
+                body: wrong.isEmpty
+                    ? 'Kartu dibuat dari jawaban yang belum maksimal pada latihan selesai.'
+                    : 'Kartu berikutnya muncul sesuai jadwal pengulanganmu.',
+              )
+            else ...[
+              Tag(
+                '${index % cards.length + 1} / ${cards.length} kartu jatuh tempo',
+                color: teal,
+              ),
+              const SizedBox(height: 20),
+              Card(
+                child: InkWell(
+                  onTap: () => setState(() => flipped = !flipped),
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          cards[index % cards.length].topic,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 20),
-                      Text(
-                        flipped
-                            ? cards[index % cards.length].explanation
-                            : cards[index % cards.length].text,
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                      const SizedBox(height: 24),
-                      Text(
-                        flipped
-                            ? 'Nilai pemahamanmu di bawah'
-                            : 'Ketuk untuk membuka pembahasan',
-                        style: const TextStyle(fontSize: 12),
-                      ),
-                    ],
+                        const SizedBox(height: 20),
+                        Text(
+                          flipped
+                              ? cards[index % cards.length].explanation
+                              : cards[index % cards.length].text,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        const SizedBox(height: 24),
+                        Text(
+                          flipped
+                              ? 'Nilai pemahamanmu di bawah'
+                              : 'Ketuk untuk membuka pembahasan',
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            if (flipped)
-              Wrap(
-                spacing: 10,
-                runSpacing: 10,
-                children:
-                    [(1, 'Ulang besok'), (3, 'Mulai paham'), (7, 'Sudah ingat')]
-                        .map(
-                          (v) => OutlinedButton(
-                            onPressed: () => guard(context, () async {
-                              final q = cards[index % cards.length];
-                              reviews[q.id] = {
-                                'due': DateTime.now()
-                                    .toUtc()
-                                    .add(Duration(days: v.$1))
-                                    .toIso8601String(),
-                                'interval_days': v.$1,
-                              };
-                              await app.save();
-                              if (mounted) {
-                                setState(() {
-                                  index = 0;
-                                  flipped = false;
-                                });
-                              }
-                            }),
-                            child: Text(v.$2),
-                          ),
-                        )
-                        .toList(),
-              )
-            else
-              FilledButton(
-                onPressed: () => setState(() => flipped = true),
-                child: const Text('Buka pembahasan'),
-              ),
+              const SizedBox(height: 20),
+              if (flipped)
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  children:
+                      [
+                            (1, 'Ulang besok'),
+                            (3, 'Mulai paham'),
+                            (7, 'Sudah ingat'),
+                          ]
+                          .map(
+                            (v) => OutlinedButton(
+                              onPressed: () => guard(context, () async {
+                                final q = cards[index % cards.length];
+                                reviews[q.id] = {
+                                  'due': DateTime.now()
+                                      .toUtc()
+                                      .add(Duration(days: v.$1))
+                                      .toIso8601String(),
+                                  'interval_days': v.$1,
+                                };
+                                await app.save();
+                                if (mounted) {
+                                  setState(() {
+                                    index = 0;
+                                    flipped = false;
+                                  });
+                                }
+                              }),
+                              child: Text(v.$2),
+                            ),
+                          )
+                          .toList(),
+                )
+              else
+                FilledButton(
+                  onPressed: () => setState(() => flipped = true),
+                  child: const Text('Buka pembahasan'),
+                ),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }

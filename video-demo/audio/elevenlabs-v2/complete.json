@@ -1,0 +1,69 @@
+{
+  "provider": "ElevenLabs",
+  "scenes": 12,
+  "voice": {
+    "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+    "name": "Bella - Professional, Bright, Warm",
+    "labels": {
+      "descriptive": "professional",
+      "language": "en",
+      "accent": "american",
+      "use_case": "informative_educational",
+      "gender": "female",
+      "age": "middle_aged"
+    },
+    "verified_languages": [
+      {
+        "language": "en",
+        "model_id": "eleven_turbo_v2_5",
+        "accent": "american",
+        "locale": "en-US",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3"
+      },
+      {
+        "language": "en",
+        "model_id": "eleven_v2_5_flash",
+        "accent": "american",
+        "locale": "en-US",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3"
+      },
+      {
+        "language": "en",
+        "model_id": "eleven_flash_v2_5",
+        "accent": "american",
+        "locale": "en-US",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3"
+      },
+      {
+        "language": "en",
+        "model_id": "eleven_turbo_v2",
+        "accent": "american",
+        "locale": "en-US",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3"
+      },
+      {
+        "language": "en",
+        "model_id": "eleven_v2_flash",
+        "accent": "american",
+        "locale": "en-US",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3"
+      },
+      {
+        "language": "en",
+        "model_id": "eleven_flash_v2",
+        "accent": "american",
+        "locale": "en-US",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3"
+      },
+      {
+        "language": "en",
+        "model_id": "eleven_multilingual_v2",
+        "accent": "american",
+        "locale": "en-US",
+        "preview_url": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3"
+      }
+    ]
+  },
+  "model": "eleven_multilingual_v2",
+  "characters": 1389
+}

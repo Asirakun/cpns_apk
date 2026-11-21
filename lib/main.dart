@@ -6,6 +6,11 @@ import 'core/controller.dart';
 import 'core/services.dart';
 import 'app/theme.dart';
 import 'app/widgets.dart';
+import 'app/paper.dart';
+import 'app/study_activity.dart';
+import 'app/intro.dart';
+import 'app/floating_nav.dart';
+import 'features/analytics.dart';
 import 'features/home.dart';
 import 'features/learn.dart';
 import 'features/tryout.dart';
@@ -33,14 +38,15 @@ Future<void> main() async {
   runApp(
     ProviderScope(
       overrides: [appProvider.overrideWith((ref) => controller)],
-      child: JourneyApp(controller: controller),
+      child: JourneyApp(controller: controller, showIntro: true),
     ),
   );
 }
 
 class JourneyApp extends StatelessWidget {
-  JourneyApp({super.key, required this.controller})
+  JourneyApp({super.key, required this.controller, this.showIntro = false})
     : router = GoRouter(
+        observers: [studyRouteObserver],
         initialLocation: '/home',
         refreshListenable: controller,
         redirect: (ctx, state) {
@@ -72,6 +78,18 @@ class JourneyApp extends StatelessWidget {
             builder: (c, s) => const OnboardingScreen(),
           ),
           GoRoute(path: '/auth', builder: (c, s) => const AuthScreen()),
+          GoRoute(
+            path: '/intro',
+            builder: (c, s) => IntroScreen(
+              onDone: () {
+                if (GoRouter.of(c).canPop()) {
+                  c.pop();
+                } else {
+                  c.go('/home');
+                }
+              },
+            ),
+          ),
           ShellRoute(
             builder: (c, s, child) =>
                 NavigationShell(location: s.uri.path, child: child),
@@ -97,6 +115,12 @@ class JourneyApp extends StatelessWidget {
             builder: (c, s) => LessonScreen(id: s.pathParameters['id']!),
           ),
           GoRoute(
+            path: '/analytics',
+            builder: (c, s) => AnalyticsScreen(
+              initialCategory: s.uri.queryParameters['category'] ?? 'Semua',
+            ),
+          ),
+          GoRoute(
             path: '/exam/:id',
             builder: (c, s) => ExamScreen(id: s.pathParameters['id']!),
           ),
@@ -112,6 +136,7 @@ class JourneyApp extends StatelessWidget {
         ],
       );
   final AppController controller;
+  final bool showIntro;
   final GoRouter router;
   @override
   Widget build(BuildContext context) => AnimatedBuilder(
@@ -131,20 +156,23 @@ class JourneyApp extends StatelessWidget {
       supportedLocales: const [Locale('id', 'ID')],
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       routerConfig: router,
-      builder: (context, child) => controller.switchingAccount
-          ? const Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    CircularProgressIndicator(),
-                    SizedBox(height: 16),
-                    Text('Memuat progres akun…'),
-                  ],
+      builder: (context, child) => IntroGate(
+        enabled: showIntro,
+        child: controller.switchingAccount
+            ? const Scaffold(
+                body: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      CircularProgressIndicator(),
+                      SizedBox(height: 16),
+                      Text('Memuat progres akun…'),
+                    ],
+                  ),
                 ),
-              ),
-            )
-          : child ?? const SizedBox.shrink(),
+              )
+            : child ?? const SizedBox.shrink(),
+      ),
     ),
   );
 }
@@ -166,6 +194,13 @@ class NavigationShell extends ConsumerWidget {
     Icons.route_outlined,
     Icons.person_outline_rounded,
   ];
+  static const paperIcons = [
+    PaperAsset.home,
+    PaperAsset.book,
+    PaperAsset.checklist,
+    PaperAsset.route,
+    PaperAsset.avatar,
+  ];
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final app = ref.watch(appProvider);
@@ -175,13 +210,17 @@ class NavigationShell extends ConsumerWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            const BrandMark(size: 32),
+            const BrandMark(size: 38),
             const SizedBox(width: 10),
             const Flexible(
               child: Text(
                 'CPNS Journey',
                 maxLines: 2,
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -.6,
+                ),
               ),
             ),
           ],
@@ -190,80 +229,77 @@ class NavigationShell extends ConsumerWidget {
           IconButton(
             tooltip: 'Agenda & pengingat',
             onPressed: () => context.push('/journey/calendar'),
-            icon: const Icon(Icons.notifications_none_rounded),
+            icon: const PaperArt(PaperAsset.bell, size: 29),
           ),
           const SizedBox(width: 8),
         ],
       ),
-      body: Row(
-        children: [
-          if (wide)
-            NavigationRail(
-              selectedIndex: index < 0 ? 0 : index,
-              onDestinationSelected: (i) => context.go(paths[i]),
-              labelType: NavigationRailLabelType.all,
-              destinations: List.generate(
-                5,
-                (i) => NavigationRailDestination(
-                  icon: Icon(icons[i]),
-                  label: Text(labels[i]),
+      body: PaperBackdrop(
+        child: Row(
+          children: [
+            if (wide)
+              NavigationRail(
+                selectedIndex: index < 0 ? 0 : index,
+                onDestinationSelected: (i) => context.go(paths[i]),
+                labelType: NavigationRailLabelType.all,
+                destinations: List.generate(
+                  5,
+                  (i) => NavigationRailDestination(
+                    icon: PaperArt(paperIcons[i], size: 32),
+                    label: Text(labels[i]),
+                  ),
                 ),
               ),
-            ),
-          Expanded(
-            child: Column(
-              children: [
-                if (app.conflict || app.error != null)
-                  Material(
-                    color: app.conflict
-                        ? amber.withValues(alpha: .12)
-                        : Theme.of(context).colorScheme.surface,
-                    child: InkWell(
-                      onTap: () => context.go('/profile'),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 8,
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              app.conflict
-                                  ? Icons.sync_problem_rounded
-                                  : Icons.cloud_off_outlined,
-                              size: 16,
-                            ),
-                            const SizedBox(width: 8),
-                            Expanded(
-                              child: Text(
-                                app.error ?? app.syncLabel,
-                                style: const TextStyle(fontSize: 11),
+            Expanded(
+              child: Column(
+                children: [
+                  if (app.conflict || app.error != null)
+                    Material(
+                      color: app.conflict
+                          ? amber.withValues(alpha: .12)
+                          : Theme.of(context).colorScheme.surface,
+                      child: InkWell(
+                        onTap: () => context.go('/profile'),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 8,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                app.conflict
+                                    ? Icons.sync_problem_rounded
+                                    : Icons.cloud_off_outlined,
+                                size: 16,
                               ),
-                            ),
-                            const Icon(Icons.chevron_right, size: 16),
-                          ],
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Text(
+                                  app.error ?? app.syncLabel,
+                                  style: const TextStyle(fontSize: 11),
+                                ),
+                              ),
+                              const Icon(Icons.chevron_right, size: 16),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                Expanded(child: child),
-              ],
+                  Expanded(child: child),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: wide
           ? null
-          : NavigationBar(
+          : FloatingPaperNavBar(
               selectedIndex: index < 0 ? 0 : index,
-              onDestinationSelected: (i) => context.go(paths[i]),
-              destinations: List.generate(
-                5,
-                (i) => NavigationDestination(
-                  icon: Icon(icons[i]),
-                  label: labels[i],
-                ),
-              ),
+              onSelected: (i) => context.go(paths[i]),
+              labels: labels,
+              icons: paperIcons,
             ),
     );
   }

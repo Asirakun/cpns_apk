@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-21T02:52:39.110Z",
+  "video": "docs/design/v1.2.0/intro/papercut-intro.mp4",
+  "decodedFrames": 96,
+  "debugFrames": 96,
+  "readableHoldFrames": 56,
+  "issues": [],
+  "pass": true,
+  "method": "Motioncraft debug color thresholds + all decoded final video frames + text-region safe margins. Props file fixes Windows quoting.",
+  "audio": "Intentionally silent app intro; voice/music loudness tests are not applicable.",
+  "limitations": "No OCR/Python available. Pixel checks are heuristics; contact sheet and full-size frames must also be visually reviewed. Not a device playback test."
+}

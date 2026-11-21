@@ -1,0 +1,786 @@
+{
+  "checkedAt": "2026-11-21T04:11:09.700Z",
+  "release": "1.2.1+6",
+  "baselineFiles": 257,
+  "scope": "Intro quality/background/GPU request only; previous uncommitted UI/security work preserved",
+  "changedFiles": 61,
+  "removedFiles": [
+    "assets/intro/papercut-intro.webp"
+  ],
+  "verification": {
+    "checkedAt": "2026-11-21T04:08:38.045Z",
+    "flutterAnalyze": "No issues",
+    "flutterTestsPassed": 70,
+    "optInSkipped": 3,
+    "sqlChecks": 33,
+    "nativeAspectThemeCaptures": 3,
+    "nativeBackgroundPixelChecks": "Exact match at viewport and mark corners for dark/light 20:9 and 16:9 with 1.3x text",
+    "apkChecks": 42,
+    "uiAssetChecks": 109,
+    "packagedUiAssets": 41,
+    "lintErrors": 0,
+    "lintWarnings": 7,
+    "osvPackages": {
+      "Pub": 136,
+      "npm": 1,
+      "Maven": 97
+    },
+    "osvActiveFindings": 0,
+    "npmToolingAdvisories": 0,
+    "gpuRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3050 6GB Laptop GPU (0x000025EC) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "nvencRequired": true,
+    "videoFrames": 96,
+    "debugFrames": 96,
+    "transparentMarkFrames": 96,
+    "videoResolution": [
+      1440,
+      3200
+    ],
+    "nativeMark": [
+      1080,
+      1080
+    ],
+    "nativePngBytes": 987557,
+    "nativeMotionFrames": 96,
+    "durationMs": 3200,
+    "artifact": {
+      "path": "build/releases/cpns-journey-1.2.1-arm64-v8a.apk",
+      "bytes": 30521841,
+      "sha256": "10fbcbb3a480992665ec9d90f9c1f17ba2874ccc74cfdcf54666d109e25440dc",
+      "version": "1.2.1",
+      "versionCode": 2006,
+      "minSdk": 24,
+      "targetSdk": 36,
+      "abi": "arm64-v8a",
+      "signer": "Existing pinned release certificate"
+    },
+    "physicalAndroidTest": false,
+    "hostedSupabaseTest": false,
+    "preserved": {
+      "originalArtworkFiles": 39,
+      "changedArtwork": [],
+      "flutterLockUnchanged": true,
+      "contentUnchanged": true,
+      "controllerUnchanged": true,
+      "storageUnchanged": true,
+      "cipherUnchanged": true,
+      "analyticsUnchanged": true,
+      "homeUnchanged": true,
+      "tryoutUnchanged": true,
+      "profileUnchanged": true,
+      "journeyUnchanged": true,
+      "newMigration": false,
+      "hostedDatabaseTouched": false
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "beforeSha256": "6902efbeae41aed36ff0d9312cc475426b010d3cadd34f04565cb583fbcbb458",
+      "afterSha256": "963eea096b6ef91156274e33a37280e584512d57ec8d561cf370e3720c9b0929",
+      "purpose": "Laporan/panduan dan perubahan setiap file untuk intro HD 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/drawable-v21/launch_background.xml",
+      "status": "modified",
+      "beforeSha256": "19a9bae44553cc6229df9d040273908bf08bb11ed29ed0e2b8f9eb592cb03762",
+      "afterSha256": "5054065b0f0f7312498ccff7a71a004f9a4b6ba33b5d1eb58b34ce7538db2d6c",
+      "purpose": "Warna splash/window native #08223B sesuai aplikasi; bitmap launcher existing tetap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled resource verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/drawable/launch_background.xml",
+      "status": "modified",
+      "beforeSha256": "19a9bae44553cc6229df9d040273908bf08bb11ed29ed0e2b8f9eb592cb03762",
+      "afterSha256": "5054065b0f0f7312498ccff7a71a004f9a4b6ba33b5d1eb58b34ce7538db2d6c",
+      "purpose": "Warna splash/window native #08223B sesuai aplikasi; bitmap launcher existing tetap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled resource verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values-night-v31/styles.xml",
+      "status": "modified",
+      "beforeSha256": "b6baaaf108701533aa1db723d7316528020f9e9413ee51316c95dff341646d07",
+      "afterSha256": "c8a39c3ace64e2cfd2821bce2ca2efe7b0d15aebbc2612d286a242948d5031a6",
+      "purpose": "Warna splash/window native #08223B sesuai aplikasi; bitmap launcher existing tetap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled resource verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values-night/styles.xml",
+      "status": "modified",
+      "beforeSha256": "bfc785f5a891a8023c346d88ca02731817a545cdca348f19c7bb7433a7d9649b",
+      "afterSha256": "51a7577db83b43587da282a3a5f759096223c6278604c8a685b372c72cc4009a",
+      "purpose": "Warna splash/window native #08223B sesuai aplikasi; bitmap launcher existing tetap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled resource verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values-v31/styles.xml",
+      "status": "modified",
+      "beforeSha256": "b6a6ef244692f02e9bb63f9535f411c3830e1b63ffc0d905f5ee5fe75a12ff87",
+      "afterSha256": "773106b41783ddfc0dfbbf513b0f233e39073613c6120902a5d61e5a0a2086d7",
+      "purpose": "Warna splash/window native #08223B sesuai aplikasi; bitmap launcher existing tetap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled resource verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values/launcher_colors.xml",
+      "status": "modified",
+      "beforeSha256": "7ccf88dd81f84d5f8321a83553125bda8aff2e2369c5c267e449547e5474185f",
+      "afterSha256": "1696af61d419cb1b8d5143ac166443b96e3787268476ade3a2db51eadccc6750",
+      "purpose": "Warna splash/window native #08223B sesuai aplikasi; bitmap launcher existing tetap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled resource verification"
+      ]
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "status": "modified",
+      "beforeSha256": "c40716842a1c4f5211a53714bbe00ac65a18de7b9035e3b448a25bbbf84fded8",
+      "afterSha256": "d7aa472119aa81b42c104679e8e99fbfa663ef8c498c109d5f747e4e39beafa1",
+      "purpose": "Warna splash/window native #08223B sesuai aplikasi; bitmap launcher existing tetap.",
+      "validation": [
+        "release build",
+        "Android Lint",
+        "compiled resource verification"
+      ]
+    },
+    {
+      "path": "assets/intro/papercut-intro.webp",
+      "status": "removed",
+      "beforeSha256": "fb53cda8e436f109b1c073df2a08c0ed5a0ecb73f7d2226dcadfa5b047f22184",
+      "afterSha256": null,
+      "purpose": "Diganti PNG/kurva; aset WebP lama dipindah ke arsip bukti 1.2.0.",
+      "validation": [
+        "PNG/timeline decode and replay tests",
+        "source-vs-APK byte verification"
+      ]
+    },
+    {
+      "path": "assets/intro/papercut-mark-hd.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "612d584bbbaeda2ce3b4a4f05f5a1b7a05995e393bc7c55605d9f3317cc25582",
+      "purpose": "PNG alpha lossless 1080×1080, copy persis hasil render GPU akhir tanpa resize.",
+      "validation": [
+        "PNG/timeline decode and replay tests",
+        "source-vs-APK byte verification"
+      ]
+    },
+    {
+      "path": "assets/intro/remotion-motion.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "ae36364f2389c9354c4e1acba5f6e4b318c50c0f9f5f6ab912997b7654a62d32",
+      "purpose": "96 sampel kurva Remotion / 30 fps / 3200 ms, bukan data pengguna.",
+      "validation": [
+        "PNG/timeline decode and replay tests",
+        "source-vs-APK byte verification"
+      ]
+    },
+    {
+      "path": "docs/INTRO_HD_V1_2_1.md",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "552688999ce9f0e26135ada04a111898d0b75a49cf153ecfd0649bf3befd107c",
+      "purpose": "Laporan/panduan dan perubahan setiap file untuk intro HD 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/INTRO_HD_V1_2_1_FILES.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": null,
+      "purpose": "Laporan/panduan dan perubahan setiap file untuk intro HD 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/KEAMANAN.md",
+      "status": "modified",
+      "beforeSha256": "2b5b7216d21a943276c22c18bc1559567506680947a8ae460059b7bbb7d8e66f",
+      "afterSha256": "4a132c64f361fa59389977995b60c8b9f1407636ead84d63d28b0f0c1470d59e",
+      "purpose": "Laporan/panduan dan perubahan setiap file untuk intro HD 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/LANJUTKAN_DI_CODEX.md",
+      "status": "modified",
+      "beforeSha256": "bc6d57ac2b2cd9b01f645a27342c2e7a865738cde7f7680e2f73279f7dc6f4a6",
+      "afterSha256": "5fec218510e3b0d7438a63c178d54b83794943ad840d49571f1dfc5dc3224f03",
+      "purpose": "Laporan/panduan dan perubahan setiap file untuk intro HD 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/VERIFIKASI.md",
+      "status": "modified",
+      "beforeSha256": "5eb15714026bb5e440faa342a659aec00ac30b2caf8d16793a413bd34bc21682",
+      "afterSha256": "7136d91430215348321a3b5994983f020af3af4b4b452abe499901b4d98e5a9f",
+      "purpose": "Laporan/panduan dan perubahan setiap file untuk intro HD 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/PAPERCUT.md",
+      "status": "modified",
+      "beforeSha256": "dfda19ca1108af65b02c8e9bfe98630c8e027cd59cb5614ebf6e029204fbc504",
+      "afterSha256": "e7acd6091e915e80f40f3794d0b7acbb30e25f07ac867aab19162a229d1685e0",
+      "purpose": "Laporan/panduan dan perubahan setiap file untuk intro HD 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.0/intro/papercut-intro.webp",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "fb53cda8e436f109b1c073df2a08c0ed5a0ecb73f7d2226dcadfa5b047f22184",
+      "purpose": "Arsip aset runtime 1.2.0 untuk menjaga bukti historis.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/asset-metadata.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "69558927e98e633cf5b609c09479671768fe534853b3a3e0f59362f54b7ed363",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/flutter-dark-16x9-large-text.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "e286c9e9386e8d2ef4790d148bc823525d3274826be5da4804ff5aa9d25f637c",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/flutter-dark-20x9.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "3676493b0421082a3162f4721508e69c3ef64c83ff700487a346db0794344d61",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/flutter-light-20x9.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "036dd040802409d2de3e6e983cbe4bc6d6fbbb91638b7803239ee366a2be524f",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/frame-20.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "d884610966a07d46f9a795a6c7d368bb8a74c4f5efa306aabda408bfff1f2fb8",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/frame-48.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "f245ccd34ff7fa0f12285fb381c867410901ce218d78e0fb47b5266a900640e9",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/frame-95.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b5bafe0b4f9252a8bf4629122be04db57f596b1170912a7c80dc9c8ef9f2c5af",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/gpu-render.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "30727cf056e2231bfcc21368fac02453d4d32b8a1ee8befe0825ee8dbe90213d",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/intro-still.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "502e5dd8fddf5c4a0716f2d883f223b1cc1ad4022ef80d5acd58c9af9998f113",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/papercut-intro-qhd.mp4",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "8dde25f0323028bb82c2bb74de1adee95c9a3e4b2458fc72eb979644c0c8aa23",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/qa-contact-sheet.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b1850794dbb0168892d84704d960cf221cf9f56e57c01a4ac7c26105d9e8d775",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/design/v1.2.1/intro/qa.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "b0c44950d41f0ac40e07ab1ebd61c698c1eaa7daa2ea45e2eae689b9d7841661",
+      "purpose": "Artefak GPU, master, QA atau screenshot Flutter baru; tidak dikemas ke APK.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/dependency-audit-1.2.1.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "125013789c46da5271a8ce1f133b86cf24016fcfbf755e3c05fe3b000447583d",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/dependency-audit.json",
+      "status": "modified",
+      "beforeSha256": "f08117e203f91db1ed788adac37c4379221b79be4604e2830b42504bb354ff0b",
+      "afterSha256": "125013789c46da5271a8ce1f133b86cf24016fcfbf755e3c05fe3b000447583d",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/intro-npm-audit-1.2.1.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2bacdc817f5707f6663a9002ce9970eabf301ec7ed49b4f84845ec634dd49ca9",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/lint-results-release-1.2.1.xml",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "7160c75eac6612b37a0dce1a76cdfd5f17d967da8126a23bea64e51d002b199a",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/regression-1.2.1.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "d5f3aeb39725d064e6924fae6076af99b7c3decc41ac60cad10ea2ce276eb2a9",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/release-security-1.2.1.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "18770d50504fc1ae4029b2b14ea5c81929fe8d042585d7d73a8fe7a3c4008779",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/release-security.json",
+      "status": "modified",
+      "beforeSha256": "aedd4178b2e2c70909b4a155084d508629b00034267b1e781c4f84043791f35e",
+      "afterSha256": "18770d50504fc1ae4029b2b14ea5c81929fe8d042585d7d73a8fe7a3c4008779",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/source-secrets-1.2.1.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "2cafa06afb012b2c0539b10ef77bc10ead152e78eb6c7486c70477b49e04e2d3",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/source-secrets.json",
+      "status": "modified",
+      "beforeSha256": "010ad22e6aa4fa67a473862937710690f7254a25cd7df87c4f35b2eeca22005a",
+      "afterSha256": "2cafa06afb012b2c0539b10ef77bc10ead152e78eb6c7486c70477b49e04e2d3",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "docs/security/ui-assets-1.2.1.json",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "d9af38423650e72e8871439e7cce23be83a141565a1860bcaa64d38f04fec6e3",
+      "purpose": "Bukti source/dependensi/regresi/Lint/APK/aset terbaru 1.2.1.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "lib/app/intro.dart",
+      "status": "modified",
+      "beforeSha256": "e3a1e04786c7320ca9cad26eef61db29822a78dce5c647b5d822f94e9677918c",
+      "afterSha256": "411e98355e3a657f183f66f4e624ec83630f19fb1567556eeb0381f2e9fcd202",
+      "purpose": "Latar PaperBackdrop penuh, font native, PNG alpha HD dan kurva Remotion; skip/replay/reduced motion tetap ada.",
+      "validation": [
+        "Flutter analyze",
+        "70 regression tests",
+        "native pixel/capture tests"
+      ]
+    },
+    {
+      "path": "lib/core/app_version.dart",
+      "status": "modified",
+      "beforeSha256": "77c86fe5ea57547146fea8c33e9117cb5a92ec7a53fda852e04aadce340b80e8",
+      "afterSha256": "bfbcf09a19152b5cf663a0a6c1a2a605a4740d35d6fad4a84f76ff894c7615b5",
+      "purpose": "Versi 1.2.1 sesuai kontrak konten.",
+      "validation": [
+        "Flutter analyze",
+        "70 regression tests",
+        "native pixel/capture tests"
+      ]
+    },
+    {
+      "path": "pubspec.yaml",
+      "status": "modified",
+      "beforeSha256": "74dbe609f8f038c4c596ef21db10fef7f3ec155562fee2efd6f177cbc0d4ab10",
+      "afterSha256": "9ec2b0be37ecf5829f1fd44eb9e7863d03151b55e872ed2ad743dc49bb0b153e",
+      "purpose": "Versi 1.2.1+6 tanpa tambahan plugin Flutter.",
+      "validation": [
+        "reviewed documentation/artifact",
+        "source pattern scan for text"
+      ]
+    },
+    {
+      "path": "scripts/build_verified_release_windows.ps1",
+      "status": "modified",
+      "beforeSha256": "2dfee2512aa4629ad0b6d888711959934c09f995f412314906c0a64eea210d2a",
+      "afterSha256": "f28d6832462f39369c8637c0e01f4f0a4bf659418e499c33f9f9be865aaf37ec",
+      "purpose": "Opsi capture intro selama suite regresi release.",
+      "validation": [
+        "PowerShell parse/execution",
+        "release/render output evidence"
+      ]
+    },
+    {
+      "path": "scripts/render_papercut_intro.ps1",
+      "status": "modified",
+      "beforeSha256": "c8b465190a442b10c2589c9108f0024f261256ec75140a021c8901c47baf86d5",
+      "afterSha256": "1b6725dedcc87b1d0ffce5f7a80569df027f06fe96a0d047cb0b7f3d815cd3ce",
+      "purpose": "Orkestrasi render RTX/NVENC dan QA HD.",
+      "validation": [
+        "PowerShell parse/execution",
+        "release/render output evidence"
+      ]
+    },
+    {
+      "path": "scripts/verify_ui_release_assets.ps1",
+      "status": "modified",
+      "beforeSha256": "0f856842851e08bf7350c14c0466713b70985472a39c937faaca50a99e637dbf",
+      "afterSha256": "4f00efbf549555af2c8f0cd1960a4437766d55c0b28e3782b54f9914caff36ce",
+      "purpose": "Pastikan WebP intro lama/opsional tidak terkemas.",
+      "validation": [
+        "PowerShell parse/execution",
+        "release/render output evidence"
+      ]
+    },
+    {
+      "path": "test/intro_hd_test.dart",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "e335fd303e86a84da931fab26d7c7725398e7b7bb71d26e26a4af8725649b591",
+      "purpose": "Tes pixel background pada dark/light 20:9 dan 16:9, DPR/font besar; tiga screenshot Flutter.",
+      "validation": [
+        "Flutter analyze",
+        "70 regression tests",
+        "native pixel/capture tests"
+      ]
+    },
+    {
+      "path": "test/security_test.dart",
+      "status": "modified",
+      "beforeSha256": "246bbb658bed6737601f91860d67cc6d37eb5573cdd212f394a764f434222929",
+      "afterSha256": "d86ee97f5620157248d23141580edfe7645b3b4d90255edfe0f1b6d74535d5cd",
+      "purpose": "Sesuaikan versi konten masa depan yang harus ditolak.",
+      "validation": [
+        "Flutter analyze",
+        "70 regression tests",
+        "native pixel/capture tests"
+      ]
+    },
+    {
+      "path": "test/ui_v12_test.dart",
+      "status": "modified",
+      "beforeSha256": "56d7e445f23ea246574bec3eaf60262e46a63255078a2b4a78b33a8a49dd640f",
+      "afterSha256": "ba177e32d55e8b5dfe08746fe5133088bca6d311f88ff02af0daa31274798ab2",
+      "purpose": "Regresi decode PNG 1080, kurva/durasi, first launch, skip/replay dan reduced motion.",
+      "validation": [
+        "Flutter analyze",
+        "70 regression tests",
+        "native pixel/capture tests"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/.gitignore",
+      "status": "modified",
+      "beforeSha256": "034a0419c90e9c78aecfab8f74649db5d7961c9665cb46ecf44fcc8f7ac330f2",
+      "afterSha256": "014b17548227cfd0665bfa97e85f539c87c89482739b282aefc281f7fd4ba3bd",
+      "purpose": "Brief, entry render/QA, konfigurasi output atau panduan tooling GPU.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/README.md",
+      "status": "modified",
+      "beforeSha256": "1d853d0501ecd3d522cef21ae9e69255e9352719367dacf28af11def5c70291b",
+      "afterSha256": "793043cbdf7a15360f9c3b4b5ddba2a2a66a9b899184e335d4c23f1c026916c9",
+      "purpose": "Brief, entry render/QA, konfigurasi output atau panduan tooling GPU.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/brief.json",
+      "status": "modified",
+      "beforeSha256": "08c94bfe8824f6b20a9933902ec9d8b38ebbfce4a2c7f9ccfce36a1cf3be04d6",
+      "afterSha256": "aece2fd3dd05f152a53100c67727b8b967da4a4c07c7ce0f983101bf6be96ad7",
+      "purpose": "Brief, entry render/QA, konfigurasi output atau panduan tooling GPU.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/encode-webp.mjs",
+      "status": "modified",
+      "beforeSha256": "6e1bdcbb87ab0809309fe39f65bc8c9fa023a6d15d2478a16724f5fd23bc624c",
+      "afterSha256": "48b7f2f924d1f25172e9c848a02a1e85186be58b82c2f998d2f618a6b88c69db",
+      "purpose": "WebP opsional disimpan di output ignored, tidak dipakai aplikasi.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/export-native.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "c8c2997e427c9cf6e06540f51c1ffc8c593765e8a3f051a4b58f2eb0f905af78",
+      "purpose": "Ekspor PNG GPU dan 96 sampel spring/interpolate langsung dari Remotion.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/gpu-browser.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "8f82149f9a69f3a57999faef5bdc7d94d61e834693e54119918c1811cda756fe",
+      "purpose": "Fail closed jika WebGL browser render bukan RTX 3050; catat status D3D11/rasterization.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/package.json",
+      "status": "modified",
+      "beforeSha256": "d15fc08d89b40eb8a3fa323373913b79835538ecc842a06669d41e41d2e88851",
+      "afterSha256": "ab9a8ff40372e9a70bf773c8c5712a635d99d4f5f95594158d714e098ff388cb",
+      "purpose": "Brief, entry render/QA, konfigurasi output atau panduan tooling GPU.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/public/intro-logo.png",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "75352541f14afe0d1845c6752fade3bb5b7f1c83251398da2ce57e091b8e55a5",
+      "purpose": "Crop alpha logo generasi asli 1254 px, tanpa memakai turunan launcher 512 px.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/qa-hd.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "3f9425f843e0627a768d41423eb98e8946118acd15f9c1d686fcc2a69e41000f",
+      "purpose": "QA seluruh 96 frame final/debug/alpha, batas teks dan kecocokan PNG/frame GPU.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/render-hd.mjs",
+      "status": "added",
+      "beforeSha256": null,
+      "afterSha256": "5bc8dbdf082a47f9f87bc20fd0871fe82783c669ffa495f2fc4221ca3a3c2779",
+      "purpose": "Bundle, probe NVENC required, master QHD+, frame PNG alpha dan ekspor native.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/src/index.tsx",
+      "status": "modified",
+      "beforeSha256": "2b4f1c30e4664c60a82c98e7481e2f2556bcc73457dd64cf53d9e4bf1a572842",
+      "afterSha256": "1a58a04d288531d475e5970e9bd1f085e20fef7bdff2b28874084bdae55adf91",
+      "purpose": "Komposisi master QHD+ / mark alpha dan palet sesuai aplikasi.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    },
+    {
+      "path": "tools/papercut_intro/src/style.json",
+      "status": "modified",
+      "beforeSha256": "928fbe5be48a9494e026aba6be1783334e31f43559cc0906fa61a3dcc4a0b2bd",
+      "afterSha256": "d8e58cf3cd4ca96cbaed4e4d72404d63e0abb725e78f34610c12926ac81cb66b",
+      "purpose": "Komposisi master QHD+ / mark alpha dan palet sesuai aplikasi.",
+      "validation": [
+        "TypeScript noEmit",
+        "verified RTX/NVENC render",
+        "all-frame QA",
+        "npm audit"
+      ]
+    }
+  ],
+  "selfHashNote": "Manifest hash null to avoid recursion; Markdown hash includes final file table."
+}

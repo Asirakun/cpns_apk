@@ -1,0 +1,18 @@
+{
+  "topic": "CPNS Journey launch intro",
+  "goal": "A short local identity reveal matching the app, not an advertisement",
+  "audience": "Current Indonesian app user",
+  "language": "id",
+  "duration": 3.2,
+  "format": "9:20, 1440x3200 QHD+ master; adaptive native Flutter playback",
+  "gpu": "Verified RTX 3050 6GB Laptop GPU, ANGLE D3D11 and NVENC required",
+  "runtime": "1080x1080 transparent GPU-rendered PNG plus exported Remotion curves; native text/background",
+  "voice": "none",
+  "audio": "intentionally silent for app startup",
+  "copySource": "Existing app name and existing profile tagline",
+  "facts": [],
+  "scenes": [
+    {"role": "intro", "headline": "CPNS Journey", "visual": "Generated papercut book/path logo settles above layered blue paper waves"},
+    {"role": "identity", "headline": "Persiapan yang terarah", "visual": "Short tagline and gold underline; hold until app transition"}
+  ]
+}

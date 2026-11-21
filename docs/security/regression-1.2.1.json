@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-11-21T04:08:38.045Z",
+  "flutterAnalyze": "No issues",
+  "flutterTestsPassed": 70,
+  "optInSkipped": 3,
+  "sqlChecks": 33,
+  "nativeAspectThemeCaptures": 3,
+  "nativeBackgroundPixelChecks": "Exact match at viewport and mark corners for dark/light 20:9 and 16:9 with 1.3x text",
+  "apkChecks": 42,
+  "uiAssetChecks": 109,
+  "packagedUiAssets": 41,
+  "lintErrors": 0,
+  "lintWarnings": 7,
+  "osvPackages": {
+    "Pub": 136,
+    "npm": 1,
+    "Maven": 97
+  },
+  "osvActiveFindings": 0,
+  "npmToolingAdvisories": 0,
+  "gpuRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3050 6GB Laptop GPU (0x000025EC) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "nvencRequired": true,
+  "videoFrames": 96,
+  "debugFrames": 96,
+  "transparentMarkFrames": 96,
+  "videoResolution": [
+    1440,
+    3200
+  ],
+  "nativeMark": [
+    1080,
+    1080
+  ],
+  "nativePngBytes": 987557,
+  "nativeMotionFrames": 96,
+  "durationMs": 3200,
+  "artifact": {
+    "path": "build/releases/cpns-journey-1.2.1-arm64-v8a.apk",
+    "bytes": 30521841,
+    "sha256": "10fbcbb3a480992665ec9d90f9c1f17ba2874ccc74cfdcf54666d109e25440dc",
+    "version": "1.2.1",
+    "versionCode": 2006,
+    "minSdk": 24,
+    "targetSdk": 36,
+    "abi": "arm64-v8a",
+    "signer": "Existing pinned release certificate"
+  },
+  "physicalAndroidTest": false,
+  "hostedSupabaseTest": false,
+  "preserved": {
+    "originalArtworkFiles": 39,
+    "changedArtwork": [],
+    "flutterLockUnchanged": true,
+    "contentUnchanged": true,
+    "controllerUnchanged": true,
+    "storageUnchanged": true,
+    "cipherUnchanged": true,
+    "analyticsUnchanged": true,
+    "homeUnchanged": true,
+    "tryoutUnchanged": true,
+    "profileUnchanged": true,
+    "journeyUnchanged": true,
+    "newMigration": false,
+    "hostedDatabaseTouched": false
+  }
+}

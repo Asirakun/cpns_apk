@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-11-21T07:44:58.637Z",
+  "tests": 70,
+  "skipped": 3,
+  "sqlChecks": 33,
+  "apkChecks": 42,
+  "assetChecks": 118,
+  "lintErrors": 0,
+  "lintWarnings": 7,
+  "osvActiveFindings": 0,
+  "navbar": {
+    "shape": "Floating capsule with selected capsule around icon and label",
+    "existingIcons": [
+      "home",
+      "book",
+      "checklist",
+      "route",
+      "avatar"
+    ],
+    "testedWidths": [
+      360,
+      430
+    ],
+    "textScale": 1.3,
+    "themes": [
+      "dark",
+      "light"
+    ]
+  },
+  "preservedPaths": [
+    "lib/core/controller.dart",
+    "lib/core/local_store_native.dart",
+    "lib/core/state_cipher.dart",
+    "lib/core/analytics.dart",
+    "lib/app/intro.dart",
+    "lib/features/home.dart",
+    "lib/features/tryout.dart",
+    "lib/features/profile.dart",
+    "lib/features/journey.dart",
+    "pubspec.lock",
+    "android/app/src/main/kotlin/id/cpnsjourney/cpns_journey/MainActivity.kt"
+  ],
+  "artworkFilesUnchanged": 48,
+  "physicalAndroidTest": false,
+  "artifact": {
+    "path": "build/releases/cpns-journey-1.2.3-arm64-v8a.apk",
+    "bytes": 30618150,
+    "sha256": "973120969d2e31c436d10397be41539d96b454eae6098d23f8fa30e03724eb1f",
+    "version": "1.2.3",
+    "versionCode": 2008,
+    "signer": "Same pinned release certificate"
+  }
+}
