@@ -1,12 +1,87 @@
-# CPNS Journey
+<div align="center">
+  <img src="assets/brand/logo.png" alt="Logo CPNS Journey" width="96" />
+  <h1>CPNS Journey</h1>
+  <p><strong>Langkah kecil setiap hari. Persiapan yang lebih terarah.</strong></p>
+  <p>Belajar, latihan CAT, dan pantau perjalanan seleksi dalam satu aplikasi Android<br/>dengan desain papercut, tema dark blue, dan penyimpanan di perangkat.</p>
+  <p>
+    <img alt="Versi 1.2.3" src="https://img.shields.io/badge/release-1.2.3-355777" />
+    <img alt="Android 7.0 ke atas ARM64" src="https://img.shields.io/badge/Android-7.0%2B%20ARM64-3D856E" />
+    <img alt="Flutter" src="https://img.shields.io/badge/built%20with-Flutter-2289C5" />
+  </p>
+  <p>
+    <a href="https://github.com/Asirakun/cpns_apk/releases/tag/v1.2.3"><strong>Unduh APK</strong></a> ·
+    <a href="#preview-aplikasi">Preview aplikasi</a> ·
+    <a href="#demo-video">Demo video</a> ·
+    <a href="docs/LANJUTKAN_DI_CODEX.md">Panduan pengembangan</a>
+  </p>
+</div>
 
-Aplikasi Android Flutter Material 3 untuk belajar CPNS dan mencatat seleksi S00–S11. Dibangun dari PRD v2 dan Checklist Berkas CPNS Kemenkeu yang diberikan. Tidak membutuhkan XAMPP, Flask, website, atau VPS sendiri.
+## Preview aplikasi
 
-Untuk melanjutkan melalui ekstensi Codex di VS Code, baca [panduan lanjutan](docs/LANJUTKAN_DI_CODEX.md). Proyek dan Flutter disiapkan untuk drive D pada Windows.
+<table>
+  <tr><th>Beranda</th><th>Tryout</th><th>Profil</th></tr>
+  <tr>
+    <td><img src="docs/design/screenshots/v1.2.3/home.png" alt="Beranda dengan progres, fokus harian dan navbar kapsul" width="240" /></td>
+    <td><img src="docs/design/screenshots/v1.2.3/tryouts.png" alt="Tryout dengan tab Soal dan Riwayat serta pencarian" width="240" /></td>
+    <td><img src="docs/design/screenshots/v1.2.3/profile.png" alt="Profil dan pengaturan tampilan" width="240" /></td>
+  </tr>
+</table>
+
+Screenshot dirender dari antarmuka Flutter dengan **data uji**, bukan riwayat pengguna. Versi 1.2.3 mempertahankan ikon papercut, menambahkan navbar kapsul mengambang, serta memakai intro dengan SFX dan latar aplikasi.
+
+## Demo video
+
+[![Tonton demo CPNS Journey: buku pop-up dan simulasi CAT](docs/design/preview/video-demo.jpg)](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/CPNS_JOURNEY_REMOTION_1080p60.mp4)
+
+**[Buka / unduh video 1080p60](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/CPNS_JOURNEY_REMOTION_1080p60.mp4)** · [Subtitle Indonesia](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/CPNS_JOURNEY_REMOTION_ID.srt) · [Source dan panduan render](video-demo/README.md)
+
+Demo Remotion berdurasi sekitar **2 menit**, dengan narasi Indonesia dan animasi buku pop-up. Klik gambar untuk membuka MP4; browser dapat memutar atau mengunduhnya. Video merupakan presentasi fitur. Preview tampilan aplikasi sebenarnya ada pada galeri di atas. Master video sekitar 236 MiB, disimpan sebagai aset Release agar tidak membebani riwayat Git.
+
+## Yang bisa kamu lakukan
+
+| Ruang | Fitur |
+| --- | --- |
+| **Beranda** | Fokus harian, progres TWK/TIU/TKP, prioritas dan grafik latihan. |
+| **Belajar** | Materi offline, pencarian, bookmark dan pengulangan topik. |
+| **Tryout** | Simulasi CAT, latihan singkat, autosave, review jawaban dan riwayat dengan filter. |
+| **Journey** | Tahap S00–S11, berkas, agenda WIB, persiapan SKB dan anggaran. |
+| **Analisis** | Ringkasan harian, mingguan dan bulanan dari aktivitas belajar. |
+| **Profil** | Tema, target belajar, pengingat, ekspor PDF/CSV/JSON dan pengaturan akun. |
+
+Mode perangkat dapat dipakai tanpa akun. Sinkronisasi akun memerlukan konfigurasi Supabase milik pemilik aplikasi; data perangkat dan akun mempunyai namespace terpisah.
+
+## Mulai menggunakan
+
+1. Unduh **[APK 1.2.3 ARM64](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/cpns-journey-1.2.3-arm64-v8a.apk)** untuk Android 7.0 atau lebih baru.
+2. Pasang aplikasi, isi nama panggilan, lalu pilih **Mulai di perangkat**.
+3. Atur target harian, pelajari materi, dan coba latihan pertama.
+
+Untuk pembaruan, gunakan APK dengan tanda tangan release yang sama. Ekspor progres sebelum tindakan yang menghapus data. Intro dapat diputar ulang dari **Profil → Intro CPNS Journey**.
+
+## Verifikasi rilis
+
+Build 1.2.3: **70 tes Flutter**, **33 pemeriksaan SQL**, **42 pemeriksaan APK**, dan **118 pemeriksaan aset** lulus. Android Lint: 0 error, 7 warning. Ini adalah hasil pemeriksaan build, bukan jaminan bebas risiko; uji audio/focus pada HP fisik dan Supabase hosted belum dilakukan.
+
+[Perubahan dan screenshot](docs/NAVBAR_V1_2_3.md) · [Laporan keamanan](docs/KEAMANAN.md) · [Hasil pengujian](docs/VERIFIKASI.md) · [Intro dengan SFX](docs/INTRO_SFX_V1_2_2.md)
+
+**Aplikasi independen, bukan produk BKN/Kemenkeu.** Soal latihan original berbasis template belum ditinjau ahli satu per satu. Nilai latihan dan preset historis bukan hasil seleksi resmi atau jaminan kelulusan.
+
+## Mengembangkan aplikasi
+
+```sh
+flutter pub get --enforce-lockfile
+flutter analyze
+flutter test
+```
+
+Build terverifikasi memakai Flutter 3.50.1 / Dart 3.14.0, JDK 21 dan Android SDK 36. [Panduan Windows drive D](docs/LANJUTKAN_DI_CODEX.md) memuat konfigurasi lengkap. Terapkan migrasi tambahan ke database existing sesuai riwayatnya; jangan membuat ulang database untuk upgrade.
+
+<details>
+<summary><strong>Dokumentasi teknis lengkap: instalasi, Supabase, build dan batas konten</strong></summary>
 
 ## Menjalankan aplikasi dan status APK
 
-**Status 21 November 2026:** versi 1.2.3 memakai navbar kapsul mengambang dengan lima ikon lama. Intro cpns-intro dengan SFX, latar aplikasi dan tanpa tombol Lewati ikut dalam APK. Data, fitur dan kunci release existing dipertahankan. [APK](build/releases/cpns-journey-1.2.3-arm64-v8a.apk), [laporan file/tes](docs/NAVBAR_V1_2_3.md), [screenshot](docs/design/screenshots/v1.2.3/home.png). 70 tes Flutter/33 SQL/42 APK/118 aset lulus. Uji audio HP fisik belum dilakukan.
+**Status 21 November 2026:** versi 1.2.3 memakai navbar kapsul mengambang dengan lima ikon lama. Intro cpns-intro dengan SFX, latar aplikasi dan tanpa tombol Lewati ikut dalam APK. Data, fitur dan kunci release existing dipertahankan. [APK](https://github.com/Asirakun/cpns_apk/releases/download/v1.2.3/cpns-journey-1.2.3-arm64-v8a.apk), [laporan file/tes](docs/NAVBAR_V1_2_3.md), [screenshot](docs/design/screenshots/v1.2.3/home.png). 70 tes Flutter/33 SQL/42 APK/118 aset lulus. Uji audio HP fisik belum dilakukan.
 
 Untuk memasang APK release:
 
@@ -30,7 +105,7 @@ Jalankan PowerShell dari folder proyek:
 .\scripts\setup_windows_d.ps1 -InstallAndroidSdk
 ```
 
-Skrip memerlukan Git, akses internet dan drive D. Tidak mengubah HOME/USERPROFILE, tidak menghapus instalasi Flutter lama pada C, dan tidak perlu hak administrator. Telemetri Flutter dinonaktifkan dan cache analyzer diarahkan ke D. Skrip Windows disediakan untuk dijalankan pada komputer Windows; pengujian sesi ini dilakukan pada Linux, bukan pada drive C komputer pengguna.
+Skrip memerlukan Git, akses internet dan drive D. Tidak mengubah HOME/USERPROFILE, tidak menghapus instalasi Flutter lama pada C, dan tidak perlu hak administrator. Telemetri Flutter dinonaktifkan dan cache analyzer diarahkan ke D. Skrip Windows disediakan untuk dijalankan pada komputer Windows; build 1.2.3 telah diverifikasi pada Windows dengan SDK dan cache di drive D.
 
 ```powershell
 flutter doctor
@@ -44,7 +119,7 @@ Versi build: Flutter 3.50.1 / Dart 3.14.0, JDK 21, compile/target SDK 36, minimu
 
 ## Supabase
 
-1. Buat proyek Supabase. Paket/kuota/pausing mengikuti ketentuan Supabase, bukan jaminan aplikasi.
+1. Gunakan proyek Supabase existing milikmu. Paket/kuota/pausing mengikuti ketentuan Supabase.
 2. Gunakan proyek Supabase existing. Terapkan hanya migrasi yang belum terpasang sesuai urutan: initial, optional private storage, security hardening, lalu `202611210001_analytics_additive.sql`. Jika 001–003 sudah terpasang, cukup migration analitik baru. Jangan membuat ulang database atau menjalankan seed ulang untuk upgrade. Supabase CLI dapat dipakai dengan riwayat migration yang sesuai.
 3. Migration kedua berisi bucket **private** untuk pengembangan unggah di masa depan; UI v1 tetap metadata-only. Tidak ada kebutuhan mengunggah KTP/KK.
 4. Aktifkan email/password dan email confirmation. Tambahkan `id.cpnsjourney://login-callback` pada Auth → URL Configuration → Redirect URLs, dan konfigurasi email/SMTP untuk verifikasi/reset sesuai layananmu.
@@ -107,3 +182,5 @@ Aplikasi independen, bukan produk BKN/Kemenkeu; tidak terhubung SSCASN serta tid
 ## Video demo dan sumber animasi
 
 Proyek video Remotion terintegrasi tersedia di [video-demo](video-demo/README.md), mencakup naskah, aset, narasi wanita ElevenLabs dan skrip render RTX 3050/NVENC. Video 1080p60 sekitar 121 detik menampilkan fitur aplikasi dengan kamera kontinu. Ikuti [panduan render](video-demo/README.md) untuk mengekspor MP4 di disk D. Voicebox telah dikeluarkan dari proyek video.
+
+</details>

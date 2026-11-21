@@ -13,7 +13,7 @@ Video buku pop-up React Remotion + Three.js, 1080p 60fps, sekitar 121 detik. Kam
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Render-RTX3050.ps1
 ```
 
-Hasil: out/remotion-v2/CPNS_JOURNEY_REMOTION_1080p60.mp4. GPU NVIDIA RTX 3050 diverifikasi melalui ANGLE/D3D11; NVENC diwajibkan. Narasi siap render disertakan; render tidak memakai kredit ElevenLabs. MP4 final disimpan lokal dan tidak dimasukkan ke Git.
+Hasil: out/remotion-v2/CPNS_JOURNEY_REMOTION_1080p60.mp4. GPU NVIDIA RTX 3050 diverifikasi melalui ANGLE/D3D11; NVENC diwajibkan. Narasi siap render disertakan; render tidak memakai kredit ElevenLabs. MP4 final tidak dimasukkan sebagai objek Git. [Video 1080p60 dan subtitle tersedia pada GitHub Release v1.2.3](https://github.com/Asirakun/cpns_apk/releases/tag/v1.2.3).
 
 Untuk narasi baru, salin .env.example menjadi .env.local dan isi key pribadi, lalu node tools/elevenlabs.mjs generate dan node audio-v2.mjs. Proses ini menggunakan layanan/kredit ElevenLabs. Jangan commit key.
 
